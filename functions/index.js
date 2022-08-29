@@ -13,7 +13,7 @@ admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 });
 
-const CM = (Cromosomas, dias) => {
+const CM = (Cromosomas) => {
   console.log("*--------------------Cruzeeeeeeeeeeee----------------------------*");
   const cruze1 = 1;
   const typeSort = Math.floor(Math.random() * 3);
@@ -40,6 +40,44 @@ const CM = (Cromosomas, dias) => {
       CromosomaTemporal[(index+1)] = cromosoma_2_temporal.concat(item.slice(cruze1));
 
       CromosomaTemporal[(index)] = cromosoma_1_nuevo;
+    }
+  });
+  console.log("-------------Resultados------------------");
+  console.log(CromosomaTemporal);
+  return CromosomaTemporal;
+};
+
+
+const funcionCruzeMutacion = (Cromosomas) => {
+  console.log("*--------------------Cruzeeeeeeeeeeee----------------------------*");
+  const cruze1 = 1;
+  let CromosomaBucle = null;
+  CromosomaBucle = Cromosomas.sort(() => {
+    return (Math.random() - 0.5);
+  });
+  console.log(CromosomaBucle);
+  const CromosomaTemporal = CromosomaBucle;
+  CromosomaBucle.forEach( (item, index) => {
+    if ((index+1) % 2) {
+      const mutacion = Boolean(Math.round(Math.random()));
+      if (mutacion === false) {
+        const cromosoma_1_temporal = item.slice(0, cruze1);
+        const cromosoma_1_nuevo = cromosoma_1_temporal.concat(CromosomaBucle[(index+1)].slice(cruze1));
+
+        const cromosoma_2_temporal = CromosomaBucle[(index+1)].slice(0, cruze1);
+        CromosomaTemporal[(index+1)] = cromosoma_2_temporal.concat(item.slice(cruze1));
+
+        CromosomaTemporal[(index)] = cromosoma_1_nuevo;
+      } else {
+        // const mutacion = Boolean(Math.round(Math.random()));
+        // const cromosoma_1_temporal = item.slice(0, cruze1);
+        // const cromosoma_1_nuevo = cromosoma_1_temporal.concat(CromosomaBucle[(index+1)].slice(cruze1));
+        //
+        // const cromosoma_2_temporal = CromosomaBucle[(index+1)].slice(0, cruze1);
+        // CromosomaTemporal[(index+1)] = cromosoma_2_temporal.concat(item.slice(cruze1));
+        //
+        // CromosomaTemporal[(index)] = cromosoma_1_nuevo;
+      }
     }
   });
   console.log("-------------Resultados------------------");
@@ -1796,7 +1834,7 @@ app.post("/AG", async (req, res) => {
       for (let i = 0; i < 40; i++) {
         cromosomas_desyuno.push([Math.floor(Math.random() * liquidos.length), Math.floor(Math.random() * desayuno.length)]);
         cromosomas_comida.push([Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)]);
-        cromosomas_snak.push([Math.floor(Math.random() * alimentos.length)]);
+        cromosomas_snak.push([Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)]);
       }
       while (constWhile) {
         for (const temp of cromosomas_desyuno) {
@@ -1832,6 +1870,19 @@ app.post("/AG", async (req, res) => {
           break;
         }
       }
+      await db.collection("Menus").add({
+        idUser: req.body.idUser,
+        FechaCreacion: (new Date()),
+        dias: req.body.dias,
+        caloriaObjetivo: req.body.caloriaObjetivo,
+        proteinaObjetivo: req.body.proteinaObjetivo,
+        Recetas: {
+          desayuno: resulatdoFitnesDesayuno.desayuno,
+          almuerzo: resulatdoFitnesAlmuerzo.almuerzo,
+          snack: resulatdoFitnesSnack.snack,
+          cena: resulatdoFitnesAlmuerzo.almuerzo,
+        },
+      });
       return res.status(200).json(
           {
             message: "OK",
@@ -1858,6 +1909,7 @@ app.post("/AG", async (req, res) => {
         if (resulatdoFitnesDesayuno.resultado) {
           break;
         }
+        funcionCruzeMutacion(cromosomas_desyuno);
       }
       while (constWhile) {
         for (const temp of cromosomas_comida) {
@@ -1869,6 +1921,7 @@ app.post("/AG", async (req, res) => {
         if (resulatdoFitnesAlmuerzo.resultado) {
           break;
         }
+        funcionCruzeMutacion(cromosomas_comida);
       }
       while (constWhile) {
         for (const temp of cromosomas_snak) {
@@ -1881,7 +1934,25 @@ app.post("/AG", async (req, res) => {
         if (resulatdoFitnesSnack.resultado) {
           break;
         }
+        funcionCruzeMutacion(cromosomas_snak);
       }
+      await db.collection("Menus").add({
+        idUser: req.body.idUser,
+        FechaCreacion: (new Date()),
+        dias: req.body.dias,
+        caloriaObjetivo: req.body.caloriaObjetivo,
+        proteinaObjetivo: req.body.proteinaObjetivo,
+        Recetas: {
+          desayuno: resulatdoFitnesDesayuno.desayuno,
+          desayuno2: resulatdoFitnesDesayuno.desayuno2,
+          almuerzo: resulatdoFitnesAlmuerzo.almuerzo,
+          almuerzo2: resulatdoFitnesAlmuerzo.almuerzo2,
+          snack: resulatdoFitnesSnack.snack,
+          snack2: resulatdoFitnesSnack.snack2,
+          cena: resulatdoFitnesAlmuerzo.almuerzo,
+          cena2: resulatdoFitnesAlmuerzo.almuerzo2,
+        },
+      });
       return res.status(200).json(
           {
             message: "OK",
@@ -1912,6 +1983,7 @@ app.post("/AG", async (req, res) => {
         if (resulatdoFitnesDesayuno.resultado) {
           break;
         }
+        funcionCruzeMutacion(cromosomas_desyuno);
       }
       while (constWhile) {
         for (const temp of cromosomas_comida) {
@@ -1923,6 +1995,7 @@ app.post("/AG", async (req, res) => {
         if (resulatdoFitnesAlmuerzo.resultado) {
           break;
         }
+        funcionCruzeMutacion(cromosomas_comida);
       }
       while (constWhile) {
         for (const temp of cromosomas_snak) {
@@ -1935,7 +2008,29 @@ app.post("/AG", async (req, res) => {
         if (resulatdoFitnesSnack.resultado) {
           break;
         }
+        funcionCruzeMutacion(cromosomas_snak);
       }
+      await db.collection("Menus").add({
+        idUser: req.body.idUser,
+        FechaCreacion: (new Date()),
+        dias: req.body.dias,
+        caloriaObjetivo: req.body.caloriaObjetivo,
+        proteinaObjetivo: req.body.proteinaObjetivo,
+        Recetas: {
+          desayuno: resulatdoFitnesDesayuno.desayuno,
+          desayuno2: resulatdoFitnesDesayuno.desayuno2,
+          desayuno3: resulatdoFitnesDesayuno.desayuno3,
+          almuerzo: resulatdoFitnesAlmuerzo.almuerzo,
+          almuerzo2: resulatdoFitnesAlmuerzo.almuerzo2,
+          almuerzo3: resulatdoFitnesAlmuerzo.almuerzo3,
+          snack: resulatdoFitnesSnack.snack,
+          snack2: resulatdoFitnesSnack.snack2,
+          snack3: resulatdoFitnesSnack.snack3,
+          cena: resulatdoFitnesAlmuerzo.almuerzo,
+          cena2: resulatdoFitnesAlmuerzo.almuerzo2,
+          cena3: resulatdoFitnesAlmuerzo.almuerzo3,
+        },
+      });
       return res.status(200).json(
           {
             message: "OK",
@@ -1970,6 +2065,7 @@ app.post("/AG", async (req, res) => {
         if (resulatdoFitnesDesayuno.resultado) {
           break;
         }
+        funcionCruzeMutacion(cromosomas_desyuno);
       }
       while (constWhile) {
         for (const temp of cromosomas_comida) {
@@ -1981,6 +2077,7 @@ app.post("/AG", async (req, res) => {
         if (resulatdoFitnesAlmuerzo.resultado) {
           break;
         }
+        funcionCruzeMutacion(cromosomas_comida);
       }
       while (constWhile) {
         for (const temp of cromosomas_snak) {
@@ -1993,7 +2090,33 @@ app.post("/AG", async (req, res) => {
         if (resulatdoFitnesSnack.resultado) {
           break;
         }
+        funcionCruzeMutacion(cromosomas_snak);
       }
+      await db.collection("Menus").add({
+        idUser: req.body.idUser,
+        FechaCreacion: (new Date()),
+        dias: req.body.dias,
+        caloriaObjetivo: req.body.caloriaObjetivo,
+        proteinaObjetivo: req.body.proteinaObjetivo,
+        Recetas: {
+          desayuno: resulatdoFitnesDesayuno.desayuno,
+          desayuno2: resulatdoFitnesDesayuno.desayuno2,
+          desayuno3: resulatdoFitnesDesayuno.desayuno3,
+          desayuno4: resulatdoFitnesDesayuno.desayuno4,
+          almuerzo: resulatdoFitnesAlmuerzo.almuerzo,
+          almuerzo2: resulatdoFitnesAlmuerzo.almuerzo2,
+          almuerzo3: resulatdoFitnesAlmuerzo.almuerzo3,
+          almuerzo4: resulatdoFitnesAlmuerzo.almuerzo4,
+          snack: resulatdoFitnesSnack.snack,
+          snack2: resulatdoFitnesSnack.snack2,
+          snack3: resulatdoFitnesSnack.snack3,
+          snack4: resulatdoFitnesSnack.snack4,
+          cena: resulatdoFitnesAlmuerzo.almuerzo,
+          cena2: resulatdoFitnesAlmuerzo.almuerzo2,
+          cena3: resulatdoFitnesAlmuerzo.almuerzo3,
+          cena4: resulatdoFitnesAlmuerzo.almuerzo4,
+        },
+      });
       return res.status(200).json(
           {
             message: "OK",
@@ -2032,6 +2155,7 @@ app.post("/AG", async (req, res) => {
         if (resulatdoFitnesDesayuno.resultado) {
           break;
         }
+        funcionCruzeMutacion(cromosomas_desyuno);
       }
       while (constWhile) {
         for (const temp of cromosomas_comida) {
@@ -2043,6 +2167,7 @@ app.post("/AG", async (req, res) => {
         if (resulatdoFitnesAlmuerzo.resultado) {
           break;
         }
+        funcionCruzeMutacion(cromosomas_comida);
       }
       while (constWhile) {
         for (const temp of cromosomas_snak) {
@@ -2055,7 +2180,37 @@ app.post("/AG", async (req, res) => {
         if (resulatdoFitnesSnack.resultado) {
           break;
         }
+        funcionCruzeMutacion(cromosomas_snak);
       }
+      await db.collection("Menus").add({
+        idUser: req.body.idUser,
+        FechaCreacion: (new Date()),
+        dias: req.body.dias,
+        caloriaObjetivo: req.body.caloriaObjetivo,
+        proteinaObjetivo: req.body.proteinaObjetivo,
+        Recetas: {
+          desayuno: resulatdoFitnesDesayuno.desayuno,
+          desayuno2: resulatdoFitnesDesayuno.desayuno2,
+          desayuno3: resulatdoFitnesDesayuno.desayuno3,
+          desayuno4: resulatdoFitnesDesayuno.desayuno4,
+          desayuno5: resulatdoFitnesDesayuno.desayuno5,
+          almuerzo: resulatdoFitnesAlmuerzo.almuerzo,
+          almuerzo2: resulatdoFitnesAlmuerzo.almuerzo2,
+          almuerzo3: resulatdoFitnesAlmuerzo.almuerzo3,
+          almuerzo4: resulatdoFitnesAlmuerzo.almuerzo4,
+          almuerzo5: resulatdoFitnesAlmuerzo.almuerzo5,
+          snack: resulatdoFitnesSnack.snack,
+          snack2: resulatdoFitnesSnack.snack2,
+          snack3: resulatdoFitnesSnack.snack3,
+          snack4: resulatdoFitnesSnack.snack4,
+          snack5: resulatdoFitnesSnack.snack5,
+          cena: resulatdoFitnesAlmuerzo.almuerzo,
+          cena2: resulatdoFitnesAlmuerzo.almuerzo2,
+          cena3: resulatdoFitnesAlmuerzo.almuerzo3,
+          cena4: resulatdoFitnesAlmuerzo.almuerzo4,
+          cena5: resulatdoFitnesAlmuerzo.almuerzo5,
+        },
+      });
       return res.status(200).json(
           {
             message: "OK",
@@ -2089,7 +2244,7 @@ app.post("/AG", async (req, res) => {
       }
       while (constWhile) {
         for (const temp of cromosomas_desyuno) {
-          resulatdoFitnesDesayuno = funcionFitnesDesayuno(temp, liquidos, desayuno, (req.body.caloriaObjetivo*0.15)*5, (req.body.proteinaObjetivo*0.15)*5, req.body.dias);
+          resulatdoFitnesDesayuno = funcionFitnesDesayuno(temp, liquidos, desayuno, (req.body.caloriaObjetivo*0.15)*6, (req.body.proteinaObjetivo*0.15)*6, req.body.dias);
           if (resulatdoFitnesDesayuno.resultado) {
             console.log(resulatdoFitnesDesayuno);
             break;
@@ -2098,10 +2253,11 @@ app.post("/AG", async (req, res) => {
         if (resulatdoFitnesDesayuno.resultado) {
           break;
         }
+        funcionCruzeMutacion(cromosomas_desyuno);
       }
       while (constWhile) {
         for (const temp of cromosomas_comida) {
-          resulatdoFitnesAlmuerzo = funcionFitnesAlmuerzo(temp, carnes, alimentos, (req.body.caloriaObjetivo*0.35)*5, (req.body.proteinaObjetivo*0.35)*5, req.body.dias);
+          resulatdoFitnesAlmuerzo = funcionFitnesAlmuerzo(temp, carnes, alimentos, (req.body.caloriaObjetivo*0.35)*6, (req.body.proteinaObjetivo*0.35)*6, req.body.dias);
           if (resulatdoFitnesAlmuerzo.resultado) {
             break;
           }
@@ -2109,10 +2265,11 @@ app.post("/AG", async (req, res) => {
         if (resulatdoFitnesAlmuerzo.resultado) {
           break;
         }
+        funcionCruzeMutacion(cromosomas_comida);
       }
       while (constWhile) {
         for (const temp of cromosomas_snak) {
-          resulatdoFitnesSnack = funcionFitnesSnack(temp, alimentos, (req.body.caloriaObjetivo*0.15)*5, (req.body.proteinaObjetivo*0.15)*5, req.body.dias);
+          resulatdoFitnesSnack = funcionFitnesSnack(temp, alimentos, (req.body.caloriaObjetivo*0.15)*6, (req.body.proteinaObjetivo*0.15)*6, req.body.dias);
           if (resulatdoFitnesSnack.resultado) {
             console.log(resulatdoFitnesSnack);
             break;
@@ -2121,7 +2278,41 @@ app.post("/AG", async (req, res) => {
         if (resulatdoFitnesSnack.resultado) {
           break;
         }
+        funcionCruzeMutacion(cromosomas_snak);
       }
+      await db.collection("Menus").add({
+        idUser: req.body.idUser,
+        FechaCreacion: (new Date()),
+        dias: req.body.dias,
+        caloriaObjetivo: req.body.caloriaObjetivo,
+        proteinaObjetivo: req.body.proteinaObjetivo,
+        Recetas: {
+          desayuno: resulatdoFitnesDesayuno.desayuno,
+          desayuno2: resulatdoFitnesDesayuno.desayuno2,
+          desayuno3: resulatdoFitnesDesayuno.desayuno3,
+          desayuno4: resulatdoFitnesDesayuno.desayuno4,
+          desayuno5: resulatdoFitnesDesayuno.desayuno5,
+          desayuno6: resulatdoFitnesDesayuno.desayuno6,
+          almuerzo: resulatdoFitnesAlmuerzo.almuerzo,
+          almuerzo2: resulatdoFitnesAlmuerzo.almuerzo2,
+          almuerzo3: resulatdoFitnesAlmuerzo.almuerzo3,
+          almuerzo4: resulatdoFitnesAlmuerzo.almuerzo4,
+          almuerzo5: resulatdoFitnesAlmuerzo.almuerzo5,
+          almuerzo6: resulatdoFitnesAlmuerzo.almuerzo6,
+          snack: resulatdoFitnesSnack.snack,
+          snack2: resulatdoFitnesSnack.snack2,
+          snack3: resulatdoFitnesSnack.snack3,
+          snack4: resulatdoFitnesSnack.snack4,
+          snack5: resulatdoFitnesSnack.snack5,
+          snack6: resulatdoFitnesSnack.snack6,
+          cena: resulatdoFitnesAlmuerzo.almuerzo,
+          cena2: resulatdoFitnesAlmuerzo.almuerzo2,
+          cena3: resulatdoFitnesAlmuerzo.almuerzo3,
+          cena4: resulatdoFitnesAlmuerzo.almuerzo4,
+          cena5: resulatdoFitnesAlmuerzo.almuerzo5,
+          cena6: resulatdoFitnesAlmuerzo.almuerzo6,
+        },
+      });
       return res.status(200).json(
           {
             message: "OK",
@@ -2159,7 +2350,7 @@ app.post("/AG", async (req, res) => {
       }
       while (constWhile) {
         for (const temp of cromosomas_desyuno) {
-          resulatdoFitnesDesayuno = funcionFitnesDesayuno(temp, liquidos, desayuno, (req.body.caloriaObjetivo*0.15)*5, (req.body.proteinaObjetivo*0.15)*5, req.body.dias);
+          resulatdoFitnesDesayuno = funcionFitnesDesayuno(temp, liquidos, desayuno, (req.body.caloriaObjetivo*0.15)*7, (req.body.proteinaObjetivo*0.15)*7, req.body.dias);
           if (resulatdoFitnesDesayuno.resultado) {
             console.log(resulatdoFitnesDesayuno);
             break;
@@ -2168,10 +2359,11 @@ app.post("/AG", async (req, res) => {
         if (resulatdoFitnesDesayuno.resultado) {
           break;
         }
+        funcionCruzeMutacion(cromosomas_desyuno);
       }
       while (constWhile) {
         for (const temp of cromosomas_comida) {
-          resulatdoFitnesAlmuerzo = funcionFitnesAlmuerzo(temp, carnes, alimentos, (req.body.caloriaObjetivo*0.35)*5, (req.body.proteinaObjetivo*0.35)*5, req.body.dias);
+          resulatdoFitnesAlmuerzo = funcionFitnesAlmuerzo(temp, carnes, alimentos, (req.body.caloriaObjetivo*0.35)*7, (req.body.proteinaObjetivo*0.35)*7, req.body.dias);
           if (resulatdoFitnesAlmuerzo.resultado) {
             break;
           }
@@ -2179,10 +2371,11 @@ app.post("/AG", async (req, res) => {
         if (resulatdoFitnesAlmuerzo.resultado) {
           break;
         }
+        funcionCruzeMutacion(cromosomas_comida);
       }
       while (constWhile) {
         for (const temp of cromosomas_snak) {
-          resulatdoFitnesSnack = funcionFitnesSnack(temp, alimentos, (req.body.caloriaObjetivo*0.15)*5, (req.body.proteinaObjetivo*0.15)*5, req.body.dias);
+          resulatdoFitnesSnack = funcionFitnesSnack(temp, alimentos, (req.body.caloriaObjetivo*0.15)*7, (req.body.proteinaObjetivo*0.15)*7, req.body.dias);
           if (resulatdoFitnesSnack.resultado) {
             console.log(resulatdoFitnesSnack);
             break;
@@ -2191,7 +2384,45 @@ app.post("/AG", async (req, res) => {
         if (resulatdoFitnesSnack.resultado) {
           break;
         }
+        funcionCruzeMutacion(cromosomas_snak);
       }
+      await db.collection("Menus").add({
+        idUser: req.body.idUser,
+        FechaCreacion: (new Date()),
+        dias: req.body.dias,
+        caloriaObjetivo: req.body.caloriaObjetivo,
+        proteinaObjetivo: req.body.proteinaObjetivo,
+        Recetas: {
+          desayuno: resulatdoFitnesDesayuno.desayuno,
+          desayuno2: resulatdoFitnesDesayuno.desayuno2,
+          desayuno3: resulatdoFitnesDesayuno.desayuno3,
+          desayuno4: resulatdoFitnesDesayuno.desayuno4,
+          desayuno5: resulatdoFitnesDesayuno.desayuno5,
+          desayuno6: resulatdoFitnesDesayuno.desayuno6,
+          desayuno7: resulatdoFitnesDesayuno.desayuno7,
+          almuerzo: resulatdoFitnesAlmuerzo.almuerzo,
+          almuerzo2: resulatdoFitnesAlmuerzo.almuerzo2,
+          almuerzo3: resulatdoFitnesAlmuerzo.almuerzo3,
+          almuerzo4: resulatdoFitnesAlmuerzo.almuerzo4,
+          almuerzo5: resulatdoFitnesAlmuerzo.almuerzo5,
+          almuerzo6: resulatdoFitnesAlmuerzo.almuerzo6,
+          almuerzo7: resulatdoFitnesAlmuerzo.almuerzo7,
+          snack: resulatdoFitnesSnack.snack,
+          snack2: resulatdoFitnesSnack.snack2,
+          snack3: resulatdoFitnesSnack.snack3,
+          snack4: resulatdoFitnesSnack.snack4,
+          snack5: resulatdoFitnesSnack.snack5,
+          snack6: resulatdoFitnesSnack.snack6,
+          snack7: resulatdoFitnesSnack.snack7,
+          cena: resulatdoFitnesAlmuerzo.almuerzo,
+          cena2: resulatdoFitnesAlmuerzo.almuerzo2,
+          cena3: resulatdoFitnesAlmuerzo.almuerzo3,
+          cena4: resulatdoFitnesAlmuerzo.almuerzo4,
+          cena5: resulatdoFitnesAlmuerzo.almuerzo5,
+          cena6: resulatdoFitnesAlmuerzo.almuerzo6,
+          cena7: resulatdoFitnesAlmuerzo.almuerzo7,
+        },
+      });
       return res.status(200).json(
           {
             message: "OK",

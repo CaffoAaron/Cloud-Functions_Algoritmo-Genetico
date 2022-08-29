@@ -13,6 +13,7 @@ module.exports = {
     "max-len": "off",
     "camelcase": "off",
     "new-cap": "off",
+    "no-unused-vars": "off",
   },
   parserOptions: {
     ecmaVersion: 2019,

@@ -131,7 +131,7 @@ const funcionFitnesDesayuno = (cromosoma, liquidos, alimentos, objetivoCaloria, 
     dia_2_alimento = alimentos[cromosoma[1][1]];
     calculo_calorias = dia_1_liquido.Cals + dia_1_alimento.Cals + dia_2_liquido.Cals + dia_2_alimento.Cals;
     calculo_proteinas = dia_1_liquido.Prot + dia_1_alimento.Prot + dia_2_liquido.Prot + dia_2_alimento.Prot;
-    if ( calculo_calorias >= (objetivoCaloria-60) && calculo_calorias <= (objetivoCaloria+60)) {
+    if ( calculo_calorias >= (objetivoCaloria-120) && calculo_calorias <= (objetivoCaloria+120)) {
       return {
         resultado: true,
         desayuno: {
@@ -165,7 +165,7 @@ const funcionFitnesDesayuno = (cromosoma, liquidos, alimentos, objetivoCaloria, 
     dia_3_alimento = alimentos[cromosoma[2][1]];
     calculo_calorias = dia_1_liquido.Cals + dia_1_alimento.Cals + dia_2_liquido.Cals + dia_2_alimento.Cals + dia_3_liquido.Cals + dia_3_alimento.Cals;
     calculo_proteinas = dia_1_liquido.Prot + dia_1_alimento.Prot + dia_2_liquido.Prot + dia_2_alimento.Prot + dia_3_liquido.Prot + dia_3_alimento.Prot;
-    if ( calculo_calorias >= (objetivoCaloria-60) && calculo_calorias <= (objetivoCaloria+60)) {
+    if ( calculo_calorias >= (objetivoCaloria-180) && calculo_calorias <= (objetivoCaloria+180)) {
       return {
         resultado: true,
         desayuno: {
@@ -209,7 +209,7 @@ const funcionFitnesDesayuno = (cromosoma, liquidos, alimentos, objetivoCaloria, 
     dia_4_alimento = alimentos[cromosoma[3][1]];
     calculo_calorias = dia_1_liquido.Cals + dia_1_alimento.Cals + dia_2_liquido.Cals + dia_2_alimento.Cals + dia_3_liquido.Cals + dia_3_alimento.Cals + dia_4_liquido.Cals + dia_4_alimento.Cals;
     calculo_proteinas = dia_1_liquido.Prot + dia_1_alimento.Prot + dia_2_liquido.Prot + dia_2_alimento.Prot + dia_3_liquido.Prot + dia_3_alimento.Prot + dia_4_liquido.Prot + dia_4_alimento.Prot;
-    if ( calculo_calorias >= (objetivoCaloria-60) && calculo_calorias <= (objetivoCaloria+60)) {
+    if ( calculo_calorias >= (objetivoCaloria-240) && calculo_calorias <= (objetivoCaloria+240)) {
       return {
         resultado: true,
         desayuno: {
@@ -263,7 +263,7 @@ const funcionFitnesDesayuno = (cromosoma, liquidos, alimentos, objetivoCaloria, 
     dia_5_alimento = alimentos[cromosoma[4][1]];
     calculo_calorias = dia_1_liquido.Cals + dia_1_alimento.Cals + dia_2_liquido.Cals + dia_2_alimento.Cals + dia_3_liquido.Cals + dia_3_alimento.Cals + dia_4_liquido.Cals + dia_4_alimento.Cals + dia_5_liquido.Cals + dia_5_alimento.Cals;
     calculo_proteinas = dia_1_liquido.Prot + dia_1_alimento.Prot + dia_2_liquido.Prot + dia_2_alimento.Prot + dia_3_liquido.Prot + dia_3_alimento.Prot + dia_4_liquido.Prot + dia_4_alimento.Prot + dia_5_liquido.Prot + dia_5_alimento.Prot;
-    if ( calculo_calorias >= (objetivoCaloria-60) && calculo_calorias <= (objetivoCaloria+60)) {
+    if ( calculo_calorias >= (objetivoCaloria-300) && calculo_calorias <= (objetivoCaloria+300)) {
       return {
         resultado: true,
         desayuno: {
@@ -327,7 +327,7 @@ const funcionFitnesDesayuno = (cromosoma, liquidos, alimentos, objetivoCaloria, 
     dia_6_alimento = alimentos[cromosoma[5][1]];
     calculo_calorias = dia_1_liquido.Cals + dia_1_alimento.Cals + dia_2_liquido.Cals + dia_2_alimento.Cals + dia_3_liquido.Cals + dia_3_alimento.Cals + dia_4_liquido.Cals + dia_4_alimento.Cals + dia_5_liquido.Cals + dia_5_alimento.Cals + dia_6_liquido.Cals + dia_6_alimento.Cals;
     calculo_proteinas = dia_1_liquido.Prot + dia_1_alimento.Prot + dia_2_liquido.Prot + dia_2_alimento.Prot + dia_3_liquido.Prot + dia_3_alimento.Prot + dia_4_liquido.Prot + dia_4_alimento.Prot + dia_5_liquido.Prot + dia_5_alimento.Prot + dia_6_liquido.Prot + dia_6_alimento.Prot;
-    if ( calculo_calorias >= (objetivoCaloria-60) && calculo_calorias <= (objetivoCaloria+60)) {
+    if ( calculo_calorias >= (objetivoCaloria-360) && calculo_calorias <= (objetivoCaloria+360)) {
       return {
         resultado: true,
         desayuno: {
@@ -401,7 +401,7 @@ const funcionFitnesDesayuno = (cromosoma, liquidos, alimentos, objetivoCaloria, 
     dia_7_alimento = alimentos[cromosoma[6][1]];
     calculo_calorias = dia_1_liquido.Cals + dia_1_alimento.Cals + dia_2_liquido.Cals + dia_2_alimento.Cals + dia_3_liquido.Cals + dia_3_alimento.Cals + dia_4_liquido.Cals + dia_4_alimento.Cals + dia_5_liquido.Cals + dia_5_alimento.Cals + dia_6_liquido.Cals + dia_6_alimento.Cals + dia_7_liquido.Cals + dia_7_alimento.Cals;
     calculo_proteinas = dia_1_liquido.Prot + dia_1_alimento.Prot + dia_2_liquido.Prot + dia_2_alimento.Prot + dia_3_liquido.Prot + dia_3_alimento.Prot + dia_4_liquido.Prot + dia_4_alimento.Prot + dia_5_liquido.Prot + dia_5_alimento.Prot + dia_6_liquido.Prot + dia_6_alimento.Prot + dia_7_liquido.Prot + dia_7_alimento.Prot;
-    if ( calculo_calorias >= (objetivoCaloria-60) && calculo_calorias <= (objetivoCaloria+60)) {
+    if ( calculo_calorias >= (objetivoCaloria-420) && calculo_calorias <= (objetivoCaloria+420)) {
       return {
         resultado: true,
         desayuno: {
@@ -509,7 +509,7 @@ const funcionFitnesAlmuerzo = (cromosoma, carnes, alimentos, objetivoCaloria, Ob
     const dia_2_alimento3 = alimentos[cromosoma[1][3]];
     const calculo_calorias = dia_1_carnes.Cals + dia_1_alimento1.Cals + dia_1_alimento2.Cals + dia_1_alimento3.Cals + dia_2_carnes.Cals + dia_2_alimento1.Cals + dia_2_alimento2.Cals + dia_2_alimento3.Cals;
     const calculo_proteinas = dia_1_carnes.Prot + dia_1_alimento1.Prot + dia_1_alimento2.Prot + dia_1_alimento3.Prot + dia_2_carnes.Prot + dia_2_alimento1.Prot + dia_2_alimento2.Prot + dia_2_alimento3.Prot;
-    if ( calculo_calorias >= (objetivoCaloria-60) && calculo_calorias <= (objetivoCaloria+60)) {
+    if ( calculo_calorias >= (objetivoCaloria-120) && calculo_calorias <= (objetivoCaloria+120)) {
       return {
         resultado: true,
         almuerzo: {
@@ -557,7 +557,7 @@ const funcionFitnesAlmuerzo = (cromosoma, carnes, alimentos, objetivoCaloria, Ob
     const dia_3_alimento3 = alimentos[cromosoma[2][3]];
     const calculo_calorias = dia_1_carnes.Cals + dia_1_alimento1.Cals + dia_1_alimento2.Cals + dia_1_alimento3.Cals + dia_2_carnes.Cals + dia_2_alimento1.Cals + dia_2_alimento2.Cals + dia_2_alimento3.Cals + dia_3_carnes.Cals + dia_3_alimento1.Cals + dia_3_alimento2.Cals + dia_3_alimento3.Cals;
     const calculo_proteinas = dia_1_carnes.Prot + dia_1_alimento1.Prot + dia_1_alimento2.Prot + dia_1_alimento3.Prot + dia_2_carnes.Prot + dia_2_alimento1.Prot + dia_2_alimento2.Prot + dia_2_alimento3.Prot + dia_3_carnes.Prot + dia_3_alimento1.Prot + dia_3_alimento2.Prot + dia_3_alimento3.Prot;
-    if ( calculo_calorias >= (objetivoCaloria-60) && calculo_calorias <= (objetivoCaloria+60)) {
+    if ( calculo_calorias >= (objetivoCaloria-180) && calculo_calorias <= (objetivoCaloria+180)) {
       return {
         resultado: true,
         almuerzo: {
@@ -621,7 +621,7 @@ const funcionFitnesAlmuerzo = (cromosoma, carnes, alimentos, objetivoCaloria, Ob
     const dia_4_alimento3 = alimentos[cromosoma[3][3]];
     const calculo_calorias = dia_1_carnes.Cals + dia_1_alimento1.Cals + dia_1_alimento2.Cals + dia_1_alimento3.Cals + dia_2_carnes.Cals + dia_2_alimento1.Cals + dia_2_alimento2.Cals + dia_2_alimento3.Cals + dia_3_carnes.Cals + dia_3_alimento1.Cals + dia_3_alimento2.Cals + dia_3_alimento3.Cals + dia_4_carnes.Cals + dia_4_alimento1.Cals + dia_4_alimento2.Cals + dia_4_alimento3.Cals;
     const calculo_proteinas = dia_1_carnes.Prot + dia_1_alimento1.Prot + dia_1_alimento2.Prot + dia_1_alimento3.Prot + dia_2_carnes.Prot + dia_2_alimento1.Prot + dia_2_alimento2.Prot + dia_2_alimento3.Prot + dia_3_carnes.Prot + dia_3_alimento1.Prot + dia_3_alimento2.Prot + dia_3_alimento3.Prot + dia_4_carnes.Prot + dia_4_alimento1.Prot + dia_4_alimento2.Prot + dia_4_alimento3.Prot;
-    if ( calculo_calorias >= (objetivoCaloria-60) && calculo_calorias <= (objetivoCaloria+60)) {
+    if ( calculo_calorias >= (objetivoCaloria-240) && calculo_calorias <= (objetivoCaloria+240)) {
       return {
         resultado: true,
         almuerzo: {
@@ -701,7 +701,7 @@ const funcionFitnesAlmuerzo = (cromosoma, carnes, alimentos, objetivoCaloria, Ob
     const dia_5_alimento3 = alimentos[cromosoma[4][3]];
     const calculo_calorias = dia_1_carnes.Cals + dia_1_alimento1.Cals + dia_1_alimento2.Cals + dia_1_alimento3.Cals + dia_2_carnes.Cals + dia_2_alimento1.Cals + dia_2_alimento2.Cals + dia_2_alimento3.Cals + dia_3_carnes.Cals + dia_3_alimento1.Cals + dia_3_alimento2.Cals + dia_3_alimento3.Cals + dia_4_carnes.Cals + dia_4_alimento1.Cals + dia_4_alimento2.Cals + dia_4_alimento3.Cals + dia_5_carnes.Cals + dia_5_alimento1.Cals + dia_5_alimento2.Cals + dia_5_alimento3.Cals;
     const calculo_proteinas = dia_1_carnes.Prot + dia_1_alimento1.Prot + dia_1_alimento2.Prot + dia_1_alimento3.Prot + dia_2_carnes.Prot + dia_2_alimento1.Prot + dia_2_alimento2.Prot + dia_2_alimento3.Prot + dia_3_carnes.Prot + dia_3_alimento1.Prot + dia_3_alimento2.Prot + dia_3_alimento3.Prot + dia_4_carnes.Prot + dia_4_alimento1.Prot + dia_4_alimento2.Prot + dia_4_alimento3.Prot + dia_5_carnes.Prot + dia_5_alimento1.Prot + dia_5_alimento2.Prot + dia_5_alimento3.Prot;
-    if ( calculo_calorias >= (objetivoCaloria-60) && calculo_calorias <= (objetivoCaloria+60)) {
+    if ( calculo_calorias >= (objetivoCaloria-300) && calculo_calorias <= (objetivoCaloria+300)) {
       return {
         resultado: true,
         almuerzo: {
@@ -797,7 +797,7 @@ const funcionFitnesAlmuerzo = (cromosoma, carnes, alimentos, objetivoCaloria, Ob
     const dia_6_alimento3 = alimentos[cromosoma[5][3]];
     const calculo_calorias = dia_1_carnes.Cals + dia_1_alimento1.Cals + dia_1_alimento2.Cals + dia_1_alimento3.Cals + dia_2_carnes.Cals + dia_2_alimento1.Cals + dia_2_alimento2.Cals + dia_2_alimento3.Cals + dia_3_carnes.Cals + dia_3_alimento1.Cals + dia_3_alimento2.Cals + dia_3_alimento3.Cals + dia_4_carnes.Cals + dia_4_alimento1.Cals + dia_4_alimento2.Cals + dia_4_alimento3.Cals + dia_5_carnes.Cals + dia_5_alimento1.Cals + dia_5_alimento2.Cals + dia_5_alimento3.Cals + dia_6_carnes.Cals + dia_6_alimento1.Cals + dia_6_alimento2.Cals + dia_6_alimento3.Cals;
     const calculo_proteinas = dia_1_carnes.Prot + dia_1_alimento1.Prot + dia_1_alimento2.Prot + dia_1_alimento3.Prot + dia_2_carnes.Prot + dia_2_alimento1.Prot + dia_2_alimento2.Prot + dia_2_alimento3.Prot + dia_3_carnes.Prot + dia_3_alimento1.Prot + dia_3_alimento2.Prot + dia_3_alimento3.Prot + dia_4_carnes.Prot + dia_4_alimento1.Prot + dia_4_alimento2.Prot + dia_4_alimento3.Prot + dia_5_carnes.Prot + dia_5_alimento1.Prot + dia_5_alimento2.Prot + dia_5_alimento3.Prot + dia_6_carnes.Prot + dia_6_alimento1.Prot + dia_6_alimento2.Prot + dia_6_alimento3.Prot;
-    if ( calculo_calorias >= (objetivoCaloria-60) && calculo_calorias <= (objetivoCaloria+60)) {
+    if ( calculo_calorias >= (objetivoCaloria-360) && calculo_calorias <= (objetivoCaloria+360)) {
       return {
         resultado: true,
         almuerzo: {
@@ -909,7 +909,7 @@ const funcionFitnesAlmuerzo = (cromosoma, carnes, alimentos, objetivoCaloria, Ob
     const dia_7_alimento3 = alimentos[cromosoma[6][3]];
     const calculo_calorias = dia_1_carnes.Cals + dia_1_alimento1.Cals + dia_1_alimento2.Cals + dia_1_alimento3.Cals + dia_2_carnes.Cals + dia_2_alimento1.Cals + dia_2_alimento2.Cals + dia_2_alimento3.Cals + dia_3_carnes.Cals + dia_3_alimento1.Cals + dia_3_alimento2.Cals + dia_3_alimento3.Cals + dia_4_carnes.Cals + dia_4_alimento1.Cals + dia_4_alimento2.Cals + dia_4_alimento3.Cals + dia_5_carnes.Cals + dia_5_alimento1.Cals + dia_5_alimento2.Cals + dia_5_alimento3.Cals + dia_6_carnes.Cals + dia_6_alimento1.Cals + dia_6_alimento2.Cals + dia_6_alimento3.Cals + dia_7_carnes.Cals + dia_7_alimento1.Cals + dia_7_alimento2.Cals + dia_7_alimento3.Cals;
     const calculo_proteinas = dia_1_carnes.Prot + dia_1_alimento1.Prot + dia_1_alimento2.Prot + dia_1_alimento3.Prot + dia_2_carnes.Prot + dia_2_alimento1.Prot + dia_2_alimento2.Prot + dia_2_alimento3.Prot + dia_3_carnes.Prot + dia_3_alimento1.Prot + dia_3_alimento2.Prot + dia_3_alimento3.Prot + dia_4_carnes.Prot + dia_4_alimento1.Prot + dia_4_alimento2.Prot + dia_4_alimento3.Prot + dia_5_carnes.Prot + dia_5_alimento1.Prot + dia_5_alimento2.Prot + dia_5_alimento3.Prot + dia_6_carnes.Prot + dia_6_alimento1.Prot + dia_6_alimento2.Prot + dia_6_alimento3.Prot + dia_7_carnes.Prot + dia_7_alimento1.Prot + dia_7_alimento2.Prot + dia_7_alimento3.Prot;
-    if ( calculo_calorias >= (objetivoCaloria-60) && calculo_calorias <= (objetivoCaloria+60)) {
+    if ( calculo_calorias >= (objetivoCaloria-420) && calculo_calorias <= (objetivoCaloria+420)) {
       return {
         resultado: true,
         almuerzo: {
@@ -1035,7 +1035,7 @@ const funcionFitnesSnack = (cromosoma, alimentos, objetivoCaloria, ObjetivoProte
     const dia_2_alimento2 = alimentos[cromosoma[1][1]];
     const calculo_calorias = dia_1_alimento.Cals + dia_1_alimento2.Cals + dia_2_alimento.Cals + dia_2_alimento2.Cals;
     const calculo_proteinas = dia_1_alimento.Prot + dia_1_alimento2.Prot + dia_2_alimento.Prot + dia_2_alimento2.Prot;
-    if ( calculo_calorias >= (objetivoCaloria-60) && calculo_calorias <= (objetivoCaloria+60)) {
+    if ( calculo_calorias >= (objetivoCaloria-120) && calculo_calorias <= (objetivoCaloria+120)) {
       return {
         resultado: true,
         snack: {
@@ -1069,7 +1069,7 @@ const funcionFitnesSnack = (cromosoma, alimentos, objetivoCaloria, ObjetivoProte
     const dia_3_alimento2 = alimentos[cromosoma[2][1]];
     const calculo_calorias = dia_1_alimento.Cals + dia_1_alimento2.Cals + dia_2_alimento.Cals + dia_2_alimento2.Cals + dia_3_alimento.Cals + dia_3_alimento2.Cals;
     const calculo_proteinas = dia_1_alimento.Prot + dia_1_alimento2.Prot + dia_2_alimento.Prot + dia_2_alimento2.Prot + dia_3_alimento.Prot + dia_3_alimento2.Prot;
-    if ( calculo_calorias >= (objetivoCaloria-60) && calculo_calorias <= (objetivoCaloria+60)) {
+    if ( calculo_calorias >= (objetivoCaloria-180) && calculo_calorias <= (objetivoCaloria+180)) {
       return {
         resultado: true,
         snack: {
@@ -1113,7 +1113,7 @@ const funcionFitnesSnack = (cromosoma, alimentos, objetivoCaloria, ObjetivoProte
     const dia_4_alimento2 = alimentos[cromosoma[3][1]];
     const calculo_calorias = dia_1_alimento.Cals + dia_1_alimento2.Cals + dia_2_alimento.Cals + dia_2_alimento2.Cals + dia_3_alimento.Cals + dia_3_alimento2.Cals + dia_4_alimento.Cals + dia_4_alimento2.Cals;
     const calculo_proteinas = dia_1_alimento.Prot + dia_1_alimento2.Prot + dia_2_alimento.Prot + dia_2_alimento2.Prot + dia_3_alimento.Prot + dia_3_alimento2.Prot + dia_4_alimento.Prot + dia_4_alimento2.Prot;
-    if ( calculo_calorias >= (objetivoCaloria-60) && calculo_calorias <= (objetivoCaloria+60)) {
+    if ( calculo_calorias >= (objetivoCaloria-240) && calculo_calorias <= (objetivoCaloria+240)) {
       return {
         resultado: true,
         snack: {
@@ -1167,7 +1167,7 @@ const funcionFitnesSnack = (cromosoma, alimentos, objetivoCaloria, ObjetivoProte
     const dia_5_alimento2 = alimentos[cromosoma[4][1]];
     const calculo_calorias = dia_1_alimento.Cals + dia_1_alimento2.Cals + dia_2_alimento.Cals + dia_2_alimento2.Cals + dia_3_alimento.Cals + dia_3_alimento2.Cals + dia_4_alimento.Cals + dia_4_alimento2.Cals + dia_5_alimento.Cals + dia_5_alimento2.Cals;
     const calculo_proteinas = dia_1_alimento.Prot + dia_1_alimento2.Prot + dia_2_alimento.Prot + dia_2_alimento2.Prot + dia_3_alimento.Prot + dia_3_alimento2.Prot + dia_4_alimento.Prot + dia_4_alimento2.Prot + dia_5_alimento.Prot + dia_5_alimento2.Prot;
-    if ( calculo_calorias >= (objetivoCaloria-60) && calculo_calorias <= (objetivoCaloria+60)) {
+    if ( calculo_calorias >= (objetivoCaloria-300) && calculo_calorias <= (objetivoCaloria+300)) {
       return {
         resultado: true,
         snack: {
@@ -1231,7 +1231,7 @@ const funcionFitnesSnack = (cromosoma, alimentos, objetivoCaloria, ObjetivoProte
     const dia_6_alimento2 = alimentos[cromosoma[5][1]];
     const calculo_calorias = dia_1_alimento.Cals + dia_1_alimento2.Cals + dia_2_alimento.Cals + dia_2_alimento2.Cals + dia_3_alimento.Cals + dia_3_alimento2.Cals + dia_4_alimento.Cals + dia_4_alimento2.Cals + dia_5_alimento.Cals + dia_5_alimento2.Cals + dia_6_alimento.Cals + dia_6_alimento2.Cals;
     const calculo_proteinas = dia_1_alimento.Prot + dia_1_alimento2.Prot + dia_2_alimento.Prot + dia_2_alimento2.Prot + dia_3_alimento.Prot + dia_3_alimento2.Prot + dia_4_alimento.Prot + dia_4_alimento2.Prot + dia_5_alimento.Prot + dia_5_alimento2.Prot + dia_6_alimento.Prot + dia_6_alimento2.Prot;
-    if ( calculo_calorias >= (objetivoCaloria-60) && calculo_calorias <= (objetivoCaloria+60)) {
+    if ( calculo_calorias >= (objetivoCaloria-360) && calculo_calorias <= (objetivoCaloria+360)) {
       return {
         resultado: true,
         snack: {
@@ -1305,7 +1305,7 @@ const funcionFitnesSnack = (cromosoma, alimentos, objetivoCaloria, ObjetivoProte
     const dia_7_alimento2 = alimentos[cromosoma[6][1]];
     const calculo_calorias = dia_1_alimento.Cals + dia_1_alimento2.Cals + dia_2_alimento.Cals + dia_2_alimento2.Cals + dia_3_alimento.Cals + dia_3_alimento2.Cals + dia_4_alimento.Cals + dia_4_alimento2.Cals + dia_5_alimento.Cals + dia_5_alimento2.Cals + dia_6_alimento.Cals + dia_6_alimento2.Cals + dia_7_alimento.Cals + dia_7_alimento2.Cals;
     const calculo_proteinas = dia_1_alimento.Prot + dia_1_alimento2.Prot + dia_2_alimento.Prot + dia_2_alimento2.Prot + dia_3_alimento.Prot + dia_3_alimento2.Prot + dia_4_alimento.Prot + dia_4_alimento2.Prot + dia_5_alimento.Prot + dia_5_alimento2.Prot + dia_6_alimento.Prot + dia_6_alimento2.Prot + dia_7_alimento.Prot + dia_7_alimento2.Prot;
-    if ( calculo_calorias >= (objetivoCaloria-60) && calculo_calorias <= (objetivoCaloria+60)) {
+    if ( calculo_calorias >= (objetivoCaloria-420) && calculo_calorias <= (objetivoCaloria+420)) {
       return {
         resultado: true,
         snack: {
@@ -1810,7 +1810,8 @@ app.post("/AG", async (req, res) => {
   console.log("-----------------------Empezo la funcion -----------------------");
   console.log("reques body recibido: ", req.body);
   if (req.body.idUser && req.body.dias && req.body.caloriaObjetivo && req.body.proteinaObjetivo) {
-    const alimentos = [];
+    let alimentos = null;
+    const tempAlimentos = [];
     const cromosomas_desyuno = [];
     const cromosomas_comida = [];
     const cromosomas_snak = [];
@@ -1820,21 +1821,20 @@ app.post("/AG", async (req, res) => {
     let resulatdoFitnesSnack = null;
     await db.collection("Alimentos").get().then((res) => {
       res.forEach((data) => {
-        alimentos.push(data.data());
+        tempAlimentos.push(data.data());
       });
     });
+    alimentos = tempAlimentos.filter((alimento) => alimento.Nombre !== req.body.alimentoNoDeseado);
     const liquidos = alimentos.filter((alimento) => alimento.Líquido === true);
     const carnes = alimentos.filter((alimento) => alimento.Tipo === "carne");
     const desayuno = alimentos.filter((alimento) => alimento.Desayuno === true);
-    console.log(desayuno);
-    console.log(desayuno.length);
-    console.log(liquidos.length);
-    console.log(carnes.length);
+    const snack = alimentos.filter((alimento) => alimento.Tipo === "fruta");
+    const almuerzo = alimentos.filter((alimento) => alimento.Almuerzo === true);
     if (req.body.dias === 1) {
-      for (let i = 0; i < 40; i++) {
+      for (let i = 0; i < 400; i++) {
         cromosomas_desyuno.push([Math.floor(Math.random() * liquidos.length), Math.floor(Math.random() * desayuno.length)]);
-        cromosomas_comida.push([Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)]);
-        cromosomas_snak.push([Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)]);
+        cromosomas_comida.push([Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length)]);
+        cromosomas_snak.push([Math.floor(Math.random() * snack.length), Math.floor(Math.random() * snack.length)]);
       }
       while (constWhile) {
         for (const temp of cromosomas_desyuno) {
@@ -1849,7 +1849,7 @@ app.post("/AG", async (req, res) => {
       }
       while (constWhile) {
         for (const temp of cromosomas_comida) {
-          resulatdoFitnesAlmuerzo = funcionFitnesAlmuerzo(temp, carnes, alimentos, (req.body.caloriaObjetivo*0.35), (req.body.proteinaObjetivo*0.35), req.body.dias);
+          resulatdoFitnesAlmuerzo = funcionFitnesAlmuerzo(temp, carnes, almuerzo, (req.body.caloriaObjetivo*0.35), (req.body.proteinaObjetivo*0.35), req.body.dias);
           if (resulatdoFitnesAlmuerzo.resultado) {
             break;
           }
@@ -1860,7 +1860,7 @@ app.post("/AG", async (req, res) => {
       }
       while (constWhile) {
         for (const temp of cromosomas_snak) {
-          resulatdoFitnesSnack = funcionFitnesSnack(temp, alimentos, (req.body.caloriaObjetivo*0.15), (req.body.proteinaObjetivo*0.15), req.body.dias);
+          resulatdoFitnesSnack = funcionFitnesSnack(temp, snack, (req.body.caloriaObjetivo*0.15), (req.body.proteinaObjetivo*0.15), req.body.dias);
           if (resulatdoFitnesSnack.resultado) {
             console.log(resulatdoFitnesSnack);
             break;
@@ -1893,10 +1893,10 @@ app.post("/AG", async (req, res) => {
           },
       );
     } else if (req.body.dias === 2) {
-      for (let i = 0; i < 40; i++) {
+      for (let i = 0; i < 400; i++) {
         cromosomas_desyuno.push([[Math.floor(Math.random() * liquidos.length), Math.floor(Math.random() * desayuno.length)], [Math.floor(Math.random() * liquidos.length), Math.floor(Math.random() * desayuno.length)]]);
-        cromosomas_comida.push([[Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)]]);
-        cromosomas_snak.push([[Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)]]);
+        cromosomas_comida.push([[Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length)]]);
+        cromosomas_snak.push([[Math.floor(Math.random() * snack.length), Math.floor(Math.random() * snack.length)], [Math.floor(Math.random() * snack.length), Math.floor(Math.random() * snack.length)]]);
       }
       while (constWhile) {
         for (const temp of cromosomas_desyuno) {
@@ -1913,7 +1913,7 @@ app.post("/AG", async (req, res) => {
       }
       while (constWhile) {
         for (const temp of cromosomas_comida) {
-          resulatdoFitnesAlmuerzo = funcionFitnesAlmuerzo(temp, carnes, alimentos, (req.body.caloriaObjetivo*0.35)*2, (req.body.proteinaObjetivo*0.35)*2, req.body.dias);
+          resulatdoFitnesAlmuerzo = funcionFitnesAlmuerzo(temp, carnes, almuerzo, (req.body.caloriaObjetivo*0.35)*2, (req.body.proteinaObjetivo*0.35)*2, req.body.dias);
           if (resulatdoFitnesAlmuerzo.resultado) {
             break;
           }
@@ -1925,7 +1925,7 @@ app.post("/AG", async (req, res) => {
       }
       while (constWhile) {
         for (const temp of cromosomas_snak) {
-          resulatdoFitnesSnack = funcionFitnesSnack(temp, alimentos, (req.body.caloriaObjetivo*0.15)*2, (req.body.proteinaObjetivo*0.15)*2, req.body.dias);
+          resulatdoFitnesSnack = funcionFitnesSnack(temp, snack, (req.body.caloriaObjetivo*0.15)*2, (req.body.proteinaObjetivo*0.15)*2, req.body.dias);
           if (resulatdoFitnesSnack.resultado) {
             console.log(resulatdoFitnesSnack);
             break;
@@ -1967,10 +1967,10 @@ app.post("/AG", async (req, res) => {
           },
       );
     } else if (req.body.dias === 3) {
-      for (let i = 0; i < 40; i++) {
+      for (let i = 0; i < 400; i++) {
         cromosomas_desyuno.push([[Math.floor(Math.random() * liquidos.length), Math.floor(Math.random() * desayuno.length)], [Math.floor(Math.random() * liquidos.length), Math.floor(Math.random() * desayuno.length)], [Math.floor(Math.random() * liquidos.length), Math.floor(Math.random() * desayuno.length)]]);
-        cromosomas_comida.push([[Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)]]);
-        cromosomas_snak.push([[Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)]]);
+        cromosomas_comida.push([[Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length)]]);
+        cromosomas_snak.push([[Math.floor(Math.random() * snack.length), Math.floor(Math.random() * snack.length)], [Math.floor(Math.random() * snack.length), Math.floor(Math.random() * snack.length)], [Math.floor(Math.random() * snack.length), Math.floor(Math.random() * snack.length)]]);
       }
       while (constWhile) {
         for (const temp of cromosomas_desyuno) {
@@ -1987,7 +1987,7 @@ app.post("/AG", async (req, res) => {
       }
       while (constWhile) {
         for (const temp of cromosomas_comida) {
-          resulatdoFitnesAlmuerzo = funcionFitnesAlmuerzo(temp, carnes, alimentos, (req.body.caloriaObjetivo*0.35)*3, (req.body.proteinaObjetivo*0.35)*3, req.body.dias);
+          resulatdoFitnesAlmuerzo = funcionFitnesAlmuerzo(temp, carnes, almuerzo, (req.body.caloriaObjetivo*0.35)*3, (req.body.proteinaObjetivo*0.35)*3, req.body.dias);
           if (resulatdoFitnesAlmuerzo.resultado) {
             break;
           }
@@ -1999,7 +1999,7 @@ app.post("/AG", async (req, res) => {
       }
       while (constWhile) {
         for (const temp of cromosomas_snak) {
-          resulatdoFitnesSnack = funcionFitnesSnack(temp, alimentos, (req.body.caloriaObjetivo*0.15)*3, (req.body.proteinaObjetivo*0.15)*3, req.body.dias);
+          resulatdoFitnesSnack = funcionFitnesSnack(temp, snack, (req.body.caloriaObjetivo*0.15)*3, (req.body.proteinaObjetivo*0.15)*3, req.body.dias);
           if (resulatdoFitnesSnack.resultado) {
             console.log(resulatdoFitnesSnack);
             break;
@@ -2049,10 +2049,10 @@ app.post("/AG", async (req, res) => {
           },
       );
     } else if (req.body.dias === 4) {
-      for (let i = 0; i < 40; i++) {
+      for (let i = 0; i < 400; i++) {
         cromosomas_desyuno.push([[Math.floor(Math.random() * liquidos.length), Math.floor(Math.random() * desayuno.length)], [Math.floor(Math.random() * liquidos.length), Math.floor(Math.random() * desayuno.length)], [Math.floor(Math.random() * liquidos.length), Math.floor(Math.random() * desayuno.length)], [Math.floor(Math.random() * liquidos.length), Math.floor(Math.random() * desayuno.length)]]);
-        cromosomas_comida.push([[Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)]]);
-        cromosomas_snak.push([[Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)]]);
+        cromosomas_comida.push([[Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length)]]);
+        cromosomas_snak.push([[Math.floor(Math.random() * snack.length), Math.floor(Math.random() * snack.length)], [Math.floor(Math.random() * snack.length), Math.floor(Math.random() * snack.length)], [Math.floor(Math.random() * snack.length), Math.floor(Math.random() * snack.length)], [Math.floor(Math.random() * snack.length), Math.floor(Math.random() * snack.length)]]);
       }
       while (constWhile) {
         for (const temp of cromosomas_desyuno) {
@@ -2069,7 +2069,7 @@ app.post("/AG", async (req, res) => {
       }
       while (constWhile) {
         for (const temp of cromosomas_comida) {
-          resulatdoFitnesAlmuerzo = funcionFitnesAlmuerzo(temp, carnes, alimentos, (req.body.caloriaObjetivo*0.35)*4, (req.body.proteinaObjetivo*0.35)*4, req.body.dias);
+          resulatdoFitnesAlmuerzo = funcionFitnesAlmuerzo(temp, carnes, almuerzo, (req.body.caloriaObjetivo*0.35)*4, (req.body.proteinaObjetivo*0.35)*4, req.body.dias);
           if (resulatdoFitnesAlmuerzo.resultado) {
             break;
           }
@@ -2081,7 +2081,7 @@ app.post("/AG", async (req, res) => {
       }
       while (constWhile) {
         for (const temp of cromosomas_snak) {
-          resulatdoFitnesSnack = funcionFitnesSnack(temp, alimentos, (req.body.caloriaObjetivo*0.15)*4, (req.body.proteinaObjetivo*0.15)*4, req.body.dias);
+          resulatdoFitnesSnack = funcionFitnesSnack(temp, snack, (req.body.caloriaObjetivo*0.15)*4, (req.body.proteinaObjetivo*0.15)*4, req.body.dias);
           if (resulatdoFitnesSnack.resultado) {
             console.log(resulatdoFitnesSnack);
             break;
@@ -2139,10 +2139,10 @@ app.post("/AG", async (req, res) => {
           },
       );
     } else if (req.body.dias === 5) {
-      for (let i = 0; i < 40; i++) {
+      for (let i = 0; i < 400; i++) {
         cromosomas_desyuno.push([[Math.floor(Math.random() * liquidos.length), Math.floor(Math.random() * desayuno.length)], [Math.floor(Math.random() * liquidos.length), Math.floor(Math.random() * desayuno.length)], [Math.floor(Math.random() * liquidos.length), Math.floor(Math.random() * desayuno.length)], [Math.floor(Math.random() * liquidos.length), Math.floor(Math.random() * desayuno.length)], [Math.floor(Math.random() * liquidos.length), Math.floor(Math.random() * desayuno.length)]]);
-        cromosomas_comida.push([[Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)]]);
-        cromosomas_snak.push([[Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)]]);
+        cromosomas_comida.push([[Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length)]]);
+        cromosomas_snak.push([[Math.floor(Math.random() * snack.length), Math.floor(Math.random() * snack.length)], [Math.floor(Math.random() * snack.length), Math.floor(Math.random() * snack.length)], [Math.floor(Math.random() * snack.length), Math.floor(Math.random() * snack.length)], [Math.floor(Math.random() * snack.length), Math.floor(Math.random() * snack.length)], [Math.floor(Math.random() * snack.length), Math.floor(Math.random() * snack.length)], [Math.floor(Math.random() * snack.length), Math.floor(Math.random() * snack.length)]]);
       }
       while (constWhile) {
         for (const temp of cromosomas_desyuno) {
@@ -2159,7 +2159,7 @@ app.post("/AG", async (req, res) => {
       }
       while (constWhile) {
         for (const temp of cromosomas_comida) {
-          resulatdoFitnesAlmuerzo = funcionFitnesAlmuerzo(temp, carnes, alimentos, (req.body.caloriaObjetivo*0.35)*5, (req.body.proteinaObjetivo*0.35)*5, req.body.dias);
+          resulatdoFitnesAlmuerzo = funcionFitnesAlmuerzo(temp, carnes, almuerzo, (req.body.caloriaObjetivo*0.35)*5, (req.body.proteinaObjetivo*0.35)*5, req.body.dias);
           if (resulatdoFitnesAlmuerzo.resultado) {
             break;
           }
@@ -2171,7 +2171,7 @@ app.post("/AG", async (req, res) => {
       }
       while (constWhile) {
         for (const temp of cromosomas_snak) {
-          resulatdoFitnesSnack = funcionFitnesSnack(temp, alimentos, (req.body.caloriaObjetivo*0.15)*5, (req.body.proteinaObjetivo*0.15)*5, req.body.dias);
+          resulatdoFitnesSnack = funcionFitnesSnack(temp, snack, (req.body.caloriaObjetivo*0.15)*5, (req.body.proteinaObjetivo*0.15)*5, req.body.dias);
           if (resulatdoFitnesSnack.resultado) {
             console.log(resulatdoFitnesSnack);
             break;
@@ -2237,10 +2237,10 @@ app.post("/AG", async (req, res) => {
           },
       );
     } else if (req.body.dias === 6) {
-      for (let i = 0; i < 40; i++) {
+      for (let i = 0; i < 400; i++) {
         cromosomas_desyuno.push([[Math.floor(Math.random() * liquidos.length), Math.floor(Math.random() * desayuno.length)], [Math.floor(Math.random() * liquidos.length), Math.floor(Math.random() * desayuno.length)], [Math.floor(Math.random() * liquidos.length), Math.floor(Math.random() * desayuno.length)], [Math.floor(Math.random() * liquidos.length), Math.floor(Math.random() * desayuno.length)], [Math.floor(Math.random() * liquidos.length), Math.floor(Math.random() * desayuno.length)], [Math.floor(Math.random() * liquidos.length), Math.floor(Math.random() * desayuno.length)]]);
-        cromosomas_comida.push([[Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)]]);
-        cromosomas_snak.push([[Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)]]);
+        cromosomas_comida.push([[Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length)]]);
+        cromosomas_snak.push([[Math.floor(Math.random() * snack.length), Math.floor(Math.random() * snack.length)], [Math.floor(Math.random() * snack.length), Math.floor(Math.random() * snack.length)], [Math.floor(Math.random() * snack.length), Math.floor(Math.random() * snack.length)], [Math.floor(Math.random() * snack.length), Math.floor(Math.random() * snack.length)], [Math.floor(Math.random() * snack.length), Math.floor(Math.random() * snack.length)], [Math.floor(Math.random() * snack.length), Math.floor(Math.random() * snack.length)], [Math.floor(Math.random() * snack.length), Math.floor(Math.random() * snack.length)]]);
       }
       while (constWhile) {
         for (const temp of cromosomas_desyuno) {
@@ -2257,7 +2257,7 @@ app.post("/AG", async (req, res) => {
       }
       while (constWhile) {
         for (const temp of cromosomas_comida) {
-          resulatdoFitnesAlmuerzo = funcionFitnesAlmuerzo(temp, carnes, alimentos, (req.body.caloriaObjetivo*0.35)*6, (req.body.proteinaObjetivo*0.35)*6, req.body.dias);
+          resulatdoFitnesAlmuerzo = funcionFitnesAlmuerzo(temp, carnes, almuerzo, (req.body.caloriaObjetivo*0.35)*6, (req.body.proteinaObjetivo*0.35)*6, req.body.dias);
           if (resulatdoFitnesAlmuerzo.resultado) {
             break;
           }
@@ -2269,7 +2269,7 @@ app.post("/AG", async (req, res) => {
       }
       while (constWhile) {
         for (const temp of cromosomas_snak) {
-          resulatdoFitnesSnack = funcionFitnesSnack(temp, alimentos, (req.body.caloriaObjetivo*0.15)*6, (req.body.proteinaObjetivo*0.15)*6, req.body.dias);
+          resulatdoFitnesSnack = funcionFitnesSnack(temp, snack, (req.body.caloriaObjetivo*0.15)*6, (req.body.proteinaObjetivo*0.15)*6, req.body.dias);
           if (resulatdoFitnesSnack.resultado) {
             console.log(resulatdoFitnesSnack);
             break;
@@ -2343,10 +2343,10 @@ app.post("/AG", async (req, res) => {
           },
       );
     } else if (req.body.dias === 7) {
-      for (let i = 0; i < 40; i++) {
+      for (let i = 0; i < 400; i++) {
         cromosomas_desyuno.push([[Math.floor(Math.random() * liquidos.length), Math.floor(Math.random() * desayuno.length)], [Math.floor(Math.random() * liquidos.length), Math.floor(Math.random() * desayuno.length)], [Math.floor(Math.random() * liquidos.length), Math.floor(Math.random() * desayuno.length)], [Math.floor(Math.random() * liquidos.length), Math.floor(Math.random() * desayuno.length)], [Math.floor(Math.random() * liquidos.length), Math.floor(Math.random() * desayuno.length)], [Math.floor(Math.random() * liquidos.length), Math.floor(Math.random() * desayuno.length)], [Math.floor(Math.random() * liquidos.length), Math.floor(Math.random() * desayuno.length)]]);
-        cromosomas_comida.push([[Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)]]);
-        cromosomas_snak.push([[Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)], [Math.floor(Math.random() * alimentos.length), Math.floor(Math.random() * alimentos.length)]]);
+        cromosomas_comida.push([[Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length)], [Math.floor(Math.random() * carnes.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length), Math.floor(Math.random() * almuerzo.length)]]);
+        cromosomas_snak.push([[Math.floor(Math.random() * snack.length), Math.floor(Math.random() * snack.length)], [Math.floor(Math.random() * snack.length), Math.floor(Math.random() * snack.length)], [Math.floor(Math.random() * snack.length), Math.floor(Math.random() * snack.length)], [Math.floor(Math.random() * snack.length), Math.floor(Math.random() * snack.length)], [Math.floor(Math.random() * snack.length), Math.floor(Math.random() * snack.length)], [Math.floor(Math.random() * snack.length), Math.floor(Math.random() * snack.length)], [Math.floor(Math.random() * snack.length), Math.floor(Math.random() * snack.length)], [Math.floor(Math.random() * snack.length), Math.floor(Math.random() * snack.length)]]);
       }
       while (constWhile) {
         for (const temp of cromosomas_desyuno) {
@@ -2363,7 +2363,7 @@ app.post("/AG", async (req, res) => {
       }
       while (constWhile) {
         for (const temp of cromosomas_comida) {
-          resulatdoFitnesAlmuerzo = funcionFitnesAlmuerzo(temp, carnes, alimentos, (req.body.caloriaObjetivo*0.35)*7, (req.body.proteinaObjetivo*0.35)*7, req.body.dias);
+          resulatdoFitnesAlmuerzo = funcionFitnesAlmuerzo(temp, carnes, almuerzo, (req.body.caloriaObjetivo*0.35)*7, (req.body.proteinaObjetivo*0.35)*7, req.body.dias);
           if (resulatdoFitnesAlmuerzo.resultado) {
             break;
           }
@@ -2375,7 +2375,7 @@ app.post("/AG", async (req, res) => {
       }
       while (constWhile) {
         for (const temp of cromosomas_snak) {
-          resulatdoFitnesSnack = funcionFitnesSnack(temp, alimentos, (req.body.caloriaObjetivo*0.15)*7, (req.body.proteinaObjetivo*0.15)*7, req.body.dias);
+          resulatdoFitnesSnack = funcionFitnesSnack(temp, snack, (req.body.caloriaObjetivo*0.15)*7, (req.body.proteinaObjetivo*0.15)*7, req.body.dias);
           if (resulatdoFitnesSnack.resultado) {
             console.log(resulatdoFitnesSnack);
             break;

@@ -206,9 +206,53 @@ const funcionFitnesDesayuno = (cromosoma, liquidos, alimentos, objetivoCaloria, 
     dia_2_alimento = alimentos[cromosoma[1][1]];
     dia_3_liquido = liquidos[cromosoma[2][0]];
     dia_3_alimento = alimentos[cromosoma[2][1]];
-    calculo_calorias = dia_1_liquido.Cals + dia_1_alimento.Cals + dia_2_liquido.Cals + dia_2_alimento.Cals + dia_3_liquido.Cals + dia_3_alimento.Cals;
+    const factorCantidadAlimento = Math.floor(Math.random() * 3) + 1;
+    const dia2_factorCantidadAlimento = Math.floor(Math.random() * 3) + 1;
+    const dia3_factorCantidadAlimento = Math.floor(Math.random() * 3) + 1;
+    calculo_calorias = dia_1_liquido.Cals + (dia_1_alimento.Cals * factorCantidadAlimento) + dia_2_liquido.Cals + (dia_2_alimento.Cals * dia2_factorCantidadAlimento) + dia_3_liquido.Cals + (dia_3_alimento.Cals * dia3_factorCantidadAlimento);
     calculo_proteinas = dia_1_liquido.Prot + dia_1_alimento.Prot + dia_2_liquido.Prot + dia_2_alimento.Prot + dia_3_liquido.Prot + dia_3_alimento.Prot;
     if ( calculo_calorias >= (objetivoCaloria-180) && calculo_calorias <= (objetivoCaloria+180)) {
+      dia_1_alimento.Cals = dia_1_alimento.Cals * factorCantidadAlimento;
+      dia_1_alimento.Prot = dia_1_alimento.Prot * factorCantidadAlimento;
+      dia_1_alimento.Grasa = dia_1_alimento.Grasa * factorCantidadAlimento;
+      switch (factorCantidadAlimento) {
+        case 2:
+          dia_1_alimento.cantidad = "2 unidades";
+          break;
+        case 3:
+          dia_1_alimento.cantidad = "3 unidades";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_2_alimento.Cals = dia_2_alimento.Cals * dia2_factorCantidadAlimento;
+      dia_2_alimento.Prot = dia_2_alimento.Prot * dia2_factorCantidadAlimento;
+      dia_2_alimento.Grasa = dia_2_alimento.Grasa * dia2_factorCantidadAlimento;
+      switch (dia2_factorCantidadAlimento) {
+        case 2:
+          dia_2_alimento.cantidad = "2 unidades";
+          break;
+        case 3:
+          dia_2_alimento.cantidad = "3 unidades";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_3_alimento.Cals = dia_3_alimento.Cals * dia3_factorCantidadAlimento;
+      dia_3_alimento.Prot = dia_3_alimento.Prot * dia3_factorCantidadAlimento;
+      dia_3_alimento.Grasa = dia_3_alimento.Grasa * dia3_factorCantidadAlimento;
+      switch (dia3_factorCantidadAlimento) {
+        case 2:
+          dia_3_alimento.cantidad = "2 unidades";
+          break;
+        case 3:
+          dia_3_alimento.cantidad = "3 unidades";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
       return {
         resultado: true,
         desayuno: {
@@ -250,9 +294,68 @@ const funcionFitnesDesayuno = (cromosoma, liquidos, alimentos, objetivoCaloria, 
     dia_3_alimento = alimentos[cromosoma[2][1]];
     dia_4_liquido = liquidos[cromosoma[3][0]];
     dia_4_alimento = alimentos[cromosoma[3][1]];
-    calculo_calorias = dia_1_liquido.Cals + dia_1_alimento.Cals + dia_2_liquido.Cals + dia_2_alimento.Cals + dia_3_liquido.Cals + dia_3_alimento.Cals + dia_4_liquido.Cals + dia_4_alimento.Cals;
+    const factorCantidadAlimento = Math.floor(Math.random() * 3) + 1;
+    const dia2_factorCantidadAlimento = Math.floor(Math.random() * 3) + 1;
+    const dia3_factorCantidadAlimento = Math.floor(Math.random() * 3) + 1;
+    const dia4_factorCantidadAlimento = Math.floor(Math.random() * 3) + 1;
+    calculo_calorias = dia_1_liquido.Cals + (dia_1_alimento.Cals * factorCantidadAlimento) + dia_2_liquido.Cals + (dia_2_alimento.Cals * dia2_factorCantidadAlimento) + dia_3_liquido.Cals + (dia_3_alimento.Cals * dia3_factorCantidadAlimento) + dia_4_liquido.Cals + (dia_4_alimento.Cals * dia4_factorCantidadAlimento);
     calculo_proteinas = dia_1_liquido.Prot + dia_1_alimento.Prot + dia_2_liquido.Prot + dia_2_alimento.Prot + dia_3_liquido.Prot + dia_3_alimento.Prot + dia_4_liquido.Prot + dia_4_alimento.Prot;
     if ( calculo_calorias >= (objetivoCaloria-240) && calculo_calorias <= (objetivoCaloria+240)) {
+      dia_1_alimento.Cals = dia_1_alimento.Cals * factorCantidadAlimento;
+      dia_1_alimento.Prot = dia_1_alimento.Prot * factorCantidadAlimento;
+      dia_1_alimento.Grasa = dia_1_alimento.Grasa * factorCantidadAlimento;
+      switch (factorCantidadAlimento) {
+        case 2:
+          dia_1_alimento.cantidad = "2 unidades";
+          break;
+        case 3:
+          dia_1_alimento.cantidad = "3 unidades";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_2_alimento.Cals = dia_2_alimento.Cals * dia2_factorCantidadAlimento;
+      dia_2_alimento.Prot = dia_2_alimento.Prot * dia2_factorCantidadAlimento;
+      dia_2_alimento.Grasa = dia_2_alimento.Grasa * dia2_factorCantidadAlimento;
+      switch (dia2_factorCantidadAlimento) {
+        case 2:
+          dia_2_alimento.cantidad = "2 unidades";
+          break;
+        case 3:
+          dia_2_alimento.cantidad = "3 unidades";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_3_alimento.Cals = dia_3_alimento.Cals * dia3_factorCantidadAlimento;
+      dia_3_alimento.Prot = dia_3_alimento.Prot * dia3_factorCantidadAlimento;
+      dia_3_alimento.Grasa = dia_3_alimento.Grasa * dia3_factorCantidadAlimento;
+      switch (dia3_factorCantidadAlimento) {
+        case 2:
+          dia_3_alimento.cantidad = "2 unidades";
+          break;
+        case 3:
+          dia_3_alimento.cantidad = "3 unidades";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_4_alimento.Cals = dia_4_alimento.Cals * dia4_factorCantidadAlimento;
+      dia_4_alimento.Prot = dia_4_alimento.Prot * dia4_factorCantidadAlimento;
+      dia_4_alimento.Grasa = dia_4_alimento.Grasa * dia4_factorCantidadAlimento;
+      switch (dia4_factorCantidadAlimento) {
+        case 2:
+          dia_4_alimento.cantidad = "2 unidades";
+          break;
+        case 3:
+          dia_4_alimento.cantidad = "3 unidades";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
       return {
         resultado: true,
         desayuno: {
@@ -304,9 +407,83 @@ const funcionFitnesDesayuno = (cromosoma, liquidos, alimentos, objetivoCaloria, 
     dia_4_alimento = alimentos[cromosoma[3][1]];
     dia_5_liquido = liquidos[cromosoma[4][0]];
     dia_5_alimento = alimentos[cromosoma[4][1]];
-    calculo_calorias = dia_1_liquido.Cals + dia_1_alimento.Cals + dia_2_liquido.Cals + dia_2_alimento.Cals + dia_3_liquido.Cals + dia_3_alimento.Cals + dia_4_liquido.Cals + dia_4_alimento.Cals + dia_5_liquido.Cals + dia_5_alimento.Cals;
+    const factorCantidadAlimento = Math.floor(Math.random() * 3) + 1;
+    const dia2_factorCantidadAlimento = Math.floor(Math.random() * 3) + 1;
+    const dia3_factorCantidadAlimento = Math.floor(Math.random() * 3) + 1;
+    const dia4_factorCantidadAlimento = Math.floor(Math.random() * 3) + 1;
+    const dia5_factorCantidadAlimento = Math.floor(Math.random() * 3) + 1;
+    calculo_calorias = dia_1_liquido.Cals + (dia_1_alimento.Cals * factorCantidadAlimento) + dia_2_liquido.Cals + (dia_2_alimento.Cals * dia2_factorCantidadAlimento) + dia_3_liquido.Cals + (dia_3_alimento.Cals * dia3_factorCantidadAlimento) + dia_4_liquido.Cals + (dia_4_alimento.Cals * dia4_factorCantidadAlimento) + dia_5_liquido.Cals + (dia_5_alimento.Cals * dia5_factorCantidadAlimento);
     calculo_proteinas = dia_1_liquido.Prot + dia_1_alimento.Prot + dia_2_liquido.Prot + dia_2_alimento.Prot + dia_3_liquido.Prot + dia_3_alimento.Prot + dia_4_liquido.Prot + dia_4_alimento.Prot + dia_5_liquido.Prot + dia_5_alimento.Prot;
     if ( calculo_calorias >= (objetivoCaloria-300) && calculo_calorias <= (objetivoCaloria+300)) {
+      dia_1_alimento.Cals = dia_1_alimento.Cals * factorCantidadAlimento;
+      dia_1_alimento.Prot = dia_1_alimento.Prot * factorCantidadAlimento;
+      dia_1_alimento.Grasa = dia_1_alimento.Grasa * factorCantidadAlimento;
+      switch (factorCantidadAlimento) {
+        case 2:
+          dia_1_alimento.cantidad = "2 unidades";
+          break;
+        case 3:
+          dia_1_alimento.cantidad = "3 unidades";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_2_alimento.Cals = dia_2_alimento.Cals * dia2_factorCantidadAlimento;
+      dia_2_alimento.Prot = dia_2_alimento.Prot * dia2_factorCantidadAlimento;
+      dia_2_alimento.Grasa = dia_2_alimento.Grasa * dia2_factorCantidadAlimento;
+      switch (dia2_factorCantidadAlimento) {
+        case 2:
+          dia_2_alimento.cantidad = "2 unidades";
+          break;
+        case 3:
+          dia_2_alimento.cantidad = "3 unidades";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_3_alimento.Cals = dia_3_alimento.Cals * dia3_factorCantidadAlimento;
+      dia_3_alimento.Prot = dia_3_alimento.Prot * dia3_factorCantidadAlimento;
+      dia_3_alimento.Grasa = dia_3_alimento.Grasa * dia3_factorCantidadAlimento;
+      switch (dia3_factorCantidadAlimento) {
+        case 2:
+          dia_3_alimento.cantidad = "2 unidades";
+          break;
+        case 3:
+          dia_3_alimento.cantidad = "3 unidades";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_4_alimento.Cals = dia_4_alimento.Cals * dia4_factorCantidadAlimento;
+      dia_4_alimento.Prot = dia_4_alimento.Prot * dia4_factorCantidadAlimento;
+      dia_4_alimento.Grasa = dia_4_alimento.Grasa * dia4_factorCantidadAlimento;
+      switch (dia4_factorCantidadAlimento) {
+        case 2:
+          dia_4_alimento.cantidad = "2 unidades";
+          break;
+        case 3:
+          dia_4_alimento.cantidad = "3 unidades";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_5_alimento.Cals = dia_5_alimento.Cals * dia5_factorCantidadAlimento;
+      dia_5_alimento.Prot = dia_5_alimento.Prot * dia5_factorCantidadAlimento;
+      dia_5_alimento.Grasa = dia_5_alimento.Grasa * dia5_factorCantidadAlimento;
+      switch (dia5_factorCantidadAlimento) {
+        case 2:
+          dia_5_alimento.cantidad = "2 unidades";
+          break;
+        case 3:
+          dia_5_alimento.cantidad = "3 unidades";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
       return {
         resultado: true,
         desayuno: {
@@ -368,9 +545,98 @@ const funcionFitnesDesayuno = (cromosoma, liquidos, alimentos, objetivoCaloria, 
     dia_5_alimento = alimentos[cromosoma[4][1]];
     dia_6_liquido = liquidos[cromosoma[5][0]];
     dia_6_alimento = alimentos[cromosoma[5][1]];
-    calculo_calorias = dia_1_liquido.Cals + dia_1_alimento.Cals + dia_2_liquido.Cals + dia_2_alimento.Cals + dia_3_liquido.Cals + dia_3_alimento.Cals + dia_4_liquido.Cals + dia_4_alimento.Cals + dia_5_liquido.Cals + dia_5_alimento.Cals + dia_6_liquido.Cals + dia_6_alimento.Cals;
+    const factorCantidadAlimento = Math.floor(Math.random() * 3) + 1;
+    const dia2_factorCantidadAlimento = Math.floor(Math.random() * 3) + 1;
+    const dia3_factorCantidadAlimento = Math.floor(Math.random() * 3) + 1;
+    const dia4_factorCantidadAlimento = Math.floor(Math.random() * 3) + 1;
+    const dia5_factorCantidadAlimento = Math.floor(Math.random() * 3) + 1;
+    const dia6_factorCantidadAlimento = Math.floor(Math.random() * 3) + 1;
+    calculo_calorias = dia_1_liquido.Cals + (dia_1_alimento.Cals * factorCantidadAlimento) + dia_2_liquido.Cals + (dia_2_alimento.Cals * dia2_factorCantidadAlimento) + dia_3_liquido.Cals + (dia_3_alimento.Cals * dia3_factorCantidadAlimento) + dia_4_liquido.Cals + (dia_4_alimento.Cals * dia4_factorCantidadAlimento) + dia_5_liquido.Cals + (dia_5_alimento.Cals * dia5_factorCantidadAlimento) + dia_6_liquido.Cals + (dia_6_alimento.Cals * dia6_factorCantidadAlimento);
     calculo_proteinas = dia_1_liquido.Prot + dia_1_alimento.Prot + dia_2_liquido.Prot + dia_2_alimento.Prot + dia_3_liquido.Prot + dia_3_alimento.Prot + dia_4_liquido.Prot + dia_4_alimento.Prot + dia_5_liquido.Prot + dia_5_alimento.Prot + dia_6_liquido.Prot + dia_6_alimento.Prot;
     if ( calculo_calorias >= (objetivoCaloria-360) && calculo_calorias <= (objetivoCaloria+360)) {
+      dia_1_alimento.Cals = dia_1_alimento.Cals * factorCantidadAlimento;
+      dia_1_alimento.Prot = dia_1_alimento.Prot * factorCantidadAlimento;
+      dia_1_alimento.Grasa = dia_1_alimento.Grasa * factorCantidadAlimento;
+      switch (factorCantidadAlimento) {
+        case 2:
+          dia_1_alimento.cantidad = "2 unidades";
+          break;
+        case 3:
+          dia_1_alimento.cantidad = "3 unidades";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_2_alimento.Cals = dia_2_alimento.Cals * dia2_factorCantidadAlimento;
+      dia_2_alimento.Prot = dia_2_alimento.Prot * dia2_factorCantidadAlimento;
+      dia_2_alimento.Grasa = dia_2_alimento.Grasa * dia2_factorCantidadAlimento;
+      switch (dia2_factorCantidadAlimento) {
+        case 2:
+          dia_2_alimento.cantidad = "2 unidades";
+          break;
+        case 3:
+          dia_2_alimento.cantidad = "3 unidades";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_3_alimento.Cals = dia_3_alimento.Cals * dia3_factorCantidadAlimento;
+      dia_3_alimento.Prot = dia_3_alimento.Prot * dia3_factorCantidadAlimento;
+      dia_3_alimento.Grasa = dia_3_alimento.Grasa * dia3_factorCantidadAlimento;
+      switch (dia3_factorCantidadAlimento) {
+        case 2:
+          dia_3_alimento.cantidad = "2 unidades";
+          break;
+        case 3:
+          dia_3_alimento.cantidad = "3 unidades";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_4_alimento.Cals = dia_4_alimento.Cals * dia4_factorCantidadAlimento;
+      dia_4_alimento.Prot = dia_4_alimento.Prot * dia4_factorCantidadAlimento;
+      dia_4_alimento.Grasa = dia_4_alimento.Grasa * dia4_factorCantidadAlimento;
+      switch (dia4_factorCantidadAlimento) {
+        case 2:
+          dia_4_alimento.cantidad = "2 unidades";
+          break;
+        case 3:
+          dia_4_alimento.cantidad = "3 unidades";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_5_alimento.Cals = dia_5_alimento.Cals * dia5_factorCantidadAlimento;
+      dia_5_alimento.Prot = dia_5_alimento.Prot * dia5_factorCantidadAlimento;
+      dia_5_alimento.Grasa = dia_5_alimento.Grasa * dia5_factorCantidadAlimento;
+      switch (dia5_factorCantidadAlimento) {
+        case 2:
+          dia_5_alimento.cantidad = "2 unidades";
+          break;
+        case 3:
+          dia_5_alimento.cantidad = "3 unidades";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_6_alimento.Cals = dia_6_alimento.Cals * dia6_factorCantidadAlimento;
+      dia_6_alimento.Prot = dia_6_alimento.Prot * dia6_factorCantidadAlimento;
+      dia_6_alimento.Grasa = dia_6_alimento.Grasa * dia6_factorCantidadAlimento;
+      switch (dia6_factorCantidadAlimento) {
+        case 2:
+          dia_6_alimento.cantidad = "2 unidades";
+          break;
+        case 3:
+          dia_6_alimento.cantidad = "3 unidades";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
       return {
         resultado: true,
         desayuno: {
@@ -442,9 +708,134 @@ const funcionFitnesDesayuno = (cromosoma, liquidos, alimentos, objetivoCaloria, 
     dia_6_alimento = alimentos[cromosoma[5][1]];
     dia_7_liquido = liquidos[cromosoma[6][0]];
     dia_7_alimento = alimentos[cromosoma[6][1]];
-    calculo_calorias = dia_1_liquido.Cals + dia_1_alimento.Cals + dia_2_liquido.Cals + dia_2_alimento.Cals + dia_3_liquido.Cals + dia_3_alimento.Cals + dia_4_liquido.Cals + dia_4_alimento.Cals + dia_5_liquido.Cals + dia_5_alimento.Cals + dia_6_liquido.Cals + dia_6_alimento.Cals + dia_7_liquido.Cals + dia_7_alimento.Cals;
+    const factorCantidadAlimento = Math.floor(Math.random() * 4) + 1;
+    const dia2_factorCantidadAlimento = Math.floor(Math.random() * 4) + 1;
+    const dia3_factorCantidadAlimento = Math.floor(Math.random() * 4) + 1;
+    const dia4_factorCantidadAlimento = Math.floor(Math.random() * 4) + 1;
+    const dia5_factorCantidadAlimento = Math.floor(Math.random() * 4) + 1;
+    const dia6_factorCantidadAlimento = Math.floor(Math.random() * 4) + 1;
+    const dia7_factorCantidadAlimento = Math.floor(Math.random() * 4) + 1;
+    calculo_calorias = dia_1_liquido.Cals + (dia_1_alimento.Cals * factorCantidadAlimento) + dia_2_liquido.Cals + (dia_2_alimento.Cals * dia2_factorCantidadAlimento) + dia_3_liquido.Cals + (dia_3_alimento.Cals * dia3_factorCantidadAlimento) + dia_4_liquido.Cals + (dia_4_alimento.Cals * dia4_factorCantidadAlimento) + dia_5_liquido.Cals + (dia_5_alimento.Cals * dia5_factorCantidadAlimento) + dia_6_liquido.Cals + (dia_6_alimento.Cals * dia6_factorCantidadAlimento) + dia_7_liquido.Cals + (dia_7_alimento.Cals * dia7_factorCantidadAlimento);
     calculo_proteinas = dia_1_liquido.Prot + dia_1_alimento.Prot + dia_2_liquido.Prot + dia_2_alimento.Prot + dia_3_liquido.Prot + dia_3_alimento.Prot + dia_4_liquido.Prot + dia_4_alimento.Prot + dia_5_liquido.Prot + dia_5_alimento.Prot + dia_6_liquido.Prot + dia_6_alimento.Prot + dia_7_liquido.Prot + dia_7_alimento.Prot;
     if ( calculo_calorias >= (objetivoCaloria-420) && calculo_calorias <= (objetivoCaloria+420)) {
+      dia_1_alimento.Cals = dia_1_alimento.Cals * factorCantidadAlimento;
+      dia_1_alimento.Prot = dia_1_alimento.Prot * factorCantidadAlimento;
+      dia_1_alimento.Grasa = dia_1_alimento.Grasa * factorCantidadAlimento;
+      switch (factorCantidadAlimento) {
+        case 2:
+          dia_1_alimento.cantidad = "2 unidades";
+          break;
+        case 3:
+          dia_1_alimento.cantidad = "3 unidades";
+          break;
+        case 4:
+          dia_1_alimento.cantidad = "4 unidades";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_2_alimento.Cals = dia_2_alimento.Cals * dia2_factorCantidadAlimento;
+      dia_2_alimento.Prot = dia_2_alimento.Prot * dia2_factorCantidadAlimento;
+      dia_2_alimento.Grasa = dia_2_alimento.Grasa * dia2_factorCantidadAlimento;
+      switch (dia2_factorCantidadAlimento) {
+        case 2:
+          dia_2_alimento.cantidad = "2 unidades";
+          break;
+        case 3:
+          dia_2_alimento.cantidad = "3 unidades";
+          break;
+        case 4:
+          dia_2_alimento.cantidad = "4 unidades";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_3_alimento.Cals = dia_3_alimento.Cals * dia3_factorCantidadAlimento;
+      dia_3_alimento.Prot = dia_3_alimento.Prot * dia3_factorCantidadAlimento;
+      dia_3_alimento.Grasa = dia_3_alimento.Grasa * dia3_factorCantidadAlimento;
+      switch (dia3_factorCantidadAlimento) {
+        case 2:
+          dia_3_alimento.cantidad = "2 unidades";
+          break;
+        case 3:
+          dia_3_alimento.cantidad = "3 unidades";
+          break;
+        case 4:
+          dia_3_alimento.cantidad = "4 unidades";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_4_alimento.Cals = dia_4_alimento.Cals * dia4_factorCantidadAlimento;
+      dia_4_alimento.Prot = dia_4_alimento.Prot * dia4_factorCantidadAlimento;
+      dia_4_alimento.Grasa = dia_4_alimento.Grasa * dia4_factorCantidadAlimento;
+      switch (dia4_factorCantidadAlimento) {
+        case 2:
+          dia_4_alimento.cantidad = "2 unidades";
+          break;
+        case 3:
+          dia_4_alimento.cantidad = "3 unidades";
+          break;
+        case 4:
+          dia_4_alimento.cantidad = "4 unidades";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_5_alimento.Cals = dia_5_alimento.Cals * dia5_factorCantidadAlimento;
+      dia_5_alimento.Prot = dia_5_alimento.Prot * dia5_factorCantidadAlimento;
+      dia_5_alimento.Grasa = dia_5_alimento.Grasa * dia5_factorCantidadAlimento;
+      switch (dia5_factorCantidadAlimento) {
+        case 2:
+          dia_5_alimento.cantidad = "2 unidades";
+          break;
+        case 3:
+          dia_5_alimento.cantidad = "3 unidades";
+          break;
+        case 4:
+          dia_5_alimento.cantidad = "4 unidades";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_6_alimento.Cals = dia_6_alimento.Cals * dia6_factorCantidadAlimento;
+      dia_6_alimento.Prot = dia_6_alimento.Prot * dia6_factorCantidadAlimento;
+      dia_6_alimento.Grasa = dia_6_alimento.Grasa * dia6_factorCantidadAlimento;
+      switch (dia6_factorCantidadAlimento) {
+        case 2:
+          dia_6_alimento.cantidad = "2 unidades";
+          break;
+        case 3:
+          dia_6_alimento.cantidad = "3 unidades";
+          break;
+        case 4:
+          dia_6_alimento.cantidad = "4 unidades";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_7_alimento.Cals = dia_7_alimento.Cals * dia7_factorCantidadAlimento;
+      dia_7_alimento.Prot = dia_7_alimento.Prot * dia7_factorCantidadAlimento;
+      dia_7_alimento.Grasa = dia_7_alimento.Grasa * dia7_factorCantidadAlimento;
+      switch (dia7_factorCantidadAlimento) {
+        case 2:
+          dia_7_alimento.cantidad = "2 unidades";
+          break;
+        case 3:
+          dia_7_alimento.cantidad = "3 unidades";
+          break;
+        case 4:
+          dia_7_alimento.cantidad = "4 unidades";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
       return {
         resultado: true,
         desayuno: {
@@ -767,9 +1158,179 @@ const funcionFitnesAlmuerzo = (cromosoma, carnes, alimentos, objetivoCaloria, Ob
     const dia_3_alimento1 = alimentos[cromosoma[2][1]];
     const dia_3_alimento2 = alimentos[cromosoma[2][2]];
     const dia_3_alimento3 = alimentos[cromosoma[2][3]];
-    const calculo_calorias = dia_1_carnes.Cals + dia_1_alimento1.Cals + dia_1_alimento2.Cals + dia_1_alimento3.Cals + dia_2_carnes.Cals + dia_2_alimento1.Cals + dia_2_alimento2.Cals + dia_2_alimento3.Cals + dia_3_carnes.Cals + dia_3_alimento1.Cals + dia_3_alimento2.Cals + dia_3_alimento3.Cals;
+    const factorCantidadCarne = Math.floor(Math.random() * 3) + 1;
+    const factorCantidadAlimento1 = Math.floor(Math.random() * 3) + 1;
+    const factorCantidadAlimento2 = Math.floor(Math.random() * 3) + 1;
+    const factorCantidadAlimento3 = Math.floor(Math.random() * 3) + 1;
+    const dia2_factorCantidadCarne = Math.floor(Math.random() * 3) + 1;
+    const dia2_factorCantidadAlimento1 = Math.floor(Math.random() * 3) + 1;
+    const dia2_factorCantidadAlimento2 = Math.floor(Math.random() * 3) + 1;
+    const dia2_factorCantidadAlimento3 = Math.floor(Math.random() * 3) + 1;
+    const dia3_factorCantidadCarne = Math.floor(Math.random() * 3) + 1;
+    const dia3_factorCantidadAlimento1 = Math.floor(Math.random() * 3) + 1;
+    const dia3_factorCantidadAlimento2 = Math.floor(Math.random() * 3) + 1;
+    const dia3_factorCantidadAlimento3 = Math.floor(Math.random() * 3) + 1;
+    const calculo_calorias = (dia_1_carnes.Cals * factorCantidadCarne) + (dia_1_alimento1.Cals * factorCantidadAlimento1) + (dia_1_alimento2.Cals * factorCantidadAlimento2) + (dia_1_alimento3.Cals * factorCantidadAlimento3) + (dia_2_carnes.Cals * dia2_factorCantidadCarne) + (dia_2_alimento1.Cals * dia2_factorCantidadAlimento1) + (dia_2_alimento2.Cals * dia2_factorCantidadAlimento2) + (dia_2_alimento3.Cals * dia2_factorCantidadAlimento3) + (dia_3_carnes.Cals * dia3_factorCantidadCarne) + (dia_3_alimento1.Cals * dia3_factorCantidadAlimento1) + (dia_3_alimento2.Cals * dia3_factorCantidadAlimento2) + (dia_3_alimento3.Cals * dia3_factorCantidadAlimento3);
     const calculo_proteinas = dia_1_carnes.Prot + dia_1_alimento1.Prot + dia_1_alimento2.Prot + dia_1_alimento3.Prot + dia_2_carnes.Prot + dia_2_alimento1.Prot + dia_2_alimento2.Prot + dia_2_alimento3.Prot + dia_3_carnes.Prot + dia_3_alimento1.Prot + dia_3_alimento2.Prot + dia_3_alimento3.Prot;
     if ( calculo_calorias >= (objetivoCaloria-180) && calculo_calorias <= (objetivoCaloria+180)) {
+      dia_1_carnes.Cals = dia_1_carnes.Cals * factorCantidadCarne;
+      dia_1_carnes.Prot = dia_1_carnes.Prot * factorCantidadCarne;
+      dia_1_carnes.Grasa = dia_1_carnes.Grasa * factorCantidadCarne;
+      switch (factorCantidadCarne) {
+        case 2:
+          dia_1_carnes.cantidad = "200 g";
+          break;
+        case 3:
+          dia_1_carnes.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_1_alimento1.Cals = dia_1_alimento1.Cals * factorCantidadAlimento1;
+      dia_1_alimento1.Prot = dia_1_alimento1.Prot * factorCantidadAlimento1;
+      dia_1_alimento1.Grasa = dia_1_alimento1.Grasa * factorCantidadAlimento1;
+      switch (factorCantidadAlimento1) {
+        case 2:
+          dia_1_alimento1.cantidad = "200 g";
+          break;
+        case 3:
+          dia_1_alimento1.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_1_alimento2.Cals = dia_1_alimento2.Cals * factorCantidadAlimento2;
+      dia_1_alimento2.Prot = dia_1_alimento2.Prot * factorCantidadAlimento2;
+      dia_1_alimento2.Grasa = dia_1_alimento2.Grasa * factorCantidadAlimento2;
+      switch (factorCantidadAlimento2) {
+        case 2:
+          dia_1_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_1_alimento2.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_1_alimento3.Cals = dia_1_alimento3.Cals * factorCantidadAlimento3;
+      dia_1_alimento3.Prot = dia_1_alimento3.Prot * factorCantidadAlimento3;
+      dia_1_alimento3.Grasa = dia_1_alimento3.Grasa * factorCantidadAlimento3;
+      switch (factorCantidadAlimento3) {
+        case 2:
+          dia_1_alimento3.cantidad = "200 g";
+          break;
+        case 3:
+          dia_1_alimento3.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_2_carnes.Cals = dia_2_carnes.Cals * dia2_factorCantidadCarne;
+      dia_2_carnes.Prot = dia_2_carnes.Prot * dia2_factorCantidadCarne;
+      dia_2_carnes.Grasa = dia_2_carnes.Grasa * dia2_factorCantidadCarne;
+      switch (dia2_factorCantidadCarne) {
+        case 2:
+          dia_2_carnes.cantidad = "200 g";
+          break;
+        case 3:
+          dia_2_carnes.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_2_alimento1.Cals = dia_2_alimento1.Cals * dia2_factorCantidadAlimento1;
+      dia_2_alimento1.Prot = dia_2_alimento1.Prot * dia2_factorCantidadAlimento1;
+      dia_2_alimento1.Grasa = dia_2_alimento1.Grasa * dia2_factorCantidadAlimento1;
+      switch (dia2_factorCantidadAlimento1) {
+        case 2:
+          dia_2_alimento1.cantidad = "200 g";
+          break;
+        case 3:
+          dia_2_alimento1.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_2_alimento2.Cals = dia_2_alimento2.Cals * dia2_factorCantidadAlimento2;
+      dia_2_alimento2.Prot = dia_2_alimento2.Prot * dia2_factorCantidadAlimento2;
+      dia_2_alimento2.Grasa = dia_2_alimento2.Grasa * dia2_factorCantidadAlimento2;
+      switch (dia2_factorCantidadAlimento2) {
+        case 2:
+          dia_2_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_2_alimento2.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_2_alimento3.Cals = dia_2_alimento3.Cals * dia2_factorCantidadAlimento3;
+      dia_2_alimento3.Prot = dia_2_alimento3.Prot * dia2_factorCantidadAlimento3;
+      dia_2_alimento3.Grasa = dia_2_alimento3.Grasa * dia2_factorCantidadAlimento3;
+      switch (dia2_factorCantidadAlimento3) {
+        case 2:
+          dia_2_alimento3.cantidad = "200 g";
+          break;
+        case 3:
+          dia_2_alimento3.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_3_carnes.Cals = dia_3_carnes.Cals * dia3_factorCantidadCarne;
+      dia_3_carnes.Prot = dia_3_carnes.Prot * dia3_factorCantidadCarne;
+      dia_3_carnes.Grasa = dia_3_carnes.Grasa * dia3_factorCantidadCarne;
+      switch (dia3_factorCantidadCarne) {
+        case 2:
+          dia_3_carnes.cantidad = "200 g";
+          break;
+        case 3:
+          dia_3_carnes.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_3_alimento1.Cals = dia_3_alimento1.Cals * dia3_factorCantidadAlimento1;
+      dia_3_alimento1.Prot = dia_3_alimento1.Prot * dia3_factorCantidadAlimento1;
+      dia_3_alimento1.Grasa = dia_3_alimento1.Grasa * dia3_factorCantidadAlimento1;
+      switch (dia3_factorCantidadAlimento1) {
+        case 2:
+          dia_3_alimento1.cantidad = "200 g";
+          break;
+        case 3:
+          dia_3_alimento1.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_3_alimento2.Cals = dia_3_alimento2.Cals * dia3_factorCantidadAlimento2;
+      dia_3_alimento2.Prot = dia_3_alimento2.Prot * dia3_factorCantidadAlimento2;
+      dia_3_alimento2.Grasa = dia_3_alimento2.Grasa * dia3_factorCantidadAlimento2;
+      switch (dia3_factorCantidadAlimento2) {
+        case 2:
+          dia_3_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_3_alimento2.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_3_alimento3.Cals = dia_3_alimento3.Cals * dia3_factorCantidadAlimento3;
+      dia_3_alimento3.Prot = dia_3_alimento3.Prot * dia3_factorCantidadAlimento3;
+      dia_3_alimento3.Grasa = dia_3_alimento3.Grasa * dia3_factorCantidadAlimento3;
+      switch (dia3_factorCantidadAlimento3) {
+        case 2:
+          dia_3_alimento3.cantidad = "200 g";
+          break;
+        case 3:
+          dia_3_alimento3.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
       return {
         resultado: true,
         almuerzo: {
@@ -831,9 +1392,236 @@ const funcionFitnesAlmuerzo = (cromosoma, carnes, alimentos, objetivoCaloria, Ob
     const dia_4_alimento1 = alimentos[cromosoma[3][1]];
     const dia_4_alimento2 = alimentos[cromosoma[3][2]];
     const dia_4_alimento3 = alimentos[cromosoma[3][3]];
-    const calculo_calorias = dia_1_carnes.Cals + dia_1_alimento1.Cals + dia_1_alimento2.Cals + dia_1_alimento3.Cals + dia_2_carnes.Cals + dia_2_alimento1.Cals + dia_2_alimento2.Cals + dia_2_alimento3.Cals + dia_3_carnes.Cals + dia_3_alimento1.Cals + dia_3_alimento2.Cals + dia_3_alimento3.Cals + dia_4_carnes.Cals + dia_4_alimento1.Cals + dia_4_alimento2.Cals + dia_4_alimento3.Cals;
+    const factorCantidadCarne = Math.floor(Math.random() * 3) + 1;
+    const factorCantidadAlimento1 = Math.floor(Math.random() * 3) + 1;
+    const factorCantidadAlimento2 = Math.floor(Math.random() * 3) + 1;
+    const factorCantidadAlimento3 = Math.floor(Math.random() * 3) + 1;
+    const dia2_factorCantidadCarne = Math.floor(Math.random() * 3) + 1;
+    const dia2_factorCantidadAlimento1 = Math.floor(Math.random() * 3) + 1;
+    const dia2_factorCantidadAlimento2 = Math.floor(Math.random() * 3) + 1;
+    const dia2_factorCantidadAlimento3 = Math.floor(Math.random() * 3) + 1;
+    const dia3_factorCantidadCarne = Math.floor(Math.random() * 3) + 1;
+    const dia3_factorCantidadAlimento1 = Math.floor(Math.random() * 3) + 1;
+    const dia3_factorCantidadAlimento2 = Math.floor(Math.random() * 3) + 1;
+    const dia3_factorCantidadAlimento3 = Math.floor(Math.random() * 3) + 1;
+    const dia4_factorCantidadCarne = Math.floor(Math.random() * 3) + 1;
+    const dia4_factorCantidadAlimento1 = Math.floor(Math.random() * 3) + 1;
+    const dia4_factorCantidadAlimento2 = Math.floor(Math.random() * 3) + 1;
+    const dia4_factorCantidadAlimento3 = Math.floor(Math.random() * 3) + 1;
+    const calculo_calorias = (dia_1_carnes.Cals * factorCantidadCarne) + (dia_1_alimento1.Cals * factorCantidadAlimento1) + (dia_1_alimento2.Cals * factorCantidadAlimento2) + (dia_1_alimento3.Cals * factorCantidadAlimento3) + (dia_2_carnes.Cals * dia2_factorCantidadCarne) + (dia_2_alimento1.Cals * dia2_factorCantidadAlimento1) + (dia_2_alimento2.Cals * dia2_factorCantidadAlimento2) + (dia_2_alimento3.Cals * dia2_factorCantidadAlimento3) + (dia_3_carnes.Cals * dia3_factorCantidadCarne) + (dia_3_alimento1.Cals * dia3_factorCantidadAlimento1) + (dia_3_alimento2.Cals * dia3_factorCantidadAlimento2) + (dia_3_alimento3.Cals * dia3_factorCantidadAlimento3) + (dia_4_carnes.Cals * dia4_factorCantidadCarne) + (dia_4_alimento1.Cals * dia4_factorCantidadAlimento1) + (dia_4_alimento2.Cals * dia4_factorCantidadAlimento2) + (dia_4_alimento3.Cals * dia4_factorCantidadAlimento3);
     const calculo_proteinas = dia_1_carnes.Prot + dia_1_alimento1.Prot + dia_1_alimento2.Prot + dia_1_alimento3.Prot + dia_2_carnes.Prot + dia_2_alimento1.Prot + dia_2_alimento2.Prot + dia_2_alimento3.Prot + dia_3_carnes.Prot + dia_3_alimento1.Prot + dia_3_alimento2.Prot + dia_3_alimento3.Prot + dia_4_carnes.Prot + dia_4_alimento1.Prot + dia_4_alimento2.Prot + dia_4_alimento3.Prot;
     if ( calculo_calorias >= (objetivoCaloria-240) && calculo_calorias <= (objetivoCaloria+240)) {
+      dia_1_carnes.Cals = dia_1_carnes.Cals * factorCantidadCarne;
+      dia_1_carnes.Prot = dia_1_carnes.Prot * factorCantidadCarne;
+      dia_1_carnes.Grasa = dia_1_carnes.Grasa * factorCantidadCarne;
+      switch (factorCantidadCarne) {
+        case 2:
+          dia_1_carnes.cantidad = "200 g";
+          break;
+        case 3:
+          dia_1_carnes.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_1_alimento1.Cals = dia_1_alimento1.Cals * factorCantidadAlimento1;
+      dia_1_alimento1.Prot = dia_1_alimento1.Prot * factorCantidadAlimento1;
+      dia_1_alimento1.Grasa = dia_1_alimento1.Grasa * factorCantidadAlimento1;
+      switch (factorCantidadAlimento1) {
+        case 2:
+          dia_1_alimento1.cantidad = "200 g";
+          break;
+        case 3:
+          dia_1_alimento1.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_1_alimento2.Cals = dia_1_alimento2.Cals * factorCantidadAlimento2;
+      dia_1_alimento2.Prot = dia_1_alimento2.Prot * factorCantidadAlimento2;
+      dia_1_alimento2.Grasa = dia_1_alimento2.Grasa * factorCantidadAlimento2;
+      switch (factorCantidadAlimento2) {
+        case 2:
+          dia_1_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_1_alimento2.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_1_alimento3.Cals = dia_1_alimento3.Cals * factorCantidadAlimento3;
+      dia_1_alimento3.Prot = dia_1_alimento3.Prot * factorCantidadAlimento3;
+      dia_1_alimento3.Grasa = dia_1_alimento3.Grasa * factorCantidadAlimento3;
+      switch (factorCantidadAlimento3) {
+        case 2:
+          dia_1_alimento3.cantidad = "200 g";
+          break;
+        case 3:
+          dia_1_alimento3.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_2_carnes.Cals = dia_2_carnes.Cals * dia2_factorCantidadCarne;
+      dia_2_carnes.Prot = dia_2_carnes.Prot * dia2_factorCantidadCarne;
+      dia_2_carnes.Grasa = dia_2_carnes.Grasa * dia2_factorCantidadCarne;
+      switch (dia2_factorCantidadCarne) {
+        case 2:
+          dia_2_carnes.cantidad = "200 g";
+          break;
+        case 3:
+          dia_2_carnes.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_2_alimento1.Cals = dia_2_alimento1.Cals * dia2_factorCantidadAlimento1;
+      dia_2_alimento1.Prot = dia_2_alimento1.Prot * dia2_factorCantidadAlimento1;
+      dia_2_alimento1.Grasa = dia_2_alimento1.Grasa * dia2_factorCantidadAlimento1;
+      switch (dia2_factorCantidadAlimento1) {
+        case 2:
+          dia_2_alimento1.cantidad = "200 g";
+          break;
+        case 3:
+          dia_2_alimento1.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_2_alimento2.Cals = dia_2_alimento2.Cals * dia2_factorCantidadAlimento2;
+      dia_2_alimento2.Prot = dia_2_alimento2.Prot * dia2_factorCantidadAlimento2;
+      dia_2_alimento2.Grasa = dia_2_alimento2.Grasa * dia2_factorCantidadAlimento2;
+      switch (dia2_factorCantidadAlimento2) {
+        case 2:
+          dia_2_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_2_alimento2.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_2_alimento3.Cals = dia_2_alimento3.Cals * dia2_factorCantidadAlimento3;
+      dia_2_alimento3.Prot = dia_2_alimento3.Prot * dia2_factorCantidadAlimento3;
+      dia_2_alimento3.Grasa = dia_2_alimento3.Grasa * dia2_factorCantidadAlimento3;
+      switch (dia2_factorCantidadAlimento3) {
+        case 2:
+          dia_2_alimento3.cantidad = "200 g";
+          break;
+        case 3:
+          dia_2_alimento3.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_3_carnes.Cals = dia_3_carnes.Cals * dia3_factorCantidadCarne;
+      dia_3_carnes.Prot = dia_3_carnes.Prot * dia3_factorCantidadCarne;
+      dia_3_carnes.Grasa = dia_3_carnes.Grasa * dia3_factorCantidadCarne;
+      switch (dia3_factorCantidadCarne) {
+        case 2:
+          dia_3_carnes.cantidad = "200 g";
+          break;
+        case 3:
+          dia_3_carnes.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_3_alimento1.Cals = dia_3_alimento1.Cals * dia3_factorCantidadAlimento1;
+      dia_3_alimento1.Prot = dia_3_alimento1.Prot * dia3_factorCantidadAlimento1;
+      dia_3_alimento1.Grasa = dia_3_alimento1.Grasa * dia3_factorCantidadAlimento1;
+      switch (dia3_factorCantidadAlimento1) {
+        case 2:
+          dia_3_alimento1.cantidad = "200 g";
+          break;
+        case 3:
+          dia_3_alimento1.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_3_alimento2.Cals = dia_3_alimento2.Cals * dia3_factorCantidadAlimento2;
+      dia_3_alimento2.Prot = dia_3_alimento2.Prot * dia3_factorCantidadAlimento2;
+      dia_3_alimento2.Grasa = dia_3_alimento2.Grasa * dia3_factorCantidadAlimento2;
+      switch (dia3_factorCantidadAlimento2) {
+        case 2:
+          dia_3_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_3_alimento2.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_3_alimento3.Cals = dia_3_alimento3.Cals * dia3_factorCantidadAlimento3;
+      dia_3_alimento3.Prot = dia_3_alimento3.Prot * dia3_factorCantidadAlimento3;
+      dia_3_alimento3.Grasa = dia_3_alimento3.Grasa * dia3_factorCantidadAlimento3;
+      switch (dia3_factorCantidadAlimento3) {
+        case 2:
+          dia_3_alimento3.cantidad = "200 g";
+          break;
+        case 3:
+          dia_3_alimento3.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_4_carnes.Cals = dia_4_carnes.Cals * dia4_factorCantidadCarne;
+      dia_4_carnes.Prot = dia_4_carnes.Prot * dia4_factorCantidadCarne;
+      dia_4_carnes.Grasa = dia_4_carnes.Grasa * dia4_factorCantidadCarne;
+      switch (dia4_factorCantidadCarne) {
+        case 2:
+          dia_4_carnes.cantidad = "200 g";
+          break;
+        case 3:
+          dia_4_carnes.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_4_alimento1.Cals = dia_4_alimento1.Cals * dia4_factorCantidadAlimento1;
+      dia_4_alimento1.Prot = dia_4_alimento1.Prot * dia4_factorCantidadAlimento1;
+      dia_4_alimento1.Grasa = dia_4_alimento1.Grasa * dia4_factorCantidadAlimento1;
+      switch (dia4_factorCantidadAlimento1) {
+        case 2:
+          dia_4_alimento1.cantidad = "200 g";
+          break;
+        case 3:
+          dia_4_alimento1.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_4_alimento2.Cals = dia_4_alimento2.Cals * dia4_factorCantidadAlimento2;
+      dia_4_alimento2.Prot = dia_4_alimento2.Prot * dia4_factorCantidadAlimento2;
+      dia_4_alimento2.Grasa = dia_4_alimento2.Grasa * dia4_factorCantidadAlimento2;
+      switch (dia4_factorCantidadAlimento2) {
+        case 2:
+          dia_4_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_4_alimento2.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_4_alimento3.Cals = dia_4_alimento3.Cals * dia4_factorCantidadAlimento3;
+      dia_4_alimento3.Prot = dia_4_alimento3.Prot * dia4_factorCantidadAlimento3;
+      dia_4_alimento3.Grasa = dia_4_alimento3.Grasa * dia4_factorCantidadAlimento3;
+      switch (dia4_factorCantidadAlimento3) {
+        case 2:
+          dia_4_alimento3.cantidad = "200 g";
+          break;
+        case 3:
+          dia_4_alimento3.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
       return {
         resultado: true,
         almuerzo: {
@@ -911,9 +1699,293 @@ const funcionFitnesAlmuerzo = (cromosoma, carnes, alimentos, objetivoCaloria, Ob
     const dia_5_alimento1 = alimentos[cromosoma[4][1]];
     const dia_5_alimento2 = alimentos[cromosoma[4][2]];
     const dia_5_alimento3 = alimentos[cromosoma[4][3]];
-    const calculo_calorias = dia_1_carnes.Cals + dia_1_alimento1.Cals + dia_1_alimento2.Cals + dia_1_alimento3.Cals + dia_2_carnes.Cals + dia_2_alimento1.Cals + dia_2_alimento2.Cals + dia_2_alimento3.Cals + dia_3_carnes.Cals + dia_3_alimento1.Cals + dia_3_alimento2.Cals + dia_3_alimento3.Cals + dia_4_carnes.Cals + dia_4_alimento1.Cals + dia_4_alimento2.Cals + dia_4_alimento3.Cals + dia_5_carnes.Cals + dia_5_alimento1.Cals + dia_5_alimento2.Cals + dia_5_alimento3.Cals;
+    const factorCantidadCarne = Math.floor(Math.random() * 3) + 1;
+    const factorCantidadAlimento1 = Math.floor(Math.random() * 3) + 1;
+    const factorCantidadAlimento2 = Math.floor(Math.random() * 3) + 1;
+    const factorCantidadAlimento3 = Math.floor(Math.random() * 3) + 1;
+    const dia2_factorCantidadCarne = Math.floor(Math.random() * 3) + 1;
+    const dia2_factorCantidadAlimento1 = Math.floor(Math.random() * 3) + 1;
+    const dia2_factorCantidadAlimento2 = Math.floor(Math.random() * 3) + 1;
+    const dia2_factorCantidadAlimento3 = Math.floor(Math.random() * 3) + 1;
+    const dia3_factorCantidadCarne = Math.floor(Math.random() * 3) + 1;
+    const dia3_factorCantidadAlimento1 = Math.floor(Math.random() * 3) + 1;
+    const dia3_factorCantidadAlimento2 = Math.floor(Math.random() * 3) + 1;
+    const dia3_factorCantidadAlimento3 = Math.floor(Math.random() * 3) + 1;
+    const dia4_factorCantidadCarne = Math.floor(Math.random() * 3) + 1;
+    const dia4_factorCantidadAlimento1 = Math.floor(Math.random() * 3) + 1;
+    const dia4_factorCantidadAlimento2 = Math.floor(Math.random() * 3) + 1;
+    const dia4_factorCantidadAlimento3 = Math.floor(Math.random() * 3) + 1;
+    const dia5_factorCantidadCarne = Math.floor(Math.random() * 3) + 1;
+    const dia5_factorCantidadAlimento1 = Math.floor(Math.random() * 3) + 1;
+    const dia5_factorCantidadAlimento2 = Math.floor(Math.random() * 3) + 1;
+    const dia5_factorCantidadAlimento3 = Math.floor(Math.random() * 3) + 1;
+    const calculo_calorias = (dia_1_carnes.Cals * factorCantidadCarne) + (dia_1_alimento1.Cals * factorCantidadAlimento1) + (dia_1_alimento2.Cals * factorCantidadAlimento2) + (dia_1_alimento3.Cals * factorCantidadAlimento3) + (dia_2_carnes.Cals * dia2_factorCantidadCarne) + (dia_2_alimento1.Cals * dia2_factorCantidadAlimento1) + (dia_2_alimento2.Cals * dia2_factorCantidadAlimento2) + (dia_2_alimento3.Cals * dia2_factorCantidadAlimento3) + (dia_3_carnes.Cals * dia3_factorCantidadCarne) + (dia_3_alimento1.Cals * dia3_factorCantidadAlimento1) + (dia_3_alimento2.Cals * dia3_factorCantidadAlimento2) + (dia_3_alimento3.Cals * dia3_factorCantidadAlimento3) + (dia_4_carnes.Cals * dia4_factorCantidadCarne) + (dia_4_alimento1.Cals * dia4_factorCantidadAlimento1) + (dia_4_alimento2.Cals * dia4_factorCantidadAlimento2) + (dia_4_alimento3.Cals * dia4_factorCantidadAlimento3) + (dia_5_carnes.Cals * dia5_factorCantidadCarne) + (dia_5_alimento1.Cals * dia5_factorCantidadAlimento1) + (dia_5_alimento2.Cals * dia5_factorCantidadAlimento2) + (dia_5_alimento3.Cals * dia5_factorCantidadAlimento3);
     const calculo_proteinas = dia_1_carnes.Prot + dia_1_alimento1.Prot + dia_1_alimento2.Prot + dia_1_alimento3.Prot + dia_2_carnes.Prot + dia_2_alimento1.Prot + dia_2_alimento2.Prot + dia_2_alimento3.Prot + dia_3_carnes.Prot + dia_3_alimento1.Prot + dia_3_alimento2.Prot + dia_3_alimento3.Prot + dia_4_carnes.Prot + dia_4_alimento1.Prot + dia_4_alimento2.Prot + dia_4_alimento3.Prot + dia_5_carnes.Prot + dia_5_alimento1.Prot + dia_5_alimento2.Prot + dia_5_alimento3.Prot;
     if ( calculo_calorias >= (objetivoCaloria-300) && calculo_calorias <= (objetivoCaloria+300)) {
+      dia_1_carnes.Cals = dia_1_carnes.Cals * factorCantidadCarne;
+      dia_1_carnes.Prot = dia_1_carnes.Prot * factorCantidadCarne;
+      dia_1_carnes.Grasa = dia_1_carnes.Grasa * factorCantidadCarne;
+      switch (factorCantidadCarne) {
+        case 2:
+          dia_1_carnes.cantidad = "200 g";
+          break;
+        case 3:
+          dia_1_carnes.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_1_alimento1.Cals = dia_1_alimento1.Cals * factorCantidadAlimento1;
+      dia_1_alimento1.Prot = dia_1_alimento1.Prot * factorCantidadAlimento1;
+      dia_1_alimento1.Grasa = dia_1_alimento1.Grasa * factorCantidadAlimento1;
+      switch (factorCantidadAlimento1) {
+        case 2:
+          dia_1_alimento1.cantidad = "200 g";
+          break;
+        case 3:
+          dia_1_alimento1.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_1_alimento2.Cals = dia_1_alimento2.Cals * factorCantidadAlimento2;
+      dia_1_alimento2.Prot = dia_1_alimento2.Prot * factorCantidadAlimento2;
+      dia_1_alimento2.Grasa = dia_1_alimento2.Grasa * factorCantidadAlimento2;
+      switch (factorCantidadAlimento2) {
+        case 2:
+          dia_1_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_1_alimento2.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_1_alimento3.Cals = dia_1_alimento3.Cals * factorCantidadAlimento3;
+      dia_1_alimento3.Prot = dia_1_alimento3.Prot * factorCantidadAlimento3;
+      dia_1_alimento3.Grasa = dia_1_alimento3.Grasa * factorCantidadAlimento3;
+      switch (factorCantidadAlimento3) {
+        case 2:
+          dia_1_alimento3.cantidad = "200 g";
+          break;
+        case 3:
+          dia_1_alimento3.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_2_carnes.Cals = dia_2_carnes.Cals * dia2_factorCantidadCarne;
+      dia_2_carnes.Prot = dia_2_carnes.Prot * dia2_factorCantidadCarne;
+      dia_2_carnes.Grasa = dia_2_carnes.Grasa * dia2_factorCantidadCarne;
+      switch (dia2_factorCantidadCarne) {
+        case 2:
+          dia_2_carnes.cantidad = "200 g";
+          break;
+        case 3:
+          dia_2_carnes.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_2_alimento1.Cals = dia_2_alimento1.Cals * dia2_factorCantidadAlimento1;
+      dia_2_alimento1.Prot = dia_2_alimento1.Prot * dia2_factorCantidadAlimento1;
+      dia_2_alimento1.Grasa = dia_2_alimento1.Grasa * dia2_factorCantidadAlimento1;
+      switch (dia2_factorCantidadAlimento1) {
+        case 2:
+          dia_2_alimento1.cantidad = "200 g";
+          break;
+        case 3:
+          dia_2_alimento1.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_2_alimento2.Cals = dia_2_alimento2.Cals * dia2_factorCantidadAlimento2;
+      dia_2_alimento2.Prot = dia_2_alimento2.Prot * dia2_factorCantidadAlimento2;
+      dia_2_alimento2.Grasa = dia_2_alimento2.Grasa * dia2_factorCantidadAlimento2;
+      switch (dia2_factorCantidadAlimento2) {
+        case 2:
+          dia_2_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_2_alimento2.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_2_alimento3.Cals = dia_2_alimento3.Cals * dia2_factorCantidadAlimento3;
+      dia_2_alimento3.Prot = dia_2_alimento3.Prot * dia2_factorCantidadAlimento3;
+      dia_2_alimento3.Grasa = dia_2_alimento3.Grasa * dia2_factorCantidadAlimento3;
+      switch (dia2_factorCantidadAlimento3) {
+        case 2:
+          dia_2_alimento3.cantidad = "200 g";
+          break;
+        case 3:
+          dia_2_alimento3.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_3_carnes.Cals = dia_3_carnes.Cals * dia3_factorCantidadCarne;
+      dia_3_carnes.Prot = dia_3_carnes.Prot * dia3_factorCantidadCarne;
+      dia_3_carnes.Grasa = dia_3_carnes.Grasa * dia3_factorCantidadCarne;
+      switch (dia3_factorCantidadCarne) {
+        case 2:
+          dia_3_carnes.cantidad = "200 g";
+          break;
+        case 3:
+          dia_3_carnes.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_3_alimento1.Cals = dia_3_alimento1.Cals * dia3_factorCantidadAlimento1;
+      dia_3_alimento1.Prot = dia_3_alimento1.Prot * dia3_factorCantidadAlimento1;
+      dia_3_alimento1.Grasa = dia_3_alimento1.Grasa * dia3_factorCantidadAlimento1;
+      switch (dia3_factorCantidadAlimento1) {
+        case 2:
+          dia_3_alimento1.cantidad = "200 g";
+          break;
+        case 3:
+          dia_3_alimento1.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_3_alimento2.Cals = dia_3_alimento2.Cals * dia3_factorCantidadAlimento2;
+      dia_3_alimento2.Prot = dia_3_alimento2.Prot * dia3_factorCantidadAlimento2;
+      dia_3_alimento2.Grasa = dia_3_alimento2.Grasa * dia3_factorCantidadAlimento2;
+      switch (dia3_factorCantidadAlimento2) {
+        case 2:
+          dia_3_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_3_alimento2.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_3_alimento3.Cals = dia_3_alimento3.Cals * dia3_factorCantidadAlimento3;
+      dia_3_alimento3.Prot = dia_3_alimento3.Prot * dia3_factorCantidadAlimento3;
+      dia_3_alimento3.Grasa = dia_3_alimento3.Grasa * dia3_factorCantidadAlimento3;
+      switch (dia3_factorCantidadAlimento3) {
+        case 2:
+          dia_3_alimento3.cantidad = "200 g";
+          break;
+        case 3:
+          dia_3_alimento3.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_4_carnes.Cals = dia_4_carnes.Cals * dia4_factorCantidadCarne;
+      dia_4_carnes.Prot = dia_4_carnes.Prot * dia4_factorCantidadCarne;
+      dia_4_carnes.Grasa = dia_4_carnes.Grasa * dia4_factorCantidadCarne;
+      switch (dia4_factorCantidadCarne) {
+        case 2:
+          dia_4_carnes.cantidad = "200 g";
+          break;
+        case 3:
+          dia_4_carnes.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_4_alimento1.Cals = dia_4_alimento1.Cals * dia4_factorCantidadAlimento1;
+      dia_4_alimento1.Prot = dia_4_alimento1.Prot * dia4_factorCantidadAlimento1;
+      dia_4_alimento1.Grasa = dia_4_alimento1.Grasa * dia4_factorCantidadAlimento1;
+      switch (dia4_factorCantidadAlimento1) {
+        case 2:
+          dia_4_alimento1.cantidad = "200 g";
+          break;
+        case 3:
+          dia_4_alimento1.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_4_alimento2.Cals = dia_4_alimento2.Cals * dia4_factorCantidadAlimento2;
+      dia_4_alimento2.Prot = dia_4_alimento2.Prot * dia4_factorCantidadAlimento2;
+      dia_4_alimento2.Grasa = dia_4_alimento2.Grasa * dia4_factorCantidadAlimento2;
+      switch (dia4_factorCantidadAlimento2) {
+        case 2:
+          dia_4_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_4_alimento2.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_4_alimento3.Cals = dia_4_alimento3.Cals * dia4_factorCantidadAlimento3;
+      dia_4_alimento3.Prot = dia_4_alimento3.Prot * dia4_factorCantidadAlimento3;
+      dia_4_alimento3.Grasa = dia_4_alimento3.Grasa * dia4_factorCantidadAlimento3;
+      switch (dia4_factorCantidadAlimento3) {
+        case 2:
+          dia_4_alimento3.cantidad = "200 g";
+          break;
+        case 3:
+          dia_4_alimento3.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_5_carnes.Cals = dia_5_carnes.Cals * dia5_factorCantidadCarne;
+      dia_5_carnes.Prot = dia_5_carnes.Prot * dia5_factorCantidadCarne;
+      dia_5_carnes.Grasa = dia_5_carnes.Grasa * dia5_factorCantidadCarne;
+      switch (dia5_factorCantidadCarne) {
+        case 2:
+          dia_5_carnes.cantidad = "200 g";
+          break;
+        case 3:
+          dia_5_carnes.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_5_alimento1.Cals = dia_5_alimento1.Cals * dia5_factorCantidadAlimento1;
+      dia_5_alimento1.Prot = dia_5_alimento1.Prot * dia5_factorCantidadAlimento1;
+      dia_5_alimento1.Grasa = dia_5_alimento1.Grasa * dia5_factorCantidadAlimento1;
+      switch (dia5_factorCantidadAlimento1) {
+        case 2:
+          dia_5_alimento1.cantidad = "200 g";
+          break;
+        case 3:
+          dia_5_alimento1.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_5_alimento2.Cals = dia_5_alimento2.Cals * dia5_factorCantidadAlimento2;
+      dia_5_alimento2.Prot = dia_5_alimento2.Prot * dia5_factorCantidadAlimento2;
+      dia_5_alimento2.Grasa = dia_5_alimento2.Grasa * dia5_factorCantidadAlimento2;
+      switch (dia5_factorCantidadAlimento2) {
+        case 2:
+          dia_5_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_5_alimento2.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_5_alimento3.Cals = dia_5_alimento3.Cals * dia5_factorCantidadAlimento3;
+      dia_5_alimento3.Prot = dia_5_alimento3.Prot * dia5_factorCantidadAlimento3;
+      dia_5_alimento3.Grasa = dia_5_alimento3.Grasa * dia5_factorCantidadAlimento3;
+      switch (dia5_factorCantidadAlimento3) {
+        case 2:
+          dia_5_alimento3.cantidad = "200 g";
+          break;
+        case 3:
+          dia_5_alimento3.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
       return {
         resultado: true,
         almuerzo: {
@@ -1007,9 +2079,350 @@ const funcionFitnesAlmuerzo = (cromosoma, carnes, alimentos, objetivoCaloria, Ob
     const dia_6_alimento1 = alimentos[cromosoma[5][1]];
     const dia_6_alimento2 = alimentos[cromosoma[5][2]];
     const dia_6_alimento3 = alimentos[cromosoma[5][3]];
-    const calculo_calorias = dia_1_carnes.Cals + dia_1_alimento1.Cals + dia_1_alimento2.Cals + dia_1_alimento3.Cals + dia_2_carnes.Cals + dia_2_alimento1.Cals + dia_2_alimento2.Cals + dia_2_alimento3.Cals + dia_3_carnes.Cals + dia_3_alimento1.Cals + dia_3_alimento2.Cals + dia_3_alimento3.Cals + dia_4_carnes.Cals + dia_4_alimento1.Cals + dia_4_alimento2.Cals + dia_4_alimento3.Cals + dia_5_carnes.Cals + dia_5_alimento1.Cals + dia_5_alimento2.Cals + dia_5_alimento3.Cals + dia_6_carnes.Cals + dia_6_alimento1.Cals + dia_6_alimento2.Cals + dia_6_alimento3.Cals;
+    const factorCantidadCarne = Math.floor(Math.random() * 3) + 1;
+    const factorCantidadAlimento1 = Math.floor(Math.random() * 3) + 1;
+    const factorCantidadAlimento2 = Math.floor(Math.random() * 3) + 1;
+    const factorCantidadAlimento3 = Math.floor(Math.random() * 3) + 1;
+    const dia2_factorCantidadCarne = Math.floor(Math.random() * 3) + 1;
+    const dia2_factorCantidadAlimento1 = Math.floor(Math.random() * 3) + 1;
+    const dia2_factorCantidadAlimento2 = Math.floor(Math.random() * 3) + 1;
+    const dia2_factorCantidadAlimento3 = Math.floor(Math.random() * 3) + 1;
+    const dia3_factorCantidadCarne = Math.floor(Math.random() * 3) + 1;
+    const dia3_factorCantidadAlimento1 = Math.floor(Math.random() * 3) + 1;
+    const dia3_factorCantidadAlimento2 = Math.floor(Math.random() * 3) + 1;
+    const dia3_factorCantidadAlimento3 = Math.floor(Math.random() * 3) + 1;
+    const dia4_factorCantidadCarne = Math.floor(Math.random() * 3) + 1;
+    const dia4_factorCantidadAlimento1 = Math.floor(Math.random() * 3) + 1;
+    const dia4_factorCantidadAlimento2 = Math.floor(Math.random() * 3) + 1;
+    const dia4_factorCantidadAlimento3 = Math.floor(Math.random() * 3) + 1;
+    const dia5_factorCantidadCarne = Math.floor(Math.random() * 3) + 1;
+    const dia5_factorCantidadAlimento1 = Math.floor(Math.random() * 3) + 1;
+    const dia5_factorCantidadAlimento2 = Math.floor(Math.random() * 3) + 1;
+    const dia5_factorCantidadAlimento3 = Math.floor(Math.random() * 3) + 1;
+    const dia6_factorCantidadCarne = Math.floor(Math.random() * 3) + 1;
+    const dia6_factorCantidadAlimento1 = Math.floor(Math.random() * 3) + 1;
+    const dia6_factorCantidadAlimento2 = Math.floor(Math.random() * 3) + 1;
+    const dia6_factorCantidadAlimento3 = Math.floor(Math.random() * 3) + 1;
+    const calculo_calorias = (dia_1_carnes.Cals * factorCantidadCarne) + (dia_1_alimento1.Cals * factorCantidadAlimento1) + (dia_1_alimento2.Cals * factorCantidadAlimento2) + (dia_1_alimento3.Cals * factorCantidadAlimento3) + (dia_2_carnes.Cals * dia2_factorCantidadCarne) + (dia_2_alimento1.Cals * dia2_factorCantidadAlimento1) + (dia_2_alimento2.Cals * dia2_factorCantidadAlimento2) + (dia_2_alimento3.Cals * dia2_factorCantidadAlimento3) + (dia_3_carnes.Cals * dia3_factorCantidadCarne) + (dia_3_alimento1.Cals * dia3_factorCantidadAlimento1) + (dia_3_alimento2.Cals * dia3_factorCantidadAlimento2) + (dia_3_alimento3.Cals * dia3_factorCantidadAlimento3) + (dia_4_carnes.Cals * dia4_factorCantidadCarne) + (dia_4_alimento1.Cals * dia4_factorCantidadAlimento1) + (dia_4_alimento2.Cals * dia4_factorCantidadAlimento2) + (dia_4_alimento3.Cals * dia4_factorCantidadAlimento3) + (dia_5_carnes.Cals * dia5_factorCantidadCarne) + (dia_5_alimento1.Cals * dia5_factorCantidadAlimento1) + (dia_5_alimento2.Cals * dia5_factorCantidadAlimento2) + (dia_5_alimento3.Cals * dia5_factorCantidadAlimento3) + (dia_6_carnes.Cals * dia6_factorCantidadCarne) + (dia_6_alimento1.Cals * dia6_factorCantidadAlimento1) + (dia_6_alimento2.Cals * dia6_factorCantidadAlimento2) + (dia_6_alimento3.Cals * dia6_factorCantidadAlimento3);
     const calculo_proteinas = dia_1_carnes.Prot + dia_1_alimento1.Prot + dia_1_alimento2.Prot + dia_1_alimento3.Prot + dia_2_carnes.Prot + dia_2_alimento1.Prot + dia_2_alimento2.Prot + dia_2_alimento3.Prot + dia_3_carnes.Prot + dia_3_alimento1.Prot + dia_3_alimento2.Prot + dia_3_alimento3.Prot + dia_4_carnes.Prot + dia_4_alimento1.Prot + dia_4_alimento2.Prot + dia_4_alimento3.Prot + dia_5_carnes.Prot + dia_5_alimento1.Prot + dia_5_alimento2.Prot + dia_5_alimento3.Prot + dia_6_carnes.Prot + dia_6_alimento1.Prot + dia_6_alimento2.Prot + dia_6_alimento3.Prot;
     if ( calculo_calorias >= (objetivoCaloria-360) && calculo_calorias <= (objetivoCaloria+360)) {
+      dia_1_carnes.Cals = dia_1_carnes.Cals * factorCantidadCarne;
+      dia_1_carnes.Prot = dia_1_carnes.Prot * factorCantidadCarne;
+      dia_1_carnes.Grasa = dia_1_carnes.Grasa * factorCantidadCarne;
+      switch (factorCantidadCarne) {
+        case 2:
+          dia_1_carnes.cantidad = "200 g";
+          break;
+        case 3:
+          dia_1_carnes.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_1_alimento1.Cals = dia_1_alimento1.Cals * factorCantidadAlimento1;
+      dia_1_alimento1.Prot = dia_1_alimento1.Prot * factorCantidadAlimento1;
+      dia_1_alimento1.Grasa = dia_1_alimento1.Grasa * factorCantidadAlimento1;
+      switch (factorCantidadAlimento1) {
+        case 2:
+          dia_1_alimento1.cantidad = "200 g";
+          break;
+        case 3:
+          dia_1_alimento1.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_1_alimento2.Cals = dia_1_alimento2.Cals * factorCantidadAlimento2;
+      dia_1_alimento2.Prot = dia_1_alimento2.Prot * factorCantidadAlimento2;
+      dia_1_alimento2.Grasa = dia_1_alimento2.Grasa * factorCantidadAlimento2;
+      switch (factorCantidadAlimento2) {
+        case 2:
+          dia_1_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_1_alimento2.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_1_alimento3.Cals = dia_1_alimento3.Cals * factorCantidadAlimento3;
+      dia_1_alimento3.Prot = dia_1_alimento3.Prot * factorCantidadAlimento3;
+      dia_1_alimento3.Grasa = dia_1_alimento3.Grasa * factorCantidadAlimento3;
+      switch (factorCantidadAlimento3) {
+        case 2:
+          dia_1_alimento3.cantidad = "200 g";
+          break;
+        case 3:
+          dia_1_alimento3.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_2_carnes.Cals = dia_2_carnes.Cals * dia2_factorCantidadCarne;
+      dia_2_carnes.Prot = dia_2_carnes.Prot * dia2_factorCantidadCarne;
+      dia_2_carnes.Grasa = dia_2_carnes.Grasa * dia2_factorCantidadCarne;
+      switch (dia2_factorCantidadCarne) {
+        case 2:
+          dia_2_carnes.cantidad = "200 g";
+          break;
+        case 3:
+          dia_2_carnes.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_2_alimento1.Cals = dia_2_alimento1.Cals * dia2_factorCantidadAlimento1;
+      dia_2_alimento1.Prot = dia_2_alimento1.Prot * dia2_factorCantidadAlimento1;
+      dia_2_alimento1.Grasa = dia_2_alimento1.Grasa * dia2_factorCantidadAlimento1;
+      switch (dia2_factorCantidadAlimento1) {
+        case 2:
+          dia_2_alimento1.cantidad = "200 g";
+          break;
+        case 3:
+          dia_2_alimento1.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_2_alimento2.Cals = dia_2_alimento2.Cals * dia2_factorCantidadAlimento2;
+      dia_2_alimento2.Prot = dia_2_alimento2.Prot * dia2_factorCantidadAlimento2;
+      dia_2_alimento2.Grasa = dia_2_alimento2.Grasa * dia2_factorCantidadAlimento2;
+      switch (dia2_factorCantidadAlimento2) {
+        case 2:
+          dia_2_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_2_alimento2.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_2_alimento3.Cals = dia_2_alimento3.Cals * dia2_factorCantidadAlimento3;
+      dia_2_alimento3.Prot = dia_2_alimento3.Prot * dia2_factorCantidadAlimento3;
+      dia_2_alimento3.Grasa = dia_2_alimento3.Grasa * dia2_factorCantidadAlimento3;
+      switch (dia2_factorCantidadAlimento3) {
+        case 2:
+          dia_2_alimento3.cantidad = "200 g";
+          break;
+        case 3:
+          dia_2_alimento3.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_3_carnes.Cals = dia_3_carnes.Cals * dia3_factorCantidadCarne;
+      dia_3_carnes.Prot = dia_3_carnes.Prot * dia3_factorCantidadCarne;
+      dia_3_carnes.Grasa = dia_3_carnes.Grasa * dia3_factorCantidadCarne;
+      switch (dia3_factorCantidadCarne) {
+        case 2:
+          dia_3_carnes.cantidad = "200 g";
+          break;
+        case 3:
+          dia_3_carnes.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_3_alimento1.Cals = dia_3_alimento1.Cals * dia3_factorCantidadAlimento1;
+      dia_3_alimento1.Prot = dia_3_alimento1.Prot * dia3_factorCantidadAlimento1;
+      dia_3_alimento1.Grasa = dia_3_alimento1.Grasa * dia3_factorCantidadAlimento1;
+      switch (dia3_factorCantidadAlimento1) {
+        case 2:
+          dia_3_alimento1.cantidad = "200 g";
+          break;
+        case 3:
+          dia_3_alimento1.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_3_alimento2.Cals = dia_3_alimento2.Cals * dia3_factorCantidadAlimento2;
+      dia_3_alimento2.Prot = dia_3_alimento2.Prot * dia3_factorCantidadAlimento2;
+      dia_3_alimento2.Grasa = dia_3_alimento2.Grasa * dia3_factorCantidadAlimento2;
+      switch (dia3_factorCantidadAlimento2) {
+        case 2:
+          dia_3_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_3_alimento2.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_3_alimento3.Cals = dia_3_alimento3.Cals * dia3_factorCantidadAlimento3;
+      dia_3_alimento3.Prot = dia_3_alimento3.Prot * dia3_factorCantidadAlimento3;
+      dia_3_alimento3.Grasa = dia_3_alimento3.Grasa * dia3_factorCantidadAlimento3;
+      switch (dia3_factorCantidadAlimento3) {
+        case 2:
+          dia_3_alimento3.cantidad = "200 g";
+          break;
+        case 3:
+          dia_3_alimento3.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_4_carnes.Cals = dia_4_carnes.Cals * dia4_factorCantidadCarne;
+      dia_4_carnes.Prot = dia_4_carnes.Prot * dia4_factorCantidadCarne;
+      dia_4_carnes.Grasa = dia_4_carnes.Grasa * dia4_factorCantidadCarne;
+      switch (dia4_factorCantidadCarne) {
+        case 2:
+          dia_4_carnes.cantidad = "200 g";
+          break;
+        case 3:
+          dia_4_carnes.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_4_alimento1.Cals = dia_4_alimento1.Cals * dia4_factorCantidadAlimento1;
+      dia_4_alimento1.Prot = dia_4_alimento1.Prot * dia4_factorCantidadAlimento1;
+      dia_4_alimento1.Grasa = dia_4_alimento1.Grasa * dia4_factorCantidadAlimento1;
+      switch (dia4_factorCantidadAlimento1) {
+        case 2:
+          dia_4_alimento1.cantidad = "200 g";
+          break;
+        case 3:
+          dia_4_alimento1.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_4_alimento2.Cals = dia_4_alimento2.Cals * dia4_factorCantidadAlimento2;
+      dia_4_alimento2.Prot = dia_4_alimento2.Prot * dia4_factorCantidadAlimento2;
+      dia_4_alimento2.Grasa = dia_4_alimento2.Grasa * dia4_factorCantidadAlimento2;
+      switch (dia4_factorCantidadAlimento2) {
+        case 2:
+          dia_4_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_4_alimento2.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_4_alimento3.Cals = dia_4_alimento3.Cals * dia4_factorCantidadAlimento3;
+      dia_4_alimento3.Prot = dia_4_alimento3.Prot * dia4_factorCantidadAlimento3;
+      dia_4_alimento3.Grasa = dia_4_alimento3.Grasa * dia4_factorCantidadAlimento3;
+      switch (dia4_factorCantidadAlimento3) {
+        case 2:
+          dia_4_alimento3.cantidad = "200 g";
+          break;
+        case 3:
+          dia_4_alimento3.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_5_carnes.Cals = dia_5_carnes.Cals * dia5_factorCantidadCarne;
+      dia_5_carnes.Prot = dia_5_carnes.Prot * dia5_factorCantidadCarne;
+      dia_5_carnes.Grasa = dia_5_carnes.Grasa * dia5_factorCantidadCarne;
+      switch (dia5_factorCantidadCarne) {
+        case 2:
+          dia_5_carnes.cantidad = "200 g";
+          break;
+        case 3:
+          dia_5_carnes.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_5_alimento1.Cals = dia_5_alimento1.Cals * dia5_factorCantidadAlimento1;
+      dia_5_alimento1.Prot = dia_5_alimento1.Prot * dia5_factorCantidadAlimento1;
+      dia_5_alimento1.Grasa = dia_5_alimento1.Grasa * dia5_factorCantidadAlimento1;
+      switch (dia5_factorCantidadAlimento1) {
+        case 2:
+          dia_5_alimento1.cantidad = "200 g";
+          break;
+        case 3:
+          dia_5_alimento1.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_5_alimento2.Cals = dia_5_alimento2.Cals * dia5_factorCantidadAlimento2;
+      dia_5_alimento2.Prot = dia_5_alimento2.Prot * dia5_factorCantidadAlimento2;
+      dia_5_alimento2.Grasa = dia_5_alimento2.Grasa * dia5_factorCantidadAlimento2;
+      switch (dia5_factorCantidadAlimento2) {
+        case 2:
+          dia_5_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_5_alimento2.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_5_alimento3.Cals = dia_5_alimento3.Cals * dia5_factorCantidadAlimento3;
+      dia_5_alimento3.Prot = dia_5_alimento3.Prot * dia5_factorCantidadAlimento3;
+      dia_5_alimento3.Grasa = dia_5_alimento3.Grasa * dia5_factorCantidadAlimento3;
+      switch (dia5_factorCantidadAlimento3) {
+        case 2:
+          dia_5_alimento3.cantidad = "200 g";
+          break;
+        case 3:
+          dia_5_alimento3.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_6_carnes.Cals = dia_6_carnes.Cals * dia6_factorCantidadCarne;
+      dia_6_carnes.Prot = dia_6_carnes.Prot * dia6_factorCantidadCarne;
+      dia_6_carnes.Grasa = dia_6_carnes.Grasa * dia6_factorCantidadCarne;
+      switch (dia6_factorCantidadCarne) {
+        case 2:
+          dia_6_carnes.cantidad = "200 g";
+          break;
+        case 3:
+          dia_6_carnes.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_6_alimento1.Cals = dia_6_alimento1.Cals * dia6_factorCantidadAlimento1;
+      dia_6_alimento1.Prot = dia_6_alimento1.Prot * dia6_factorCantidadAlimento1;
+      dia_6_alimento1.Grasa = dia_6_alimento1.Grasa * dia6_factorCantidadAlimento1;
+      switch (dia6_factorCantidadAlimento1) {
+        case 2:
+          dia_6_alimento1.cantidad = "200 g";
+          break;
+        case 3:
+          dia_6_alimento1.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_6_alimento2.Cals = dia_6_alimento2.Cals * dia6_factorCantidadAlimento2;
+      dia_6_alimento2.Prot = dia_6_alimento2.Prot * dia6_factorCantidadAlimento2;
+      dia_6_alimento2.Grasa = dia_6_alimento2.Grasa * dia6_factorCantidadAlimento2;
+      switch (dia6_factorCantidadAlimento2) {
+        case 2:
+          dia_6_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_6_alimento2.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_6_alimento3.Cals = dia_6_alimento3.Cals * dia6_factorCantidadAlimento3;
+      dia_6_alimento3.Prot = dia_6_alimento3.Prot * dia6_factorCantidadAlimento3;
+      dia_6_alimento3.Grasa = dia_6_alimento3.Grasa * dia6_factorCantidadAlimento3;
+      switch (dia5_factorCantidadAlimento3) {
+        case 2:
+          dia_6_alimento3.cantidad = "200 g";
+          break;
+        case 3:
+          dia_6_alimento3.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
       return {
         resultado: true,
         almuerzo: {
@@ -1119,9 +2532,491 @@ const funcionFitnesAlmuerzo = (cromosoma, carnes, alimentos, objetivoCaloria, Ob
     const dia_7_alimento1 = alimentos[cromosoma[6][1]];
     const dia_7_alimento2 = alimentos[cromosoma[6][2]];
     const dia_7_alimento3 = alimentos[cromosoma[6][3]];
-    const calculo_calorias = dia_1_carnes.Cals + dia_1_alimento1.Cals + dia_1_alimento2.Cals + dia_1_alimento3.Cals + dia_2_carnes.Cals + dia_2_alimento1.Cals + dia_2_alimento2.Cals + dia_2_alimento3.Cals + dia_3_carnes.Cals + dia_3_alimento1.Cals + dia_3_alimento2.Cals + dia_3_alimento3.Cals + dia_4_carnes.Cals + dia_4_alimento1.Cals + dia_4_alimento2.Cals + dia_4_alimento3.Cals + dia_5_carnes.Cals + dia_5_alimento1.Cals + dia_5_alimento2.Cals + dia_5_alimento3.Cals + dia_6_carnes.Cals + dia_6_alimento1.Cals + dia_6_alimento2.Cals + dia_6_alimento3.Cals + dia_7_carnes.Cals + dia_7_alimento1.Cals + dia_7_alimento2.Cals + dia_7_alimento3.Cals;
+    const factorCantidadCarne = Math.floor(Math.random() * 4) + 1;
+    const factorCantidadAlimento1 = Math.floor(Math.random() * 4) + 1;
+    const factorCantidadAlimento2 = Math.floor(Math.random() * 4) + 1;
+    const factorCantidadAlimento3 = Math.floor(Math.random() * 4) + 1;
+    const dia2_factorCantidadCarne = Math.floor(Math.random() * 4) + 1;
+    const dia2_factorCantidadAlimento1 = Math.floor(Math.random() * 4) + 1;
+    const dia2_factorCantidadAlimento2 = Math.floor(Math.random() * 4) + 1;
+    const dia2_factorCantidadAlimento3 = Math.floor(Math.random() * 4) + 1;
+    const dia3_factorCantidadCarne = Math.floor(Math.random() * 4) + 1;
+    const dia3_factorCantidadAlimento1 = Math.floor(Math.random() * 4) + 1;
+    const dia3_factorCantidadAlimento2 = Math.floor(Math.random() * 4) + 1;
+    const dia3_factorCantidadAlimento3 = Math.floor(Math.random() * 4) + 1;
+    const dia4_factorCantidadCarne = Math.floor(Math.random() * 4) + 1;
+    const dia4_factorCantidadAlimento1 = Math.floor(Math.random() * 4) + 1;
+    const dia4_factorCantidadAlimento2 = Math.floor(Math.random() * 4) + 1;
+    const dia4_factorCantidadAlimento3 = Math.floor(Math.random() * 4) + 1;
+    const dia5_factorCantidadCarne = Math.floor(Math.random() * 4) + 1;
+    const dia5_factorCantidadAlimento1 = Math.floor(Math.random() * 4) + 1;
+    const dia5_factorCantidadAlimento2 = Math.floor(Math.random() * 4) + 1;
+    const dia5_factorCantidadAlimento3 = Math.floor(Math.random() * 4) + 1;
+    const dia6_factorCantidadCarne = Math.floor(Math.random() * 4) + 1;
+    const dia6_factorCantidadAlimento1 = Math.floor(Math.random() * 4) + 1;
+    const dia6_factorCantidadAlimento2 = Math.floor(Math.random() * 4) + 1;
+    const dia6_factorCantidadAlimento3 = Math.floor(Math.random() * 4) + 1;
+    const dia7_factorCantidadCarne = Math.floor(Math.random() * 4) + 1;
+    const dia7_factorCantidadAlimento1 = Math.floor(Math.random() * 4) + 1;
+    const dia7_factorCantidadAlimento2 = Math.floor(Math.random() * 4) + 1;
+    const dia7_factorCantidadAlimento3 = Math.floor(Math.random() * 4) + 1;
+    const calculo_calorias = (dia_1_carnes.Cals * factorCantidadCarne) + (dia_1_alimento1.Cals * factorCantidadAlimento1) + (dia_1_alimento2.Cals * factorCantidadAlimento2) + (dia_1_alimento3.Cals * factorCantidadAlimento3) + (dia_2_carnes.Cals * dia2_factorCantidadCarne) + (dia_2_alimento1.Cals * dia2_factorCantidadAlimento1) + (dia_2_alimento2.Cals * dia2_factorCantidadAlimento2) + (dia_2_alimento3.Cals * dia2_factorCantidadAlimento3) + (dia_3_carnes.Cals * dia3_factorCantidadCarne) + (dia_3_alimento1.Cals * dia3_factorCantidadAlimento1) + (dia_3_alimento2.Cals * dia3_factorCantidadAlimento2) + (dia_3_alimento3.Cals * dia3_factorCantidadAlimento3) + (dia_4_carnes.Cals * dia4_factorCantidadCarne) + (dia_4_alimento1.Cals * dia4_factorCantidadAlimento1) + (dia_4_alimento2.Cals * dia4_factorCantidadAlimento2) + (dia_4_alimento3.Cals * dia4_factorCantidadAlimento3) + (dia_5_carnes.Cals * dia5_factorCantidadCarne) + (dia_5_alimento1.Cals * dia5_factorCantidadAlimento1) + (dia_5_alimento2.Cals * dia5_factorCantidadAlimento2) + (dia_5_alimento3.Cals * dia5_factorCantidadAlimento3) + (dia_6_carnes.Cals * dia6_factorCantidadCarne) + (dia_6_alimento1.Cals * dia6_factorCantidadAlimento1) + (dia_6_alimento2.Cals * dia6_factorCantidadAlimento2) + (dia_6_alimento3.Cals * dia6_factorCantidadAlimento3) + (dia_7_carnes.Cals * dia7_factorCantidadCarne) + (dia_7_alimento1.Cals * dia7_factorCantidadAlimento1) + (dia_7_alimento2.Cals * dia7_factorCantidadAlimento2) + (dia_7_alimento3.Cals * dia7_factorCantidadAlimento3);
     const calculo_proteinas = dia_1_carnes.Prot + dia_1_alimento1.Prot + dia_1_alimento2.Prot + dia_1_alimento3.Prot + dia_2_carnes.Prot + dia_2_alimento1.Prot + dia_2_alimento2.Prot + dia_2_alimento3.Prot + dia_3_carnes.Prot + dia_3_alimento1.Prot + dia_3_alimento2.Prot + dia_3_alimento3.Prot + dia_4_carnes.Prot + dia_4_alimento1.Prot + dia_4_alimento2.Prot + dia_4_alimento3.Prot + dia_5_carnes.Prot + dia_5_alimento1.Prot + dia_5_alimento2.Prot + dia_5_alimento3.Prot + dia_6_carnes.Prot + dia_6_alimento1.Prot + dia_6_alimento2.Prot + dia_6_alimento3.Prot + dia_7_carnes.Prot + dia_7_alimento1.Prot + dia_7_alimento2.Prot + dia_7_alimento3.Prot;
     if ( calculo_calorias >= (objetivoCaloria-420) && calculo_calorias <= (objetivoCaloria+420)) {
+      dia_1_carnes.Cals = dia_1_carnes.Cals * factorCantidadCarne;
+      dia_1_carnes.Prot = dia_1_carnes.Prot * factorCantidadCarne;
+      dia_1_carnes.Grasa = dia_1_carnes.Grasa * factorCantidadCarne;
+      switch (factorCantidadCarne) {
+        case 2:
+          dia_1_carnes.cantidad = "200 g";
+          break;
+        case 3:
+          dia_1_carnes.cantidad = "300 g";
+          break;
+        case 4:
+          dia_1_carnes.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_1_alimento1.Cals = dia_1_alimento1.Cals * factorCantidadAlimento1;
+      dia_1_alimento1.Prot = dia_1_alimento1.Prot * factorCantidadAlimento1;
+      dia_1_alimento1.Grasa = dia_1_alimento1.Grasa * factorCantidadAlimento1;
+      switch (factorCantidadAlimento1) {
+        case 2:
+          dia_1_alimento1.cantidad = "200 g";
+          break;
+        case 3:
+          dia_1_alimento1.cantidad = "300 g";
+          break;
+        case 4:
+          dia_1_alimento1.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_1_alimento2.Cals = dia_1_alimento2.Cals * factorCantidadAlimento2;
+      dia_1_alimento2.Prot = dia_1_alimento2.Prot * factorCantidadAlimento2;
+      dia_1_alimento2.Grasa = dia_1_alimento2.Grasa * factorCantidadAlimento2;
+      switch (factorCantidadAlimento2) {
+        case 2:
+          dia_1_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_1_alimento2.cantidad = "300 g";
+          break;
+        case 4:
+          dia_1_alimento2.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_1_alimento3.Cals = dia_1_alimento3.Cals * factorCantidadAlimento3;
+      dia_1_alimento3.Prot = dia_1_alimento3.Prot * factorCantidadAlimento3;
+      dia_1_alimento3.Grasa = dia_1_alimento3.Grasa * factorCantidadAlimento3;
+      switch (factorCantidadAlimento3) {
+        case 2:
+          dia_1_alimento3.cantidad = "200 g";
+          break;
+        case 3:
+          dia_1_alimento3.cantidad = "300 g";
+          break;
+        case 4:
+          dia_1_alimento3.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_2_carnes.Cals = dia_2_carnes.Cals * dia2_factorCantidadCarne;
+      dia_2_carnes.Prot = dia_2_carnes.Prot * dia2_factorCantidadCarne;
+      dia_2_carnes.Grasa = dia_2_carnes.Grasa * dia2_factorCantidadCarne;
+      switch (dia2_factorCantidadCarne) {
+        case 2:
+          dia_2_carnes.cantidad = "200 g";
+          break;
+        case 3:
+          dia_2_carnes.cantidad = "300 g";
+          break;
+        case 4:
+          dia_2_carnes.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_2_alimento1.Cals = dia_2_alimento1.Cals * dia2_factorCantidadAlimento1;
+      dia_2_alimento1.Prot = dia_2_alimento1.Prot * dia2_factorCantidadAlimento1;
+      dia_2_alimento1.Grasa = dia_2_alimento1.Grasa * dia2_factorCantidadAlimento1;
+      switch (dia2_factorCantidadAlimento1) {
+        case 2:
+          dia_2_alimento1.cantidad = "200 g";
+          break;
+        case 3:
+          dia_2_alimento1.cantidad = "300 g";
+          break;
+        case 4:
+          dia_2_alimento1.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_2_alimento2.Cals = dia_2_alimento2.Cals * dia2_factorCantidadAlimento2;
+      dia_2_alimento2.Prot = dia_2_alimento2.Prot * dia2_factorCantidadAlimento2;
+      dia_2_alimento2.Grasa = dia_2_alimento2.Grasa * dia2_factorCantidadAlimento2;
+      switch (dia2_factorCantidadAlimento2) {
+        case 2:
+          dia_2_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_2_alimento2.cantidad = "300 g";
+          break;
+        case 4:
+          dia_2_alimento2.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_2_alimento3.Cals = dia_2_alimento3.Cals * dia2_factorCantidadAlimento3;
+      dia_2_alimento3.Prot = dia_2_alimento3.Prot * dia2_factorCantidadAlimento3;
+      dia_2_alimento3.Grasa = dia_2_alimento3.Grasa * dia2_factorCantidadAlimento3;
+      switch (dia2_factorCantidadAlimento3) {
+        case 2:
+          dia_2_alimento3.cantidad = "200 g";
+          break;
+        case 3:
+          dia_2_alimento3.cantidad = "300 g";
+          break;
+        case 4:
+          dia_2_alimento3.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_3_carnes.Cals = dia_3_carnes.Cals * dia3_factorCantidadCarne;
+      dia_3_carnes.Prot = dia_3_carnes.Prot * dia3_factorCantidadCarne;
+      dia_3_carnes.Grasa = dia_3_carnes.Grasa * dia3_factorCantidadCarne;
+      switch (dia3_factorCantidadCarne) {
+        case 2:
+          dia_3_carnes.cantidad = "200 g";
+          break;
+        case 3:
+          dia_3_carnes.cantidad = "300 g";
+          break;
+        case 4:
+          dia_3_carnes.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_3_alimento1.Cals = dia_3_alimento1.Cals * dia3_factorCantidadAlimento1;
+      dia_3_alimento1.Prot = dia_3_alimento1.Prot * dia3_factorCantidadAlimento1;
+      dia_3_alimento1.Grasa = dia_3_alimento1.Grasa * dia3_factorCantidadAlimento1;
+      switch (dia3_factorCantidadAlimento1) {
+        case 2:
+          dia_3_alimento1.cantidad = "200 g";
+          break;
+        case 3:
+          dia_3_alimento1.cantidad = "300 g";
+          break;
+        case 4:
+          dia_3_alimento1.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_3_alimento2.Cals = dia_3_alimento2.Cals * dia3_factorCantidadAlimento2;
+      dia_3_alimento2.Prot = dia_3_alimento2.Prot * dia3_factorCantidadAlimento2;
+      dia_3_alimento2.Grasa = dia_3_alimento2.Grasa * dia3_factorCantidadAlimento2;
+      switch (dia3_factorCantidadAlimento2) {
+        case 2:
+          dia_3_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_3_alimento2.cantidad = "300 g";
+          break;
+        case 4:
+          dia_3_alimento2.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_3_alimento3.Cals = dia_3_alimento3.Cals * dia3_factorCantidadAlimento3;
+      dia_3_alimento3.Prot = dia_3_alimento3.Prot * dia3_factorCantidadAlimento3;
+      dia_3_alimento3.Grasa = dia_3_alimento3.Grasa * dia3_factorCantidadAlimento3;
+      switch (dia3_factorCantidadAlimento3) {
+        case 2:
+          dia_3_alimento3.cantidad = "200 g";
+          break;
+        case 3:
+          dia_3_alimento3.cantidad = "300 g";
+          break;
+        case 4:
+          dia_3_alimento3.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_4_carnes.Cals = dia_4_carnes.Cals * dia4_factorCantidadCarne;
+      dia_4_carnes.Prot = dia_4_carnes.Prot * dia4_factorCantidadCarne;
+      dia_4_carnes.Grasa = dia_4_carnes.Grasa * dia4_factorCantidadCarne;
+      switch (dia4_factorCantidadCarne) {
+        case 2:
+          dia_4_carnes.cantidad = "200 g";
+          break;
+        case 3:
+          dia_4_carnes.cantidad = "300 g";
+          break;
+        case 4:
+          dia_4_carnes.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_4_alimento1.Cals = dia_4_alimento1.Cals * dia4_factorCantidadAlimento1;
+      dia_4_alimento1.Prot = dia_4_alimento1.Prot * dia4_factorCantidadAlimento1;
+      dia_4_alimento1.Grasa = dia_4_alimento1.Grasa * dia4_factorCantidadAlimento1;
+      switch (dia4_factorCantidadAlimento1) {
+        case 2:
+          dia_4_alimento1.cantidad = "200 g";
+          break;
+        case 3:
+          dia_4_alimento1.cantidad = "300 g";
+          break;
+        case 4:
+          dia_4_alimento1.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_4_alimento2.Cals = dia_4_alimento2.Cals * dia4_factorCantidadAlimento2;
+      dia_4_alimento2.Prot = dia_4_alimento2.Prot * dia4_factorCantidadAlimento2;
+      dia_4_alimento2.Grasa = dia_4_alimento2.Grasa * dia4_factorCantidadAlimento2;
+      switch (dia4_factorCantidadAlimento2) {
+        case 2:
+          dia_4_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_4_alimento2.cantidad = "300 g";
+          break;
+        case 4:
+          dia_4_alimento2.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_4_alimento3.Cals = dia_4_alimento3.Cals * dia4_factorCantidadAlimento3;
+      dia_4_alimento3.Prot = dia_4_alimento3.Prot * dia4_factorCantidadAlimento3;
+      dia_4_alimento3.Grasa = dia_4_alimento3.Grasa * dia4_factorCantidadAlimento3;
+      switch (dia4_factorCantidadAlimento3) {
+        case 2:
+          dia_4_alimento3.cantidad = "200 g";
+          break;
+        case 3:
+          dia_4_alimento3.cantidad = "300 g";
+          break;
+        case 4:
+          dia_4_alimento3.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_5_carnes.Cals = dia_5_carnes.Cals * dia5_factorCantidadCarne;
+      dia_5_carnes.Prot = dia_5_carnes.Prot * dia5_factorCantidadCarne;
+      dia_5_carnes.Grasa = dia_5_carnes.Grasa * dia5_factorCantidadCarne;
+      switch (dia5_factorCantidadCarne) {
+        case 2:
+          dia_5_carnes.cantidad = "200 g";
+          break;
+        case 3:
+          dia_5_carnes.cantidad = "300 g";
+          break;
+        case 4:
+          dia_5_carnes.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_5_alimento1.Cals = dia_5_alimento1.Cals * dia5_factorCantidadAlimento1;
+      dia_5_alimento1.Prot = dia_5_alimento1.Prot * dia5_factorCantidadAlimento1;
+      dia_5_alimento1.Grasa = dia_5_alimento1.Grasa * dia5_factorCantidadAlimento1;
+      switch (dia5_factorCantidadAlimento1) {
+        case 2:
+          dia_5_alimento1.cantidad = "200 g";
+          break;
+        case 3:
+          dia_5_alimento1.cantidad = "300 g";
+          break;
+        case 4:
+          dia_5_alimento1.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_5_alimento2.Cals = dia_5_alimento2.Cals * dia5_factorCantidadAlimento2;
+      dia_5_alimento2.Prot = dia_5_alimento2.Prot * dia5_factorCantidadAlimento2;
+      dia_5_alimento2.Grasa = dia_5_alimento2.Grasa * dia5_factorCantidadAlimento2;
+      switch (dia5_factorCantidadAlimento2) {
+        case 2:
+          dia_5_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_5_alimento2.cantidad = "300 g";
+          break;
+        case 4:
+          dia_5_alimento2.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_5_alimento3.Cals = dia_5_alimento3.Cals * dia5_factorCantidadAlimento3;
+      dia_5_alimento3.Prot = dia_5_alimento3.Prot * dia5_factorCantidadAlimento3;
+      dia_5_alimento3.Grasa = dia_5_alimento3.Grasa * dia5_factorCantidadAlimento3;
+      switch (dia5_factorCantidadAlimento3) {
+        case 2:
+          dia_5_alimento3.cantidad = "200 g";
+          break;
+        case 3:
+          dia_5_alimento3.cantidad = "300 g";
+          break;
+        case 4:
+          dia_5_alimento3.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_6_carnes.Cals = dia_6_carnes.Cals * dia6_factorCantidadCarne;
+      dia_6_carnes.Prot = dia_6_carnes.Prot * dia6_factorCantidadCarne;
+      dia_6_carnes.Grasa = dia_6_carnes.Grasa * dia6_factorCantidadCarne;
+      switch (dia6_factorCantidadCarne) {
+        case 2:
+          dia_6_carnes.cantidad = "200 g";
+          break;
+        case 3:
+          dia_6_carnes.cantidad = "300 g";
+          break;
+        case 4:
+          dia_6_carnes.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_6_alimento1.Cals = dia_6_alimento1.Cals * dia6_factorCantidadAlimento1;
+      dia_6_alimento1.Prot = dia_6_alimento1.Prot * dia6_factorCantidadAlimento1;
+      dia_6_alimento1.Grasa = dia_6_alimento1.Grasa * dia6_factorCantidadAlimento1;
+      switch (dia6_factorCantidadAlimento1) {
+        case 2:
+          dia_6_alimento1.cantidad = "200 g";
+          break;
+        case 3:
+          dia_6_alimento1.cantidad = "300 g";
+          break;
+        case 4:
+          dia_6_alimento1.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_6_alimento2.Cals = dia_6_alimento2.Cals * dia6_factorCantidadAlimento2;
+      dia_6_alimento2.Prot = dia_6_alimento2.Prot * dia6_factorCantidadAlimento2;
+      dia_6_alimento2.Grasa = dia_6_alimento2.Grasa * dia6_factorCantidadAlimento2;
+      switch (dia6_factorCantidadAlimento2) {
+        case 2:
+          dia_6_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_6_alimento2.cantidad = "300 g";
+          break;
+        case 4:
+          dia_6_alimento2.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_6_alimento3.Cals = dia_6_alimento3.Cals * dia6_factorCantidadAlimento3;
+      dia_6_alimento3.Prot = dia_6_alimento3.Prot * dia6_factorCantidadAlimento3;
+      dia_6_alimento3.Grasa = dia_6_alimento3.Grasa * dia6_factorCantidadAlimento3;
+      switch (dia5_factorCantidadAlimento3) {
+        case 2:
+          dia_6_alimento3.cantidad = "200 g";
+          break;
+        case 3:
+          dia_6_alimento3.cantidad = "300 g";
+          break;
+        case 4:
+          dia_6_alimento3.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_7_carnes.Cals = dia_7_carnes.Cals * dia7_factorCantidadCarne;
+      dia_7_carnes.Prot = dia_7_carnes.Prot * dia7_factorCantidadCarne;
+      dia_7_carnes.Grasa = dia_7_carnes.Grasa * dia7_factorCantidadCarne;
+      switch (dia7_factorCantidadCarne) {
+        case 2:
+          dia_7_carnes.cantidad = "200 g";
+          break;
+        case 3:
+          dia_7_carnes.cantidad = "300 g";
+          break;
+        case 4:
+          dia_7_carnes.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_7_alimento1.Cals = dia_7_alimento1.Cals * dia7_factorCantidadAlimento1;
+      dia_7_alimento1.Prot = dia_7_alimento1.Prot * dia7_factorCantidadAlimento1;
+      dia_7_alimento1.Grasa = dia_7_alimento1.Grasa * dia7_factorCantidadAlimento1;
+      switch (dia7_factorCantidadAlimento1) {
+        case 2:
+          dia_7_alimento1.cantidad = "200 g";
+          break;
+        case 3:
+          dia_7_alimento1.cantidad = "300 g";
+          break;
+        case 4:
+          dia_7_alimento1.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_7_alimento2.Cals = dia_7_alimento2.Cals * dia7_factorCantidadAlimento2;
+      dia_7_alimento2.Prot = dia_7_alimento2.Prot * dia7_factorCantidadAlimento2;
+      dia_7_alimento2.Grasa = dia_7_alimento2.Grasa * dia7_factorCantidadAlimento2;
+      switch (dia7_factorCantidadAlimento2) {
+        case 2:
+          dia_7_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_7_alimento2.cantidad = "300 g";
+          break;
+        case 4:
+          dia_7_alimento2.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_7_alimento3.Cals = dia_7_alimento3.Cals * dia7_factorCantidadAlimento3;
+      dia_7_alimento3.Prot = dia_7_alimento3.Prot * dia7_factorCantidadAlimento3;
+      dia_7_alimento3.Grasa = dia_7_alimento3.Grasa * dia7_factorCantidadAlimento3;
+      switch (dia7_factorCantidadAlimento3) {
+        case 2:
+          dia_7_alimento3.cantidad = "200 g";
+          break;
+        case 3:
+          dia_7_alimento3.cantidad = "300 g";
+          break;
+        case 4:
+          dia_7_alimento3.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
       return {
         resultado: true,
         almuerzo: {
@@ -1364,9 +3259,95 @@ const funcionFitnesSnack = (cromosoma, alimentos, objetivoCaloria, ObjetivoProte
     const dia_2_alimento2 = alimentos[cromosoma[1][1]];
     const dia_3_alimento = alimentos[cromosoma[2][0]];
     const dia_3_alimento2 = alimentos[cromosoma[2][1]];
-    const calculo_calorias = dia_1_alimento.Cals + dia_1_alimento2.Cals + dia_2_alimento.Cals + dia_2_alimento2.Cals + dia_3_alimento.Cals + dia_3_alimento2.Cals;
+    const factorCantidadAlimento = Math.floor(Math.random() * 3) + 1;
+    const factorCantidadAlimento2 = Math.floor(Math.random() * 3) + 1;
+    const dia2_factorCantidadAlimento = Math.floor(Math.random() * 3) + 1;
+    const dia2_factorCantidadAlimento2 = Math.floor(Math.random() * 3) + 1;
+    const dia3_factorCantidadAlimento = Math.floor(Math.random() * 3) + 1;
+    const dia3_factorCantidadAlimento2 = Math.floor(Math.random() * 3) + 1;
+    const calculo_calorias = (dia_1_alimento.Cals * factorCantidadAlimento) + (dia_1_alimento2.Cals * factorCantidadAlimento2) + (dia_2_alimento.Cals * dia2_factorCantidadAlimento) + (dia_2_alimento2.Cals * dia2_factorCantidadAlimento2) + (dia_3_alimento.Cals * dia3_factorCantidadAlimento) + (dia_3_alimento2.Cals * dia3_factorCantidadAlimento2);
     const calculo_proteinas = dia_1_alimento.Prot + dia_1_alimento2.Prot + dia_2_alimento.Prot + dia_2_alimento2.Prot + dia_3_alimento.Prot + dia_3_alimento2.Prot;
     if ( calculo_calorias >= (objetivoCaloria-180) && calculo_calorias <= (objetivoCaloria+180)) {
+      dia_1_alimento.Cals = dia_1_alimento.Cals * factorCantidadAlimento;
+      dia_1_alimento.Prot = dia_1_alimento.Prot * factorCantidadAlimento;
+      dia_1_alimento.Grasa = dia_1_alimento.Grasa * factorCantidadAlimento;
+      switch (factorCantidadAlimento) {
+        case 2:
+          dia_1_alimento.cantidad = "200 g";
+          break;
+        case 3:
+          dia_1_alimento.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_1_alimento2.Cals = dia_1_alimento2.Cals * factorCantidadAlimento2;
+      dia_1_alimento2.Prot = dia_1_alimento2.Prot * factorCantidadAlimento2;
+      dia_1_alimento2.Grasa = dia_1_alimento2.Grasa * factorCantidadAlimento2;
+      switch (factorCantidadAlimento2) {
+        case 2:
+          dia_1_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_1_alimento2.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_2_alimento.Cals = dia_2_alimento.Cals * dia2_factorCantidadAlimento;
+      dia_2_alimento.Prot = dia_2_alimento.Prot * dia2_factorCantidadAlimento;
+      dia_2_alimento.Grasa = dia_2_alimento.Grasa * dia2_factorCantidadAlimento;
+      switch (dia2_factorCantidadAlimento) {
+        case 2:
+          dia_2_alimento.cantidad = "200 g";
+          break;
+        case 3:
+          dia_2_alimento.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_2_alimento2.Cals = dia_2_alimento2.Cals * dia2_factorCantidadAlimento2;
+      dia_2_alimento2.Prot = dia_2_alimento2.Prot * dia2_factorCantidadAlimento2;
+      dia_2_alimento2.Grasa = dia_2_alimento2.Grasa * dia2_factorCantidadAlimento2;
+      switch (dia2_factorCantidadAlimento2) {
+        case 2:
+          dia_2_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_2_alimento2.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_3_alimento.Cals = dia_3_alimento.Cals * dia3_factorCantidadAlimento;
+      dia_3_alimento.Prot = dia_3_alimento.Prot * dia3_factorCantidadAlimento;
+      dia_3_alimento.Grasa = dia_3_alimento.Grasa * dia3_factorCantidadAlimento;
+      switch (dia3_factorCantidadAlimento) {
+        case 2:
+          dia_3_alimento.cantidad = "200 g";
+          break;
+        case 3:
+          dia_3_alimento.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_3_alimento2.Cals = dia_3_alimento2.Cals * dia3_factorCantidadAlimento2;
+      dia_3_alimento2.Prot = dia_3_alimento2.Prot * dia3_factorCantidadAlimento2;
+      dia_3_alimento2.Grasa = dia_3_alimento2.Grasa * dia3_factorCantidadAlimento2;
+      switch (dia3_factorCantidadAlimento2) {
+        case 2:
+          dia_3_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_3_alimento2.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
       return {
         resultado: true,
         snack: {
@@ -1408,9 +3389,124 @@ const funcionFitnesSnack = (cromosoma, alimentos, objetivoCaloria, ObjetivoProte
     const dia_3_alimento2 = alimentos[cromosoma[2][1]];
     const dia_4_alimento = alimentos[cromosoma[3][0]];
     const dia_4_alimento2 = alimentos[cromosoma[3][1]];
-    const calculo_calorias = dia_1_alimento.Cals + dia_1_alimento2.Cals + dia_2_alimento.Cals + dia_2_alimento2.Cals + dia_3_alimento.Cals + dia_3_alimento2.Cals + dia_4_alimento.Cals + dia_4_alimento2.Cals;
+    const factorCantidadAlimento = Math.floor(Math.random() * 3) + 1;
+    const factorCantidadAlimento2 = Math.floor(Math.random() * 3) + 1;
+    const dia2_factorCantidadAlimento = Math.floor(Math.random() * 3) + 1;
+    const dia2_factorCantidadAlimento2 = Math.floor(Math.random() * 3) + 1;
+    const dia3_factorCantidadAlimento = Math.floor(Math.random() * 3) + 1;
+    const dia3_factorCantidadAlimento2 = Math.floor(Math.random() * 3) + 1;
+    const dia4_factorCantidadAlimento = Math.floor(Math.random() * 3) + 1;
+    const dia4_factorCantidadAlimento2 = Math.floor(Math.random() * 3) + 1;
+    const calculo_calorias = (dia_1_alimento.Cals * factorCantidadAlimento) + (dia_1_alimento2.Cals * factorCantidadAlimento2) + (dia_2_alimento.Cals * dia2_factorCantidadAlimento) + (dia_2_alimento2.Cals * dia2_factorCantidadAlimento2) + (dia_3_alimento.Cals * dia3_factorCantidadAlimento) + (dia_3_alimento2.Cals * dia3_factorCantidadAlimento2) + (dia_4_alimento.Cals * dia4_factorCantidadAlimento) + (dia_4_alimento2.Cals * dia4_factorCantidadAlimento2);
     const calculo_proteinas = dia_1_alimento.Prot + dia_1_alimento2.Prot + dia_2_alimento.Prot + dia_2_alimento2.Prot + dia_3_alimento.Prot + dia_3_alimento2.Prot + dia_4_alimento.Prot + dia_4_alimento2.Prot;
     if ( calculo_calorias >= (objetivoCaloria-240) && calculo_calorias <= (objetivoCaloria+240)) {
+      dia_1_alimento.Cals = dia_1_alimento.Cals * factorCantidadAlimento;
+      dia_1_alimento.Prot = dia_1_alimento.Prot * factorCantidadAlimento;
+      dia_1_alimento.Grasa = dia_1_alimento.Grasa * factorCantidadAlimento;
+      switch (factorCantidadAlimento) {
+        case 2:
+          dia_1_alimento.cantidad = "200 g";
+          break;
+        case 3:
+          dia_1_alimento.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_1_alimento2.Cals = dia_1_alimento2.Cals * factorCantidadAlimento2;
+      dia_1_alimento2.Prot = dia_1_alimento2.Prot * factorCantidadAlimento2;
+      dia_1_alimento2.Grasa = dia_1_alimento2.Grasa * factorCantidadAlimento2;
+      switch (factorCantidadAlimento2) {
+        case 2:
+          dia_1_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_1_alimento2.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_2_alimento.Cals = dia_2_alimento.Cals * dia2_factorCantidadAlimento;
+      dia_2_alimento.Prot = dia_2_alimento.Prot * dia2_factorCantidadAlimento;
+      dia_2_alimento.Grasa = dia_2_alimento.Grasa * dia2_factorCantidadAlimento;
+      switch (dia2_factorCantidadAlimento) {
+        case 2:
+          dia_2_alimento.cantidad = "200 g";
+          break;
+        case 3:
+          dia_2_alimento.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_2_alimento2.Cals = dia_2_alimento2.Cals * dia2_factorCantidadAlimento2;
+      dia_2_alimento2.Prot = dia_2_alimento2.Prot * dia2_factorCantidadAlimento2;
+      dia_2_alimento2.Grasa = dia_2_alimento2.Grasa * dia2_factorCantidadAlimento2;
+      switch (dia2_factorCantidadAlimento2) {
+        case 2:
+          dia_2_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_2_alimento2.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_3_alimento.Cals = dia_3_alimento.Cals * dia3_factorCantidadAlimento;
+      dia_3_alimento.Prot = dia_3_alimento.Prot * dia3_factorCantidadAlimento;
+      dia_3_alimento.Grasa = dia_3_alimento.Grasa * dia3_factorCantidadAlimento;
+      switch (dia3_factorCantidadAlimento) {
+        case 2:
+          dia_3_alimento.cantidad = "200 g";
+          break;
+        case 3:
+          dia_3_alimento.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_3_alimento2.Cals = dia_3_alimento2.Cals * dia3_factorCantidadAlimento2;
+      dia_3_alimento2.Prot = dia_3_alimento2.Prot * dia3_factorCantidadAlimento2;
+      dia_3_alimento2.Grasa = dia_3_alimento2.Grasa * dia3_factorCantidadAlimento2;
+      switch (dia3_factorCantidadAlimento2) {
+        case 2:
+          dia_3_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_3_alimento2.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_4_alimento.Cals = dia_4_alimento.Cals * dia4_factorCantidadAlimento;
+      dia_4_alimento.Prot = dia_4_alimento.Prot * dia4_factorCantidadAlimento;
+      dia_4_alimento.Grasa = dia_4_alimento.Grasa * dia4_factorCantidadAlimento;
+      switch (dia4_factorCantidadAlimento) {
+        case 2:
+          dia_4_alimento.cantidad = "200 g";
+          break;
+        case 3:
+          dia_4_alimento.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_4_alimento2.Cals = dia_4_alimento2.Cals * dia4_factorCantidadAlimento2;
+      dia_4_alimento2.Prot = dia_4_alimento2.Prot * dia4_factorCantidadAlimento2;
+      dia_4_alimento2.Grasa = dia_4_alimento2.Grasa * dia4_factorCantidadAlimento2;
+      switch (dia4_factorCantidadAlimento2) {
+        case 2:
+          dia_4_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_4_alimento2.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
       return {
         resultado: true,
         snack: {
@@ -1462,9 +3558,153 @@ const funcionFitnesSnack = (cromosoma, alimentos, objetivoCaloria, ObjetivoProte
     const dia_4_alimento2 = alimentos[cromosoma[3][1]];
     const dia_5_alimento = alimentos[cromosoma[4][0]];
     const dia_5_alimento2 = alimentos[cromosoma[4][1]];
-    const calculo_calorias = dia_1_alimento.Cals + dia_1_alimento2.Cals + dia_2_alimento.Cals + dia_2_alimento2.Cals + dia_3_alimento.Cals + dia_3_alimento2.Cals + dia_4_alimento.Cals + dia_4_alimento2.Cals + dia_5_alimento.Cals + dia_5_alimento2.Cals;
+    const factorCantidadAlimento = Math.floor(Math.random() * 3) + 1;
+    const factorCantidadAlimento2 = Math.floor(Math.random() * 3) + 1;
+    const dia2_factorCantidadAlimento = Math.floor(Math.random() * 3) + 1;
+    const dia2_factorCantidadAlimento2 = Math.floor(Math.random() * 3) + 1;
+    const dia3_factorCantidadAlimento = Math.floor(Math.random() * 3) + 1;
+    const dia3_factorCantidadAlimento2 = Math.floor(Math.random() * 3) + 1;
+    const dia4_factorCantidadAlimento = Math.floor(Math.random() * 3) + 1;
+    const dia4_factorCantidadAlimento2 = Math.floor(Math.random() * 3) + 1;
+    const dia5_factorCantidadAlimento = Math.floor(Math.random() * 3) + 1;
+    const dia5_factorCantidadAlimento2 = Math.floor(Math.random() * 3) + 1;
+    const calculo_calorias = (dia_1_alimento.Cals * factorCantidadAlimento) + (dia_1_alimento2.Cals * factorCantidadAlimento2) + (dia_2_alimento.Cals * dia2_factorCantidadAlimento) + (dia_2_alimento2.Cals * dia2_factorCantidadAlimento2) + (dia_3_alimento.Cals * dia3_factorCantidadAlimento) + (dia_3_alimento2.Cals * dia3_factorCantidadAlimento2) + (dia_4_alimento.Cals * dia4_factorCantidadAlimento) + (dia_4_alimento2.Cals * dia4_factorCantidadAlimento2) + (dia_5_alimento.Cals * dia5_factorCantidadAlimento) + (dia_5_alimento2.Cals * dia5_factorCantidadAlimento2);
     const calculo_proteinas = dia_1_alimento.Prot + dia_1_alimento2.Prot + dia_2_alimento.Prot + dia_2_alimento2.Prot + dia_3_alimento.Prot + dia_3_alimento2.Prot + dia_4_alimento.Prot + dia_4_alimento2.Prot + dia_5_alimento.Prot + dia_5_alimento2.Prot;
     if ( calculo_calorias >= (objetivoCaloria-300) && calculo_calorias <= (objetivoCaloria+300)) {
+      dia_1_alimento.Cals = dia_1_alimento.Cals * factorCantidadAlimento;
+      dia_1_alimento.Prot = dia_1_alimento.Prot * factorCantidadAlimento;
+      dia_1_alimento.Grasa = dia_1_alimento.Grasa * factorCantidadAlimento;
+      switch (factorCantidadAlimento) {
+        case 2:
+          dia_1_alimento.cantidad = "200 g";
+          break;
+        case 3:
+          dia_1_alimento.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_1_alimento2.Cals = dia_1_alimento2.Cals * factorCantidadAlimento2;
+      dia_1_alimento2.Prot = dia_1_alimento2.Prot * factorCantidadAlimento2;
+      dia_1_alimento2.Grasa = dia_1_alimento2.Grasa * factorCantidadAlimento2;
+      switch (factorCantidadAlimento2) {
+        case 2:
+          dia_1_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_1_alimento2.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_2_alimento.Cals = dia_2_alimento.Cals * dia2_factorCantidadAlimento;
+      dia_2_alimento.Prot = dia_2_alimento.Prot * dia2_factorCantidadAlimento;
+      dia_2_alimento.Grasa = dia_2_alimento.Grasa * dia2_factorCantidadAlimento;
+      switch (dia2_factorCantidadAlimento) {
+        case 2:
+          dia_2_alimento.cantidad = "200 g";
+          break;
+        case 3:
+          dia_2_alimento.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_2_alimento2.Cals = dia_2_alimento2.Cals * dia2_factorCantidadAlimento2;
+      dia_2_alimento2.Prot = dia_2_alimento2.Prot * dia2_factorCantidadAlimento2;
+      dia_2_alimento2.Grasa = dia_2_alimento2.Grasa * dia2_factorCantidadAlimento2;
+      switch (dia2_factorCantidadAlimento2) {
+        case 2:
+          dia_2_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_2_alimento2.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_3_alimento.Cals = dia_3_alimento.Cals * dia3_factorCantidadAlimento;
+      dia_3_alimento.Prot = dia_3_alimento.Prot * dia3_factorCantidadAlimento;
+      dia_3_alimento.Grasa = dia_3_alimento.Grasa * dia3_factorCantidadAlimento;
+      switch (dia3_factorCantidadAlimento) {
+        case 2:
+          dia_3_alimento.cantidad = "200 g";
+          break;
+        case 3:
+          dia_3_alimento.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_3_alimento2.Cals = dia_3_alimento2.Cals * dia3_factorCantidadAlimento2;
+      dia_3_alimento2.Prot = dia_3_alimento2.Prot * dia3_factorCantidadAlimento2;
+      dia_3_alimento2.Grasa = dia_3_alimento2.Grasa * dia3_factorCantidadAlimento2;
+      switch (dia3_factorCantidadAlimento2) {
+        case 2:
+          dia_3_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_3_alimento2.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_4_alimento.Cals = dia_4_alimento.Cals * dia4_factorCantidadAlimento;
+      dia_4_alimento.Prot = dia_4_alimento.Prot * dia4_factorCantidadAlimento;
+      dia_4_alimento.Grasa = dia_4_alimento.Grasa * dia4_factorCantidadAlimento;
+      switch (dia4_factorCantidadAlimento) {
+        case 2:
+          dia_4_alimento.cantidad = "200 g";
+          break;
+        case 3:
+          dia_4_alimento.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_4_alimento2.Cals = dia_4_alimento2.Cals * dia4_factorCantidadAlimento2;
+      dia_4_alimento2.Prot = dia_4_alimento2.Prot * dia4_factorCantidadAlimento2;
+      dia_4_alimento2.Grasa = dia_4_alimento2.Grasa * dia4_factorCantidadAlimento2;
+      switch (dia4_factorCantidadAlimento2) {
+        case 2:
+          dia_4_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_4_alimento2.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_5_alimento.Cals = dia_5_alimento.Cals * dia5_factorCantidadAlimento;
+      dia_5_alimento.Prot = dia_5_alimento.Prot * dia5_factorCantidadAlimento;
+      dia_5_alimento.Grasa = dia_5_alimento.Grasa * dia5_factorCantidadAlimento;
+      switch (dia5_factorCantidadAlimento) {
+        case 2:
+          dia_5_alimento.cantidad = "200 g";
+          break;
+        case 3:
+          dia_5_alimento.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_5_alimento2.Cals = dia_5_alimento2.Cals * dia5_factorCantidadAlimento2;
+      dia_5_alimento2.Prot = dia_5_alimento2.Prot * dia5_factorCantidadAlimento2;
+      dia_5_alimento2.Grasa = dia_5_alimento2.Grasa * dia5_factorCantidadAlimento2;
+      switch (dia5_factorCantidadAlimento2) {
+        case 2:
+          dia_5_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_5_alimento2.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
       return {
         resultado: true,
         snack: {
@@ -1526,9 +3766,182 @@ const funcionFitnesSnack = (cromosoma, alimentos, objetivoCaloria, ObjetivoProte
     const dia_5_alimento2 = alimentos[cromosoma[4][1]];
     const dia_6_alimento = alimentos[cromosoma[5][0]];
     const dia_6_alimento2 = alimentos[cromosoma[5][1]];
-    const calculo_calorias = dia_1_alimento.Cals + dia_1_alimento2.Cals + dia_2_alimento.Cals + dia_2_alimento2.Cals + dia_3_alimento.Cals + dia_3_alimento2.Cals + dia_4_alimento.Cals + dia_4_alimento2.Cals + dia_5_alimento.Cals + dia_5_alimento2.Cals + dia_6_alimento.Cals + dia_6_alimento2.Cals;
+    const factorCantidadAlimento = Math.floor(Math.random() * 3) + 1;
+    const factorCantidadAlimento2 = Math.floor(Math.random() * 3) + 1;
+    const dia2_factorCantidadAlimento = Math.floor(Math.random() * 3) + 1;
+    const dia2_factorCantidadAlimento2 = Math.floor(Math.random() * 3) + 1;
+    const dia3_factorCantidadAlimento = Math.floor(Math.random() * 3) + 1;
+    const dia3_factorCantidadAlimento2 = Math.floor(Math.random() * 3) + 1;
+    const dia4_factorCantidadAlimento = Math.floor(Math.random() * 3) + 1;
+    const dia4_factorCantidadAlimento2 = Math.floor(Math.random() * 3) + 1;
+    const dia5_factorCantidadAlimento = Math.floor(Math.random() * 3) + 1;
+    const dia5_factorCantidadAlimento2 = Math.floor(Math.random() * 3) + 1;
+    const dia6_factorCantidadAlimento = Math.floor(Math.random() * 3) + 1;
+    const dia6_factorCantidadAlimento2 = Math.floor(Math.random() * 3) + 1;
+    const calculo_calorias = (dia_1_alimento.Cals * factorCantidadAlimento) + (dia_1_alimento2.Cals * factorCantidadAlimento2) + (dia_2_alimento.Cals * dia2_factorCantidadAlimento) + (dia_2_alimento2.Cals * dia2_factorCantidadAlimento2) + (dia_3_alimento.Cals * dia3_factorCantidadAlimento) + (dia_3_alimento2.Cals * dia3_factorCantidadAlimento2) + (dia_4_alimento.Cals * dia4_factorCantidadAlimento) + (dia_4_alimento2.Cals * dia4_factorCantidadAlimento2) + (dia_5_alimento.Cals * dia5_factorCantidadAlimento) + (dia_5_alimento2.Cals * dia5_factorCantidadAlimento2) + (dia_6_alimento.Cals * dia6_factorCantidadAlimento) + (dia_6_alimento2.Cals * dia6_factorCantidadAlimento2);
     const calculo_proteinas = dia_1_alimento.Prot + dia_1_alimento2.Prot + dia_2_alimento.Prot + dia_2_alimento2.Prot + dia_3_alimento.Prot + dia_3_alimento2.Prot + dia_4_alimento.Prot + dia_4_alimento2.Prot + dia_5_alimento.Prot + dia_5_alimento2.Prot + dia_6_alimento.Prot + dia_6_alimento2.Prot;
     if ( calculo_calorias >= (objetivoCaloria-360) && calculo_calorias <= (objetivoCaloria+360)) {
+      dia_1_alimento.Cals = dia_1_alimento.Cals * factorCantidadAlimento;
+      dia_1_alimento.Prot = dia_1_alimento.Prot * factorCantidadAlimento;
+      dia_1_alimento.Grasa = dia_1_alimento.Grasa * factorCantidadAlimento;
+      switch (factorCantidadAlimento) {
+        case 2:
+          dia_1_alimento.cantidad = "200 g";
+          break;
+        case 3:
+          dia_1_alimento.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_1_alimento2.Cals = dia_1_alimento2.Cals * factorCantidadAlimento2;
+      dia_1_alimento2.Prot = dia_1_alimento2.Prot * factorCantidadAlimento2;
+      dia_1_alimento2.Grasa = dia_1_alimento2.Grasa * factorCantidadAlimento2;
+      switch (factorCantidadAlimento2) {
+        case 2:
+          dia_1_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_1_alimento2.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_2_alimento.Cals = dia_2_alimento.Cals * dia2_factorCantidadAlimento;
+      dia_2_alimento.Prot = dia_2_alimento.Prot * dia2_factorCantidadAlimento;
+      dia_2_alimento.Grasa = dia_2_alimento.Grasa * dia2_factorCantidadAlimento;
+      switch (dia2_factorCantidadAlimento) {
+        case 2:
+          dia_2_alimento.cantidad = "200 g";
+          break;
+        case 3:
+          dia_2_alimento.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_2_alimento2.Cals = dia_2_alimento2.Cals * dia2_factorCantidadAlimento2;
+      dia_2_alimento2.Prot = dia_2_alimento2.Prot * dia2_factorCantidadAlimento2;
+      dia_2_alimento2.Grasa = dia_2_alimento2.Grasa * dia2_factorCantidadAlimento2;
+      switch (dia2_factorCantidadAlimento2) {
+        case 2:
+          dia_2_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_2_alimento2.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_3_alimento.Cals = dia_3_alimento.Cals * dia3_factorCantidadAlimento;
+      dia_3_alimento.Prot = dia_3_alimento.Prot * dia3_factorCantidadAlimento;
+      dia_3_alimento.Grasa = dia_3_alimento.Grasa * dia3_factorCantidadAlimento;
+      switch (dia3_factorCantidadAlimento) {
+        case 2:
+          dia_3_alimento.cantidad = "200 g";
+          break;
+        case 3:
+          dia_3_alimento.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_3_alimento2.Cals = dia_3_alimento2.Cals * dia3_factorCantidadAlimento2;
+      dia_3_alimento2.Prot = dia_3_alimento2.Prot * dia3_factorCantidadAlimento2;
+      dia_3_alimento2.Grasa = dia_3_alimento2.Grasa * dia3_factorCantidadAlimento2;
+      switch (dia3_factorCantidadAlimento2) {
+        case 2:
+          dia_3_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_3_alimento2.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_4_alimento.Cals = dia_4_alimento.Cals * dia4_factorCantidadAlimento;
+      dia_4_alimento.Prot = dia_4_alimento.Prot * dia4_factorCantidadAlimento;
+      dia_4_alimento.Grasa = dia_4_alimento.Grasa * dia4_factorCantidadAlimento;
+      switch (dia4_factorCantidadAlimento) {
+        case 2:
+          dia_4_alimento.cantidad = "200 g";
+          break;
+        case 3:
+          dia_4_alimento.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_4_alimento2.Cals = dia_4_alimento2.Cals * dia4_factorCantidadAlimento2;
+      dia_4_alimento2.Prot = dia_4_alimento2.Prot * dia4_factorCantidadAlimento2;
+      dia_4_alimento2.Grasa = dia_4_alimento2.Grasa * dia4_factorCantidadAlimento2;
+      switch (dia4_factorCantidadAlimento2) {
+        case 2:
+          dia_4_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_4_alimento2.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_5_alimento.Cals = dia_5_alimento.Cals * dia5_factorCantidadAlimento;
+      dia_5_alimento.Prot = dia_5_alimento.Prot * dia5_factorCantidadAlimento;
+      dia_5_alimento.Grasa = dia_5_alimento.Grasa * dia5_factorCantidadAlimento;
+      switch (dia5_factorCantidadAlimento) {
+        case 2:
+          dia_5_alimento.cantidad = "200 g";
+          break;
+        case 3:
+          dia_5_alimento.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_5_alimento2.Cals = dia_5_alimento2.Cals * dia5_factorCantidadAlimento2;
+      dia_5_alimento2.Prot = dia_5_alimento2.Prot * dia5_factorCantidadAlimento2;
+      dia_5_alimento2.Grasa = dia_5_alimento2.Grasa * dia5_factorCantidadAlimento2;
+      switch (dia5_factorCantidadAlimento2) {
+        case 2:
+          dia_5_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_5_alimento2.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_6_alimento.Cals = dia_6_alimento.Cals * dia6_factorCantidadAlimento;
+      dia_6_alimento.Prot = dia_6_alimento.Prot * dia6_factorCantidadAlimento;
+      dia_6_alimento.Grasa = dia_6_alimento.Grasa * dia6_factorCantidadAlimento;
+      switch (dia6_factorCantidadAlimento) {
+        case 2:
+          dia_6_alimento.cantidad = "200 g";
+          break;
+        case 3:
+          dia_6_alimento.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_6_alimento2.Cals = dia_6_alimento2.Cals * dia6_factorCantidadAlimento2;
+      dia_6_alimento2.Prot = dia_6_alimento2.Prot * dia6_factorCantidadAlimento2;
+      dia_6_alimento2.Grasa = dia_6_alimento2.Grasa * dia6_factorCantidadAlimento2;
+      switch (dia6_factorCantidadAlimento2) {
+        case 2:
+          dia_6_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_6_alimento2.cantidad = "300 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
       return {
         resultado: true,
         snack: {
@@ -1600,9 +4013,253 @@ const funcionFitnesSnack = (cromosoma, alimentos, objetivoCaloria, ObjetivoProte
     const dia_6_alimento2 = alimentos[cromosoma[5][1]];
     const dia_7_alimento = alimentos[cromosoma[6][0]];
     const dia_7_alimento2 = alimentos[cromosoma[6][1]];
-    const calculo_calorias = dia_1_alimento.Cals + dia_1_alimento2.Cals + dia_2_alimento.Cals + dia_2_alimento2.Cals + dia_3_alimento.Cals + dia_3_alimento2.Cals + dia_4_alimento.Cals + dia_4_alimento2.Cals + dia_5_alimento.Cals + dia_5_alimento2.Cals + dia_6_alimento.Cals + dia_6_alimento2.Cals + dia_7_alimento.Cals + dia_7_alimento2.Cals;
+    const factorCantidadAlimento = Math.floor(Math.random() * 4) + 1;
+    const factorCantidadAlimento2 = Math.floor(Math.random() * 4) + 1;
+    const dia2_factorCantidadAlimento = Math.floor(Math.random() * 4) + 1;
+    const dia2_factorCantidadAlimento2 = Math.floor(Math.random() * 4) + 1;
+    const dia3_factorCantidadAlimento = Math.floor(Math.random() * 4) + 1;
+    const dia3_factorCantidadAlimento2 = Math.floor(Math.random() * 4) + 1;
+    const dia4_factorCantidadAlimento = Math.floor(Math.random() * 4) + 1;
+    const dia4_factorCantidadAlimento2 = Math.floor(Math.random() * 4) + 1;
+    const dia5_factorCantidadAlimento = Math.floor(Math.random() * 4) + 1;
+    const dia5_factorCantidadAlimento2 = Math.floor(Math.random() * 4) + 1;
+    const dia6_factorCantidadAlimento = Math.floor(Math.random() * 4) + 1;
+    const dia6_factorCantidadAlimento2 = Math.floor(Math.random() * 4) + 1;
+    const dia7_factorCantidadAlimento = Math.floor(Math.random() * 4) + 1;
+    const dia7_factorCantidadAlimento2 = Math.floor(Math.random() * 4) + 1;
+    const calculo_calorias = (dia_1_alimento.Cals * factorCantidadAlimento) + (dia_1_alimento2.Cals * factorCantidadAlimento2) + (dia_2_alimento.Cals * dia2_factorCantidadAlimento) + (dia_2_alimento2.Cals * dia2_factorCantidadAlimento2) + (dia_3_alimento.Cals * dia3_factorCantidadAlimento) + (dia_3_alimento2.Cals * dia3_factorCantidadAlimento2) + (dia_4_alimento.Cals * dia4_factorCantidadAlimento) + (dia_4_alimento2.Cals * dia4_factorCantidadAlimento2) + (dia_5_alimento.Cals * dia5_factorCantidadAlimento) + (dia_5_alimento2.Cals * dia5_factorCantidadAlimento2) + (dia_6_alimento.Cals * dia6_factorCantidadAlimento) + (dia_6_alimento2.Cals * dia6_factorCantidadAlimento2) + (dia_7_alimento.Cals * dia7_factorCantidadAlimento) + (dia_7_alimento2.Cals * dia7_factorCantidadAlimento2);
     const calculo_proteinas = dia_1_alimento.Prot + dia_1_alimento2.Prot + dia_2_alimento.Prot + dia_2_alimento2.Prot + dia_3_alimento.Prot + dia_3_alimento2.Prot + dia_4_alimento.Prot + dia_4_alimento2.Prot + dia_5_alimento.Prot + dia_5_alimento2.Prot + dia_6_alimento.Prot + dia_6_alimento2.Prot + dia_7_alimento.Prot + dia_7_alimento2.Prot;
     if ( calculo_calorias >= (objetivoCaloria-420) && calculo_calorias <= (objetivoCaloria+420)) {
+      dia_1_alimento.Cals = dia_1_alimento.Cals * factorCantidadAlimento;
+      dia_1_alimento.Prot = dia_1_alimento.Prot * factorCantidadAlimento;
+      dia_1_alimento.Grasa = dia_1_alimento.Grasa * factorCantidadAlimento;
+      switch (factorCantidadAlimento) {
+        case 2:
+          dia_1_alimento.cantidad = "200 g";
+          break;
+        case 3:
+          dia_1_alimento.cantidad = "300 g";
+          break;
+        case 4:
+          dia_1_alimento.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_1_alimento2.Cals = dia_1_alimento2.Cals * factorCantidadAlimento2;
+      dia_1_alimento2.Prot = dia_1_alimento2.Prot * factorCantidadAlimento2;
+      dia_1_alimento2.Grasa = dia_1_alimento2.Grasa * factorCantidadAlimento2;
+      switch (factorCantidadAlimento2) {
+        case 2:
+          dia_1_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_1_alimento2.cantidad = "300 g";
+          break;
+        case 4:
+          dia_1_alimento2.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_2_alimento.Cals = dia_2_alimento.Cals * dia2_factorCantidadAlimento;
+      dia_2_alimento.Prot = dia_2_alimento.Prot * dia2_factorCantidadAlimento;
+      dia_2_alimento.Grasa = dia_2_alimento.Grasa * dia2_factorCantidadAlimento;
+      switch (dia2_factorCantidadAlimento) {
+        case 2:
+          dia_2_alimento.cantidad = "200 g";
+          break;
+        case 3:
+          dia_2_alimento.cantidad = "300 g";
+          break;
+        case 4:
+          dia_2_alimento.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_2_alimento2.Cals = dia_2_alimento2.Cals * dia2_factorCantidadAlimento2;
+      dia_2_alimento2.Prot = dia_2_alimento2.Prot * dia2_factorCantidadAlimento2;
+      dia_2_alimento2.Grasa = dia_2_alimento2.Grasa * dia2_factorCantidadAlimento2;
+      switch (dia2_factorCantidadAlimento2) {
+        case 2:
+          dia_2_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_2_alimento2.cantidad = "300 g";
+          break;
+        case 4:
+          dia_2_alimento2.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_3_alimento.Cals = dia_3_alimento.Cals * dia3_factorCantidadAlimento;
+      dia_3_alimento.Prot = dia_3_alimento.Prot * dia3_factorCantidadAlimento;
+      dia_3_alimento.Grasa = dia_3_alimento.Grasa * dia3_factorCantidadAlimento;
+      switch (dia3_factorCantidadAlimento) {
+        case 2:
+          dia_3_alimento.cantidad = "200 g";
+          break;
+        case 3:
+          dia_3_alimento.cantidad = "300 g";
+          break;
+        case 4:
+          dia_3_alimento.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_3_alimento2.Cals = dia_3_alimento2.Cals * dia3_factorCantidadAlimento2;
+      dia_3_alimento2.Prot = dia_3_alimento2.Prot * dia3_factorCantidadAlimento2;
+      dia_3_alimento2.Grasa = dia_3_alimento2.Grasa * dia3_factorCantidadAlimento2;
+      switch (dia3_factorCantidadAlimento2) {
+        case 2:
+          dia_3_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_3_alimento2.cantidad = "300 g";
+          break;
+        case 4:
+          dia_3_alimento2.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_4_alimento.Cals = dia_4_alimento.Cals * dia4_factorCantidadAlimento;
+      dia_4_alimento.Prot = dia_4_alimento.Prot * dia4_factorCantidadAlimento;
+      dia_4_alimento.Grasa = dia_4_alimento.Grasa * dia4_factorCantidadAlimento;
+      switch (dia4_factorCantidadAlimento) {
+        case 2:
+          dia_4_alimento.cantidad = "200 g";
+          break;
+        case 3:
+          dia_4_alimento.cantidad = "300 g";
+          break;
+        case 4:
+          dia_4_alimento.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_4_alimento2.Cals = dia_4_alimento2.Cals * dia4_factorCantidadAlimento2;
+      dia_4_alimento2.Prot = dia_4_alimento2.Prot * dia4_factorCantidadAlimento2;
+      dia_4_alimento2.Grasa = dia_4_alimento2.Grasa * dia4_factorCantidadAlimento2;
+      switch (dia4_factorCantidadAlimento2) {
+        case 2:
+          dia_4_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_4_alimento2.cantidad = "300 g";
+          break;
+        case 4:
+          dia_4_alimento2.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_5_alimento.Cals = dia_5_alimento.Cals * dia5_factorCantidadAlimento;
+      dia_5_alimento.Prot = dia_5_alimento.Prot * dia5_factorCantidadAlimento;
+      dia_5_alimento.Grasa = dia_5_alimento.Grasa * dia5_factorCantidadAlimento;
+      switch (dia5_factorCantidadAlimento) {
+        case 2:
+          dia_5_alimento.cantidad = "200 g";
+          break;
+        case 3:
+          dia_5_alimento.cantidad = "300 g";
+          break;
+        case 4:
+          dia_5_alimento.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_5_alimento2.Cals = dia_5_alimento2.Cals * dia5_factorCantidadAlimento2;
+      dia_5_alimento2.Prot = dia_5_alimento2.Prot * dia5_factorCantidadAlimento2;
+      dia_5_alimento2.Grasa = dia_5_alimento2.Grasa * dia5_factorCantidadAlimento2;
+      switch (dia5_factorCantidadAlimento2) {
+        case 2:
+          dia_5_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_5_alimento2.cantidad = "300 g";
+          break;
+        case 4:
+          dia_5_alimento2.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_6_alimento.Cals = dia_6_alimento.Cals * dia6_factorCantidadAlimento;
+      dia_6_alimento.Prot = dia_6_alimento.Prot * dia6_factorCantidadAlimento;
+      dia_6_alimento.Grasa = dia_6_alimento.Grasa * dia6_factorCantidadAlimento;
+      switch (dia6_factorCantidadAlimento) {
+        case 2:
+          dia_6_alimento.cantidad = "200 g";
+          break;
+        case 3:
+          dia_6_alimento.cantidad = "300 g";
+          break;
+        case 4:
+          dia_6_alimento.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_6_alimento2.Cals = dia_6_alimento2.Cals * dia6_factorCantidadAlimento2;
+      dia_6_alimento2.Prot = dia_6_alimento2.Prot * dia6_factorCantidadAlimento2;
+      dia_6_alimento2.Grasa = dia_6_alimento2.Grasa * dia6_factorCantidadAlimento2;
+      switch (dia6_factorCantidadAlimento2) {
+        case 2:
+          dia_6_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_6_alimento2.cantidad = "300 g";
+          break;
+        case 4:
+          dia_6_alimento2.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+
+      dia_7_alimento.Cals = dia_7_alimento.Cals * dia7_factorCantidadAlimento;
+      dia_7_alimento.Prot = dia_7_alimento.Prot * dia7_factorCantidadAlimento;
+      dia_7_alimento.Grasa = dia_7_alimento.Grasa * dia7_factorCantidadAlimento;
+      switch (dia7_factorCantidadAlimento) {
+        case 2:
+          dia_7_alimento.cantidad = "200 g";
+          break;
+        case 3:
+          dia_7_alimento.cantidad = "300 g";
+          break;
+        case 4:
+          dia_7_alimento.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
+      dia_7_alimento2.Cals = dia_7_alimento2.Cals * dia7_factorCantidadAlimento2;
+      dia_7_alimento2.Prot = dia_7_alimento2.Prot * dia7_factorCantidadAlimento2;
+      dia_7_alimento2.Grasa = dia_7_alimento2.Grasa * dia7_factorCantidadAlimento2;
+      switch (dia7_factorCantidadAlimento2) {
+        case 2:
+          dia_7_alimento2.cantidad = "200 g";
+          break;
+        case 3:
+          dia_7_alimento2.cantidad = "300 g";
+          break;
+        case 4:
+          dia_7_alimento2.cantidad = "400 g";
+          break;
+        default:
+          console.log("la unidad es 1");
+      }
       return {
         resultado: true,
         snack: {
@@ -2137,12 +4794,10 @@ app.post("/AG", async (req, res) => {
         for (const temp of cromosomas_desyuno) {
           resulatdoFitnesDesayuno = funcionFitnesDesayuno(temp, liquidos, desayuno, (req.body.caloriaObjetivo*0.15), (req.body.proteinaObjetivo*0.15), req.body.dias);
           if (resulatdoFitnesDesayuno.resultado) {
-            console.log('---------DESAYUNO OK-------------');
             break;
           }
         }
         if (resulatdoFitnesDesayuno.resultado) {
-          console.log('---------DESAYUNO OK-------------');
           break;
         }
       }
@@ -2150,12 +4805,10 @@ app.post("/AG", async (req, res) => {
         for (const temp of cromosomas_comida) {
           resulatdoFitnesAlmuerzo = funcionFitnesAlmuerzo(temp, carnes, almuerzo, (req.body.caloriaObjetivo*0.35), (req.body.proteinaObjetivo*0.35), req.body.dias);
           if (resulatdoFitnesAlmuerzo.resultado) {
-            console.log('---------ALMUERZO OK-------------');
             break;
           }
         }
         if (resulatdoFitnesAlmuerzo.resultado) {
-          console.log('---------ALMUERZO OK-------------');
           break;
         }
       }
@@ -2164,12 +4817,10 @@ app.post("/AG", async (req, res) => {
           resulatdoFitnesSnack = funcionFitnesSnack(temp, snack, (req.body.caloriaObjetivo*0.15), (req.body.proteinaObjetivo*0.15), req.body.dias);
           if (resulatdoFitnesSnack.resultado) {
             console.log(resulatdoFitnesSnack);
-            console.log('---------SNACK OK-------------');
             break;
           }
         }
         if (resulatdoFitnesSnack.resultado) {
-          console.log('---------SNACK OK-------------');
           break;
         }
       }
